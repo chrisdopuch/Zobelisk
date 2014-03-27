@@ -20,6 +20,8 @@
 		E6E5F68518E350A90001FBAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6E5F66718E350A90001FBAF /* UIKit.framework */; };
 		E6E5F68D18E350A90001FBAF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E6E5F68B18E350A90001FBAF /* InfoPlist.strings */; };
 		E6E5F68F18E350A90001FBAF /* ZobeliskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E5F68E18E350A90001FBAF /* ZobeliskTests.m */; };
+		E6E5F6A118E397500001FBAF /* MIZNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E5F6A018E397500001FBAF /* MIZNavigationController.m */; };
+		E6E5F6A418E397A70001FBAF /* MIZFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E5F6A318E397A70001FBAF /* MIZFeedTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +52,10 @@
 		E6E5F68A18E350A90001FBAF /* ZobeliskTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZobeliskTests-Info.plist"; sourceTree = "<group>"; };
 		E6E5F68C18E350A90001FBAF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E6E5F68E18E350A90001FBAF /* ZobeliskTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZobeliskTests.m; sourceTree = "<group>"; };
+		E6E5F69F18E397500001FBAF /* MIZNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZNavigationController.h; path = "View Controller/MIZNavigationController.h"; sourceTree = "<group>"; };
+		E6E5F6A018E397500001FBAF /* MIZNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZNavigationController.m; path = "View Controller/MIZNavigationController.m"; sourceTree = "<group>"; };
+		E6E5F6A218E397A70001FBAF /* MIZFeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZFeedTableViewController.h; path = "View Controller/MIZFeedTableViewController.h"; sourceTree = "<group>"; };
+		E6E5F6A318E397A70001FBAF /* MIZFeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZFeedTableViewController.m; path = "View Controller/MIZFeedTableViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,11 +115,10 @@
 		E6E5F66918E350A90001FBAF /* Zobelisk */ = {
 			isa = PBXGroup;
 			children = (
+				E6E5F69B18E395AC0001FBAF /* Delegates */,
 				E6E5F69A18E350DA0001FBAF /* Model */,
 				E6E5F69918E350C20001FBAF /* Views */,
-				E6E5F69818E350B60001FBAF /* View Controlloer */,
-				E6E5F67218E350A90001FBAF /* MIZAppDelegate.h */,
-				E6E5F67318E350A90001FBAF /* MIZAppDelegate.m */,
+				E6E5F69818E350B60001FBAF /* View Controller */,
 				E6E5F67518E350A90001FBAF /* Main.storyboard */,
 				E6E5F67B18E350A90001FBAF /* Images.xcassets */,
 				E6E5F66A18E350A90001FBAF /* Supporting Files */,
@@ -150,11 +155,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		E6E5F69818E350B60001FBAF /* View Controlloer */ = {
+		E6E5F69818E350B60001FBAF /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E6E5F69F18E397500001FBAF /* MIZNavigationController.h */,
+				E6E5F6A018E397500001FBAF /* MIZNavigationController.m */,
+				E6E5F6A218E397A70001FBAF /* MIZFeedTableViewController.h */,
+				E6E5F6A318E397A70001FBAF /* MIZFeedTableViewController.m */,
 			);
-			name = "View Controlloer";
+			name = "View Controller";
 			sourceTree = "<group>";
 		};
 		E6E5F69918E350C20001FBAF /* Views */ = {
@@ -169,6 +178,15 @@
 			children = (
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		E6E5F69B18E395AC0001FBAF /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				E6E5F67218E350A90001FBAF /* MIZAppDelegate.h */,
+				E6E5F67318E350A90001FBAF /* MIZAppDelegate.m */,
+			);
+			name = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -271,6 +289,8 @@
 			files = (
 				E6E5F67018E350A90001FBAF /* main.m in Sources */,
 				E6E5F67418E350A90001FBAF /* MIZAppDelegate.m in Sources */,
+				E6E5F6A418E397A70001FBAF /* MIZFeedTableViewController.m in Sources */,
+				E6E5F6A118E397500001FBAF /* MIZNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
