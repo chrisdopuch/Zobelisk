@@ -22,6 +22,7 @@
 		E6E5F68F18E350A90001FBAF /* ZobeliskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E5F68E18E350A90001FBAF /* ZobeliskTests.m */; };
 		E6E5F6A118E397500001FBAF /* MIZNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E5F6A018E397500001FBAF /* MIZNavigationController.m */; };
 		E6E5F6A418E397A70001FBAF /* MIZFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E5F6A318E397A70001FBAF /* MIZFeedTableViewController.m */; };
+		E6E5F6A918EB40360001FBAF /* MIZMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E5F6A818EB40360001FBAF /* MIZMeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		E6E5F6A018E397500001FBAF /* MIZNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZNavigationController.m; path = "View Controller/MIZNavigationController.m"; sourceTree = "<group>"; };
 		E6E5F6A218E397A70001FBAF /* MIZFeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZFeedTableViewController.h; path = "View Controller/MIZFeedTableViewController.h"; sourceTree = "<group>"; };
 		E6E5F6A318E397A70001FBAF /* MIZFeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZFeedTableViewController.m; path = "View Controller/MIZFeedTableViewController.m"; sourceTree = "<group>"; };
+		E6E5F6A718EB40360001FBAF /* MIZMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZMeViewController.h; path = "View Controller/MIZMeViewController.h"; sourceTree = "<group>"; };
+		E6E5F6A818EB40360001FBAF /* MIZMeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZMeViewController.m; path = "View Controller/MIZMeViewController.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,10 +161,10 @@
 		E6E5F69818E350B60001FBAF /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E6E5F69F18E397500001FBAF /* MIZNavigationController.h */,
-				E6E5F6A018E397500001FBAF /* MIZNavigationController.m */,
-				E6E5F6A218E397A70001FBAF /* MIZFeedTableViewController.h */,
-				E6E5F6A318E397A70001FBAF /* MIZFeedTableViewController.m */,
+				E6E5F6A618EB36CB0001FBAF /* Table View Controller */,
+				E6E5F6A518EB36B90001FBAF /* Navigation Controller */,
+				E6E5F6A718EB40360001FBAF /* MIZMeViewController.h */,
+				E6E5F6A818EB40360001FBAF /* MIZMeViewController.m */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -187,6 +190,24 @@
 				E6E5F67318E350A90001FBAF /* MIZAppDelegate.m */,
 			);
 			name = Delegates;
+			sourceTree = "<group>";
+		};
+		E6E5F6A518EB36B90001FBAF /* Navigation Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E6E5F69F18E397500001FBAF /* MIZNavigationController.h */,
+				E6E5F6A018E397500001FBAF /* MIZNavigationController.m */,
+			);
+			name = "Navigation Controller";
+			sourceTree = "<group>";
+		};
+		E6E5F6A618EB36CB0001FBAF /* Table View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E6E5F6A218E397A70001FBAF /* MIZFeedTableViewController.h */,
+				E6E5F6A318E397A70001FBAF /* MIZFeedTableViewController.m */,
+			);
+			name = "Table View Controller";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -291,6 +312,7 @@
 				E6E5F67418E350A90001FBAF /* MIZAppDelegate.m in Sources */,
 				E6E5F6A418E397A70001FBAF /* MIZFeedTableViewController.m in Sources */,
 				E6E5F6A118E397500001FBAF /* MIZNavigationController.m in Sources */,
+				E6E5F6A918EB40360001FBAF /* MIZMeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,6 +517,7 @@
 				E6E5F69418E350A90001FBAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E6E5F69518E350A90001FBAF /* Build configuration list for PBXNativeTarget "ZobeliskTests" */ = {
 			isa = XCConfigurationList;
@@ -503,6 +526,7 @@
 				E6E5F69718E350A90001FBAF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
