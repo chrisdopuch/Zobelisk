@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E6C0ED6718F46FF3006402B5 /* MIZPocketTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C0ED6618F46FF3006402B5 /* MIZPocketTableViewController.m */; };
+		E6C0ED6D18F470A8006402B5 /* MIZSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C0ED6C18F470A8006402B5 /* MIZSignUpViewController.m */; };
+		E6C0ED7018F470FB006402B5 /* MIZPostTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C0ED6F18F470FB006402B5 /* MIZPostTableViewController.m */; };
+		E6C0ED7318F4719E006402B5 /* MIZMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C0ED7218F4719E006402B5 /* MIZMapViewController.m */; };
 		E6E5F66418E350A90001FBAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6E5F66318E350A90001FBAF /* Foundation.framework */; };
 		E6E5F66618E350A90001FBAF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6E5F66518E350A90001FBAF /* CoreGraphics.framework */; };
 		E6E5F66818E350A90001FBAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6E5F66718E350A90001FBAF /* UIKit.framework */; };
@@ -36,6 +40,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E6C0ED6518F46FF3006402B5 /* MIZPocketTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZPocketTableViewController.h; path = "View Controller/MIZPocketTableViewController.h"; sourceTree = "<group>"; };
+		E6C0ED6618F46FF3006402B5 /* MIZPocketTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZPocketTableViewController.m; path = "View Controller/MIZPocketTableViewController.m"; sourceTree = "<group>"; };
+		E6C0ED6B18F470A8006402B5 /* MIZSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZSignUpViewController.h; path = "View Controller/MIZSignUpViewController.h"; sourceTree = "<group>"; };
+		E6C0ED6C18F470A8006402B5 /* MIZSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZSignUpViewController.m; path = "View Controller/MIZSignUpViewController.m"; sourceTree = "<group>"; };
+		E6C0ED6E18F470FB006402B5 /* MIZPostTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIZPostTableViewController.h; sourceTree = "<group>"; };
+		E6C0ED6F18F470FB006402B5 /* MIZPostTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIZPostTableViewController.m; sourceTree = "<group>"; };
+		E6C0ED7118F4719E006402B5 /* MIZMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIZMapViewController.h; sourceTree = "<group>"; };
+		E6C0ED7218F4719E006402B5 /* MIZMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIZMapViewController.m; sourceTree = "<group>"; };
 		E6E5F66018E350A90001FBAF /* Zobelisk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zobelisk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6E5F66318E350A90001FBAF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E6E5F66518E350A90001FBAF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -165,6 +177,10 @@
 				E6E5F6A518EB36B90001FBAF /* Navigation Controller */,
 				E6E5F6A718EB40360001FBAF /* MIZMeViewController.h */,
 				E6E5F6A818EB40360001FBAF /* MIZMeViewController.m */,
+				E6C0ED6B18F470A8006402B5 /* MIZSignUpViewController.h */,
+				E6C0ED6C18F470A8006402B5 /* MIZSignUpViewController.m */,
+				E6C0ED7118F4719E006402B5 /* MIZMapViewController.h */,
+				E6C0ED7218F4719E006402B5 /* MIZMapViewController.m */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -206,6 +222,10 @@
 			children = (
 				E6E5F6A218E397A70001FBAF /* MIZFeedTableViewController.h */,
 				E6E5F6A318E397A70001FBAF /* MIZFeedTableViewController.m */,
+				E6C0ED6518F46FF3006402B5 /* MIZPocketTableViewController.h */,
+				E6C0ED6618F46FF3006402B5 /* MIZPocketTableViewController.m */,
+				E6C0ED6E18F470FB006402B5 /* MIZPostTableViewController.h */,
+				E6C0ED6F18F470FB006402B5 /* MIZPostTableViewController.m */,
 			);
 			name = "Table View Controller";
 			sourceTree = "<group>";
@@ -310,9 +330,13 @@
 			files = (
 				E6E5F67018E350A90001FBAF /* main.m in Sources */,
 				E6E5F67418E350A90001FBAF /* MIZAppDelegate.m in Sources */,
+				E6C0ED6718F46FF3006402B5 /* MIZPocketTableViewController.m in Sources */,
 				E6E5F6A418E397A70001FBAF /* MIZFeedTableViewController.m in Sources */,
+				E6C0ED7018F470FB006402B5 /* MIZPostTableViewController.m in Sources */,
 				E6E5F6A118E397500001FBAF /* MIZNavigationController.m in Sources */,
+				E6C0ED6D18F470A8006402B5 /* MIZSignUpViewController.m in Sources */,
 				E6E5F6A918EB40360001FBAF /* MIZMeViewController.m in Sources */,
+				E6C0ED7318F4719E006402B5 /* MIZMapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
