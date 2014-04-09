@@ -8,28 +8,28 @@
         <scene sceneID="68n-CK-0fR">
             <objects>
                 <tabBarController definesPresentationContext="YES" id="Piy-dZ-9S3" sceneMemberID="viewController">
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="KwS-6Q-VtU">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="4tp-qQ-Uug" kind="relationship" relationship="viewControllers" id="N4g-tl-Mt6"/>
                         <segue destination="JWy-IE-ANd" kind="relationship" relationship="viewControllers" id="tVb-A9-fZE"/>
                         <segue destination="Jm0-AR-PeT" kind="relationship" relationship="viewControllers" id="4Ax-nh-UzX"/>
                         <segue destination="bpr-IB-zuQ" kind="relationship" relationship="viewControllers" id="SOj-eT-cYA"/>
+                        <segue destination="eOT-98-so9" kind="relationship" relationship="viewControllers" id="kT7-vp-iYY"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6zd-bf-Kpk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1042" y="-3"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Feed Navigation View Controller - Feed -->
         <scene sceneID="tng-XN-Ebs">
             <objects>
-                <navigationController definesPresentationContext="YES" id="bpr-IB-zuQ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="ijI-Tc-KQs"/>
+                <navigationController definesPresentationContext="YES" id="bpr-IB-zuQ" customClass="MIZFeedNavigationViewController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Feed " id="ijI-Tc-KQs"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dzq-NV-zDK">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -610,6 +610,22 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="781" y="-1896"/>
         </scene>
+        <!--Maps Navigation Controller - Maps-->
+        <scene sceneID="Esf-6F-ZJ1">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="eOT-98-so9" customClass="MIZMapsNavigationController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Maps" id="pHc-tx-R3J"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tLP-B7-pSQ">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="UPh-qh-SjY" kind="relationship" relationship="rootViewController" id="Z6A-YH-fxU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tu4-tR-LKg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-234" y="1727"/>
+        </scene>
         <!--MapView-->
         <scene sceneID="qZP-zE-zOd">
             <objects>
@@ -634,7 +650,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ym6-v2-YJ3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="781" y="967"/>
+            <point key="canvasLocation" x="258" y="1727"/>
         </scene>
         <!--MeView-->
         <scene sceneID="GXs-43-AAG">
@@ -705,7 +721,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 </constraints>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="131" id="CtL-E0-jke">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="131"/>
+                                        <rect key="frame" x="0.0" y="22" width="0.0" height="131"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CtL-E0-jke" id="MYt-Bk-Xg4">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
@@ -992,25 +1008,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="242" y="-475"/>
         </scene>
-        <!--Navigation Controller - Item-->
-        <scene sceneID="YCk-jC-nv2">
-            <objects>
-                <navigationController definesPresentationContext="YES" id="4tp-qQ-Uug" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="HsM-dt-jz2"/>
-                    <navigationItem key="navigationItem" id="UWz-si-AQa"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hi9-Yg-5Vj">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Fnx-2C-K5H" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-218" y="-480"/>
-        </scene>
-        <!--Navigation Controller - Item-->
+        <!--Me Navigation View Controller - Me-->
         <scene sceneID="T8N-JA-NxQ">
             <objects>
-                <navigationController definesPresentationContext="YES" id="JWy-IE-ANd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="j3d-gn-gqt"/>
+                <navigationController definesPresentationContext="YES" id="JWy-IE-ANd" customClass="MIZMeNavigationViewController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Me" id="j3d-gn-gqt"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dpf-C0-cKT">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1022,11 +1024,11 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
             </objects>
             <point key="canvasLocation" x="-234" y="287"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Pocket Navigation Controller - Pocket-->
         <scene sceneID="eL3-hE-6Ry">
             <objects>
-                <navigationController definesPresentationContext="YES" id="Jm0-AR-PeT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="9i5-sh-neB"/>
+                <navigationController definesPresentationContext="YES" id="Jm0-AR-PeT" customClass="MIZPocketNavigationController" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Pocket" id="9i5-sh-neB"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aNH-rO-d9N">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

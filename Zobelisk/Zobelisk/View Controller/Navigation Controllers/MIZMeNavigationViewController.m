@@ -1,18 +1,18 @@
 //
-//  MIZMeViewController.m
+//  MIZMeNavigationViewController.m
 //  Zobelisk
 //
-//  Created by Clifford Green on 4/1/14.
+//  Created by Clifford Green on 4/8/14.
 //  Copyright (c) 2014 Mizzou IT. All rights reserved.
 //
 
-#import "MIZMeViewController.h"
+#import "MIZMeNavigationViewController.h"
 
-@interface MIZMeViewController ()
+@interface MIZMeNavigationViewController ()
 
 @end
 
-@implementation MIZMeViewController
+@implementation MIZMeNavigationViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,10 +26,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
     UIBarButtonItem *addPost = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:nil];
     self.navigationItem.rightBarButtonItem = addPost;
+    // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning

@@ -11,6 +11,10 @@
 		E6C0ED6D18F470A8006402B5 /* MIZSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C0ED6C18F470A8006402B5 /* MIZSignUpViewController.m */; };
 		E6C0ED7018F470FB006402B5 /* MIZPostTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C0ED6F18F470FB006402B5 /* MIZPostTableViewController.m */; };
 		E6C0ED7318F4719E006402B5 /* MIZMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C0ED7218F4719E006402B5 /* MIZMapViewController.m */; };
+		E6C0ED7618F4BA8F006402B5 /* MIZFeedNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C0ED7518F4BA8F006402B5 /* MIZFeedNavigationViewController.m */; };
+		E6C0ED7918F4BAB5006402B5 /* MIZMeNavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C0ED7818F4BAB5006402B5 /* MIZMeNavigationViewController.m */; };
+		E6C0ED7C18F4BAD5006402B5 /* MIZMapsNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C0ED7B18F4BAD5006402B5 /* MIZMapsNavigationController.m */; };
+		E6C0ED7F18F4BAF2006402B5 /* MIZPocketNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C0ED7E18F4BAF2006402B5 /* MIZPocketNavigationController.m */; };
 		E6E5F66418E350A90001FBAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6E5F66318E350A90001FBAF /* Foundation.framework */; };
 		E6E5F66618E350A90001FBAF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6E5F66518E350A90001FBAF /* CoreGraphics.framework */; };
 		E6E5F66818E350A90001FBAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6E5F66718E350A90001FBAF /* UIKit.framework */; };
@@ -24,7 +28,6 @@
 		E6E5F68518E350A90001FBAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E6E5F66718E350A90001FBAF /* UIKit.framework */; };
 		E6E5F68D18E350A90001FBAF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E6E5F68B18E350A90001FBAF /* InfoPlist.strings */; };
 		E6E5F68F18E350A90001FBAF /* ZobeliskTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E5F68E18E350A90001FBAF /* ZobeliskTests.m */; };
-		E6E5F6A118E397500001FBAF /* MIZNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E5F6A018E397500001FBAF /* MIZNavigationController.m */; };
 		E6E5F6A418E397A70001FBAF /* MIZFeedTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E5F6A318E397A70001FBAF /* MIZFeedTableViewController.m */; };
 		E6E5F6A918EB40360001FBAF /* MIZMeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6E5F6A818EB40360001FBAF /* MIZMeViewController.m */; };
 /* End PBXBuildFile section */
@@ -48,6 +51,14 @@
 		E6C0ED6F18F470FB006402B5 /* MIZPostTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIZPostTableViewController.m; sourceTree = "<group>"; };
 		E6C0ED7118F4719E006402B5 /* MIZMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIZMapViewController.h; sourceTree = "<group>"; };
 		E6C0ED7218F4719E006402B5 /* MIZMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIZMapViewController.m; sourceTree = "<group>"; };
+		E6C0ED7418F4BA8F006402B5 /* MIZFeedNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZFeedNavigationViewController.h; path = "View Controller/Navigation Controllers/MIZFeedNavigationViewController.h"; sourceTree = "<group>"; };
+		E6C0ED7518F4BA8F006402B5 /* MIZFeedNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZFeedNavigationViewController.m; path = "View Controller/Navigation Controllers/MIZFeedNavigationViewController.m"; sourceTree = "<group>"; };
+		E6C0ED7718F4BAB5006402B5 /* MIZMeNavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZMeNavigationViewController.h; path = "View Controller/Navigation Controllers/MIZMeNavigationViewController.h"; sourceTree = "<group>"; };
+		E6C0ED7818F4BAB5006402B5 /* MIZMeNavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZMeNavigationViewController.m; path = "View Controller/Navigation Controllers/MIZMeNavigationViewController.m"; sourceTree = "<group>"; };
+		E6C0ED7A18F4BAD5006402B5 /* MIZMapsNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZMapsNavigationController.h; path = "View Controller/Navigation Controllers/MIZMapsNavigationController.h"; sourceTree = "<group>"; };
+		E6C0ED7B18F4BAD5006402B5 /* MIZMapsNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZMapsNavigationController.m; path = "View Controller/Navigation Controllers/MIZMapsNavigationController.m"; sourceTree = "<group>"; };
+		E6C0ED7D18F4BAF2006402B5 /* MIZPocketNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZPocketNavigationController.h; path = "View Controller/MIZPocketNavigationController.h"; sourceTree = "<group>"; };
+		E6C0ED7E18F4BAF2006402B5 /* MIZPocketNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZPocketNavigationController.m; path = "View Controller/MIZPocketNavigationController.m"; sourceTree = "<group>"; };
 		E6E5F66018E350A90001FBAF /* Zobelisk.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zobelisk.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6E5F66318E350A90001FBAF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E6E5F66518E350A90001FBAF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -65,8 +76,6 @@
 		E6E5F68A18E350A90001FBAF /* ZobeliskTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZobeliskTests-Info.plist"; sourceTree = "<group>"; };
 		E6E5F68C18E350A90001FBAF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E6E5F68E18E350A90001FBAF /* ZobeliskTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZobeliskTests.m; sourceTree = "<group>"; };
-		E6E5F69F18E397500001FBAF /* MIZNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZNavigationController.h; path = "View Controller/MIZNavigationController.h"; sourceTree = "<group>"; };
-		E6E5F6A018E397500001FBAF /* MIZNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZNavigationController.m; path = "View Controller/MIZNavigationController.m"; sourceTree = "<group>"; };
 		E6E5F6A218E397A70001FBAF /* MIZFeedTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZFeedTableViewController.h; path = "View Controller/MIZFeedTableViewController.h"; sourceTree = "<group>"; };
 		E6E5F6A318E397A70001FBAF /* MIZFeedTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZFeedTableViewController.m; path = "View Controller/MIZFeedTableViewController.m"; sourceTree = "<group>"; };
 		E6E5F6A718EB40360001FBAF /* MIZMeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZMeViewController.h; path = "View Controller/MIZMeViewController.h"; sourceTree = "<group>"; };
@@ -211,8 +220,14 @@
 		E6E5F6A518EB36B90001FBAF /* Navigation Controller */ = {
 			isa = PBXGroup;
 			children = (
-				E6E5F69F18E397500001FBAF /* MIZNavigationController.h */,
-				E6E5F6A018E397500001FBAF /* MIZNavigationController.m */,
+				E6C0ED7418F4BA8F006402B5 /* MIZFeedNavigationViewController.h */,
+				E6C0ED7518F4BA8F006402B5 /* MIZFeedNavigationViewController.m */,
+				E6C0ED7718F4BAB5006402B5 /* MIZMeNavigationViewController.h */,
+				E6C0ED7818F4BAB5006402B5 /* MIZMeNavigationViewController.m */,
+				E6C0ED7A18F4BAD5006402B5 /* MIZMapsNavigationController.h */,
+				E6C0ED7B18F4BAD5006402B5 /* MIZMapsNavigationController.m */,
+				E6C0ED7D18F4BAF2006402B5 /* MIZPocketNavigationController.h */,
+				E6C0ED7E18F4BAF2006402B5 /* MIZPocketNavigationController.m */,
 			);
 			name = "Navigation Controller";
 			sourceTree = "<group>";
@@ -332,11 +347,14 @@
 				E6E5F67418E350A90001FBAF /* MIZAppDelegate.m in Sources */,
 				E6C0ED6718F46FF3006402B5 /* MIZPocketTableViewController.m in Sources */,
 				E6E5F6A418E397A70001FBAF /* MIZFeedTableViewController.m in Sources */,
+				E6C0ED7F18F4BAF2006402B5 /* MIZPocketNavigationController.m in Sources */,
 				E6C0ED7018F470FB006402B5 /* MIZPostTableViewController.m in Sources */,
-				E6E5F6A118E397500001FBAF /* MIZNavigationController.m in Sources */,
+				E6C0ED7918F4BAB5006402B5 /* MIZMeNavigationViewController.m in Sources */,
 				E6C0ED6D18F470A8006402B5 /* MIZSignUpViewController.m in Sources */,
+				E6C0ED7618F4BA8F006402B5 /* MIZFeedNavigationViewController.m in Sources */,
 				E6E5F6A918EB40360001FBAF /* MIZMeViewController.m in Sources */,
 				E6C0ED7318F4719E006402B5 /* MIZMapViewController.m in Sources */,
+				E6C0ED7C18F4BAD5006402B5 /* MIZMapsNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
