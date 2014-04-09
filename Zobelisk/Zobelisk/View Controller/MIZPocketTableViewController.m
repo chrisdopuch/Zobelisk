@@ -28,7 +28,8 @@
 {
     [super viewDidLoad];
     
-    UIBarButtonItem *addPost = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:nil];
+    UIBarButtonItem *addPost = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addPostButtonTapped:)];
+    
     self.navigationItem.rightBarButtonItem = addPost;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -37,6 +38,9 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)addPostButtonTapped:(id)sender{
+    [self performSegueWithIdentifier:@"addPost" sender:sender];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -95,15 +99,16 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    [segue destinationViewController];
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end

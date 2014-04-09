@@ -28,7 +28,7 @@
 {
     [super viewDidLoad];
     
-    UIBarButtonItem *addPost = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:nil];
+    UIBarButtonItem *addPost = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addPostButtonTapped:)];
     self.navigationItem.rightBarButtonItem = addPost;
     
     // Uncomment the following line to preserve selection between presentations.
@@ -36,6 +36,10 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+- (void)MIZAddPostViewControllerDidCancel:(MIZAddPostViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -46,7 +50,9 @@
 
 #pragma mark - Table view data source
 
-
+- (void)addPostButtonTapped:(id)sender{
+    [self performSegueWithIdentifier:@"addPost" sender:sender];
+}
 /*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -96,15 +102,16 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
+ //In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    [segue destinationViewController];
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
 }
-*/
 
 @end

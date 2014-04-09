@@ -1,18 +1,18 @@
 //
-//  MIZMeViewController.m
+//  MIZTabViewController.m
 //  Zobelisk
 //
-//  Created by Clifford Green on 4/1/14.
+//  Created by Clifford Green on 4/8/14.
 //  Copyright (c) 2014 Mizzou IT. All rights reserved.
 //
 
-#import "MIZMeViewController.h"
+#import "MIZTabViewController.h"
 
-@interface MIZMeViewController ()
+@interface MIZTabViewController ()
 
 @end
 
-@implementation MIZMeViewController
+@implementation MIZTabViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,30 +27,23 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    UIBarButtonItem *addPost = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addPostButtonTapped:)];
-    self.navigationItem.rightBarButtonItem = addPost;
 }
 
-- (void)addPostButtonTapped:(id)sender{
-    [self performSegueWithIdentifier:@"addPost" sender:sender];
-}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-
+/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    [segue destinationViewController];
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-
+*/
 
 @end

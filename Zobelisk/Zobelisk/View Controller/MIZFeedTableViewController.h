@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MIZAddPostViewController.h"
 
-@interface MIZFeedTableViewController : UITableViewController
-
+@interface MIZFeedTableViewController : UITableViewController <MIZAddPostViewControllerDelegate>
 @end
