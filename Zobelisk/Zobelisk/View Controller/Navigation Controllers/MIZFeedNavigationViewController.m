@@ -25,6 +25,7 @@
 
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
     
     UIBarButtonItem *addPost = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:nil];
