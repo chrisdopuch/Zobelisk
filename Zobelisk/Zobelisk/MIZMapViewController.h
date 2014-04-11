@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MIZAddPostViewController.h"
 
-@interface MIZMapViewController : UIViewController
+@interface MIZMapViewController : UIViewController <MIZAddPostViewControllerDelegate>
 
 @end

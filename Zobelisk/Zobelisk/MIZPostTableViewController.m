@@ -27,11 +27,27 @@
 {
     [super viewDidLoad];
     
+    UIBarButtonItem *addPost = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addPostButtonTapped:)];
+    
+    self.navigationItem.rightBarButtonItem = addPost;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)addPostButtonTapped:(id)sender{
+    [self performSegueWithIdentifier:@"addPost" sender:sender];
+}
+- (void)MIZAddPostViewControllerDidCancel:(MIZAddPostViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(IBAction)done:(id)sender
+{
+    [self.navigationController popToRootViewControllerAnimated:true];
 }
 
 - (void)didReceiveMemoryWarning
@@ -91,15 +107,21 @@
 }
 */
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    if([segue.identifier isEqualToString:@"addPost"])
+    {
+        UINavigationController *navigationController = segue.destinationViewController;
+        MIZAddPostViewController* AddPostViewController = [navigationController viewControllers][0];
+        AddPostViewController.delegate = self;
+    }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end
