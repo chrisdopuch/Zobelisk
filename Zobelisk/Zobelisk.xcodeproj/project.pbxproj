@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57EE0E1018F75DF5003F0293 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57EE0E0F18F75DF5003F0293 /* MapKit.framework */; };
 		E6C0ED6718F46FF3006402B5 /* MIZPocketTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C0ED6618F46FF3006402B5 /* MIZPocketTableViewController.m */; };
 		E6C0ED6D18F470A8006402B5 /* MIZSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C0ED6C18F470A8006402B5 /* MIZSignUpViewController.m */; };
 		E6C0ED7018F470FB006402B5 /* MIZPostTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C0ED6F18F470FB006402B5 /* MIZPostTableViewController.m */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		57EE0E0F18F75DF5003F0293 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E6C0ED6518F46FF3006402B5 /* MIZPocketTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZPocketTableViewController.h; path = "View Controller/MIZPocketTableViewController.h"; sourceTree = "<group>"; };
 		E6C0ED6618F46FF3006402B5 /* MIZPocketTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZPocketTableViewController.m; path = "View Controller/MIZPocketTableViewController.m"; sourceTree = "<group>"; };
 		E6C0ED6B18F470A8006402B5 /* MIZSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZSignUpViewController.h; path = "View Controller/MIZSignUpViewController.h"; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57EE0E1018F75DF5003F0293 /* MapKit.framework in Frameworks */,
 				E6E5F66618E350A90001FBAF /* CoreGraphics.framework in Frameworks */,
 				E6E5F66818E350A90001FBAF /* UIKit.framework in Frameworks */,
 				E6E5F66418E350A90001FBAF /* Foundation.framework in Frameworks */,
@@ -143,6 +146,7 @@
 		E6E5F66218E350A90001FBAF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				57EE0E0F18F75DF5003F0293 /* MapKit.framework */,
 				E6E5F66318E350A90001FBAF /* Foundation.framework */,
 				E6E5F66518E350A90001FBAF /* CoreGraphics.framework */,
 				E6E5F66718E350A90001FBAF /* UIKit.framework */,
@@ -499,6 +503,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Zobelisk/Zobelisk-Prefix.pch";
 				INFOPLIST_FILE = "Zobelisk/Zobelisk-Info.plist";
@@ -512,6 +520,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Zobelisk/Zobelisk-Prefix.pch";
 				INFOPLIST_FILE = "Zobelisk/Zobelisk-Info.plist";
