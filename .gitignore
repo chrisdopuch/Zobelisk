@@ -1,3 +1,4 @@
 #This will ignore the config.txt file which will contain all of our 
 #sensitive credential info which shouldn't go in the repo
 config.txt
+.DS_Store

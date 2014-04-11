@@ -934,11 +934,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <action selector="cancel:" destination="vT2-x3-SuC" id="6Fp-Ys-e4g"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ajD-1t-TBS">
-                            <connections>
-                                <segue destination="AcZ-Iv-5n2" kind="push" id="59a-EG-Qv8"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ajD-1t-TBS"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XpP-o6-W7r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -986,7 +982,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="s8O-t9-C42"/>
+<<<<<<< HEAD
         <segue reference="59a-EG-Qv8"/>
+=======
+>>>>>>> 7d44b76b22bd0df641826d82e9b0ee4c61e22450
         <segue reference="l1k-gD-2k0"/>
     </inferredMetricsTieBreakers>
 </document>
