@@ -981,11 +981,9 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        //This area was messed with by git, make sure everything is okay
         <segue reference="s8O-t9-C42"/>
-<<<<<<< HEAD
-        <segue reference="59a-EG-Qv8"/>
-=======
->>>>>>> 7d44b76b22bd0df641826d82e9b0ee4c61e22450
+
         <segue reference="l1k-gD-2k0"/>
     </inferredMetricsTieBreakers>
 </document>
