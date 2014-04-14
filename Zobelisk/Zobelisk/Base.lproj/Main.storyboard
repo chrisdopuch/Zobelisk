@@ -1142,11 +1142,12 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
 <<<<<<< HEAD
-        <segue reference="s8O-t9-C42"/>
 <<<<<<< HEAD
-        <segue reference="59a-EG-Qv8"/>
 =======
->>>>>>> 7d44b76b22bd0df641826d82e9b0ee4c61e22450
+        //This area was messed with by git, make sure everything is okay
+>>>>>>> a96f9e74c889c2cd68bece987ce12d8ccd1b6b06
+        <segue reference="s8O-t9-C42"/>
+
         <segue reference="l1k-gD-2k0"/>
 =======
         <segue reference="qRT-Qu-JUk"/>
