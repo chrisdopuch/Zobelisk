@@ -29,6 +29,8 @@
     // Do any additional setup after loading the view.
 }
 
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -46,4 +48,13 @@
 }
 */
 
+- (IBAction)passFieldDidChange:(id)sender {
+    
+    if(_passTextField.text.length > 8)
+    {
+        _signUpButton.enabled = true;
+    }
+    
+    
+}
 @end

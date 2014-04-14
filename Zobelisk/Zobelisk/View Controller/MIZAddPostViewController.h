@@ -10,6 +10,7 @@
 @class MIZAddPostViewController;
 
 @protocol MIZAddPostViewControllerDelegate <NSObject>
+
 - (void)MIZAddPostViewControllerDidCancel:(MIZAddPostViewController *)controller;
 
 @end
@@ -19,4 +20,6 @@
 @property (nonatomic, weak) id <MIZAddPostViewControllerDelegate> delegate;
 
 - (IBAction)cancel:(id)sender;
+
+
 @end

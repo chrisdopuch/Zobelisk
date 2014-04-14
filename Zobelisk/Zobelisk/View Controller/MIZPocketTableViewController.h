@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MIZAddPostViewController.h"
 
-@interface MIZPocketTableViewController : UITableViewController
+@interface MIZPocketTableViewController : UITableViewController <MIZAddPostViewControllerDelegate>
 
 @end
