@@ -6,20 +6,16 @@
 //  Copyright (c) 2014 Mizzou IT. All rights reserved.
 //
 
-<<<<<<< HEAD
 #import <MapKit/MapKit.h>
+#import <UIKit/UIKit.h>
+#import "MIZAddPostViewController.h"
 
 @interface MIZMapViewController : UIViewController
-<MKMapViewDelegate>
+<MKMapViewDelegate> //<MIZAddPostViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic, retain) CLLocation* initialLocation;
 
-=======
-#import <UIKit/UIKit.h>
-#import "MIZAddPostViewController.h"
 
-@interface MIZMapViewController : UIViewController <MIZAddPostViewControllerDelegate>
->>>>>>> SignUp
 
 @end
