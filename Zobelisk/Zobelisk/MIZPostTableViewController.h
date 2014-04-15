@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MIZAddPostViewController.h"
 
-@interface MIZPostTableViewController : UITableViewController
+@interface MIZPostTableViewController : UITableViewController <MIZAddPostViewControllerDelegate>
+
+- (IBAction)done:(id)sender;
 
 @end

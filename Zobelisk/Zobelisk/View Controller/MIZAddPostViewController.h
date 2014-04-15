@@ -10,6 +10,7 @@
 @class MIZAddPostViewController;
 
 @protocol MIZAddPostViewControllerDelegate <NSObject>
+
 - (void)MIZAddPostViewControllerDidCancel:(MIZAddPostViewController *)controller;
 
 @end
@@ -24,4 +25,6 @@
 -(IBAction)choosePhotoBtn:(id)sender;
 
 - (IBAction)cancel:(id)sender;
+
+
 @end

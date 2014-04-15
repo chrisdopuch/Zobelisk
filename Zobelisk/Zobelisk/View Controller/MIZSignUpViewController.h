@@ -9,5 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface MIZSignUpViewController : UIViewController
+@property (nonatomic, weak) IBOutlet UIButton *signUpButton;
+@property (weak, nonatomic) IBOutlet UITextField *passTextField;
+
+- (IBAction)passFieldDidChange:(id)sender;
+
 
 @end
