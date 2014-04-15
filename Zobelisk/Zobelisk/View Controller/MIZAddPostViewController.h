@@ -14,9 +14,14 @@
 
 @end
 
-@interface MIZAddPostViewController : UIViewController
+@interface MIZAddPostViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
-@property (nonatomic, weak) id <MIZAddPostViewControllerDelegate> delegate;
+@property (nonatomic, strong) id <MIZAddPostViewControllerDelegate> delegate;
+@property (nonatomic, weak) IBOutlet UIImageView *selectedImageView;
+@property (weak, nonatomic) IBOutlet UITextView *description;
+
+
+-(IBAction)choosePhotoBtn:(id)sender;
 
 - (IBAction)cancel:(id)sender;
 @end

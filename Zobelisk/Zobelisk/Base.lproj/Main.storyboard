@@ -41,45 +41,6 @@
             </objects>
             <point key="canvasLocation" x="-218" y="-1185"/>
         </scene>
-        <!--AddMediaView-->
-        <scene sceneID="RGF-Bl-Za7">
-            <objects>
-                <viewController id="AaI-ug-26m" userLabel="AddMediaView" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Q0y-LL-CGw"/>
-                        <viewControllerLayoutGuide type="bottom" id="3mO-Fj-ZbL"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="I1v-9O-Qry">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="M1a-Ku-1sQ">
-                                <rect key="frame" x="0.0" y="81" width="320" height="406"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BjZ-qw-GB6">
-                                <rect key="frame" x="137" y="518" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a07-QO-xxW">
-                                <rect key="frame" x="20" y="518" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Upload Photo" id="oGj-Va-sgR"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DVo-Wa-AQN" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1179" y="-480"/>
-        </scene>
         <!--MediaPostView-->
         <scene sceneID="deW-KV-DlO">
             <objects>
@@ -863,32 +824,26 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DF5-JB-tZn">
-                                <rect key="frame" x="20" y="117" width="97" height="30"/>
+                                <rect key="frame" x="20" y="117" width="260" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="x13-Xy-PcZ"/>
+                                    <constraint firstAttribute="width" constant="260" id="x13-Xy-PcZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="msS-6u-trT">
-                                <rect key="frame" x="20" y="189" width="280" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AA8-gt-1Er">
-                                <rect key="frame" x="31" y="283" width="91" height="30"/>
+                                <rect key="frame" x="20" y="480" width="91" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Attach Media">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="AaI-ug-26m" kind="push" id="Pa7-Ee-OSF"/>
+                                    <action selector="choosePhotoBtn:" destination="vT2-x3-SuC" eventType="touchUpInside" id="atl-se-Ljf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vr0-kr-wg6">
-                                <rect key="frame" x="31" y="321" width="133" height="30"/>
+                                <rect key="frame" x="20" y="518" width="133" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Set Expiration Date">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -910,22 +865,41 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fel-0d-w4b">
+                                <rect key="frame" x="40" y="339" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter a brief description of your post here..." translatesAutoresizingMaskIntoConstraints="NO" id="iTT-eI-xMU">
+                                <rect key="frame" x="20" y="189" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="Zbu-we-liN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="AA8-gt-1Er" firstAttribute="leading" secondItem="Iwn-nG-Syq" secondAttribute="leading" constant="31" id="1MG-En-hTF"/>
+                            <constraint firstItem="AA8-gt-1Er" firstAttribute="leading" secondItem="Iwn-nG-Syq" secondAttribute="leading" constant="20" id="1MG-En-hTF"/>
                             <constraint firstItem="DF5-JB-tZn" firstAttribute="top" secondItem="MNg-XD-q5l" secondAttribute="bottom" constant="53" id="2L3-A7-e1U"/>
+                            <constraint firstAttribute="bottom" secondItem="Vr0-kr-wg6" secondAttribute="bottom" constant="20" symbolic="YES" id="2Wj-Xo-sdo"/>
                             <constraint firstItem="DF5-JB-tZn" firstAttribute="top" secondItem="Mzx-HI-emz" secondAttribute="bottom" constant="8" symbolic="YES" id="4rt-En-7Tv"/>
                             <constraint firstItem="DF5-JB-tZn" firstAttribute="leading" secondItem="Iwn-nG-Syq" secondAttribute="leading" constant="20" symbolic="YES" id="4tA-f6-mGs"/>
-                            <constraint firstAttribute="trailing" secondItem="msS-6u-trT" secondAttribute="trailing" constant="20" symbolic="YES" id="CfT-bF-rJR"/>
+                            <constraint firstItem="AA8-gt-1Er" firstAttribute="top" secondItem="fel-0d-w4b" secondAttribute="bottom" constant="13" id="7Ag-ct-a3Y"/>
+                            <constraint firstAttribute="trailing" secondItem="iTT-eI-xMU" secondAttribute="trailing" constant="60" id="CND-FY-Mkq"/>
+                            <constraint firstItem="iTT-eI-xMU" firstAttribute="top" secondItem="Mzx-HI-emz" secondAttribute="bottom" constant="80" id="Cnq-WI-BpO"/>
+                            <constraint firstAttribute="trailing" secondItem="fel-0d-w4b" secondAttribute="trailing" constant="40" id="H5u-rK-6Tr"/>
                             <constraint firstItem="Mzx-HI-emz" firstAttribute="leading" secondItem="DF5-JB-tZn" secondAttribute="leading" id="Id7-Er-5UJ"/>
+                            <constraint firstAttribute="centerX" secondItem="fel-0d-w4b" secondAttribute="centerX" id="JmG-6J-eK1"/>
                             <constraint firstItem="Vr0-kr-wg6" firstAttribute="leading" secondItem="AA8-gt-1Er" secondAttribute="leading" id="K64-mA-inX"/>
-                            <constraint firstItem="AA8-gt-1Er" firstAttribute="top" secondItem="msS-6u-trT" secondAttribute="bottom" constant="64" id="cL3-Xm-Y3Z"/>
+                            <constraint firstItem="fel-0d-w4b" firstAttribute="leading" secondItem="Iwn-nG-Syq" secondAttribute="leading" constant="40" id="Llj-4S-i8F"/>
                             <constraint firstItem="Vr0-kr-wg6" firstAttribute="top" secondItem="AA8-gt-1Er" secondAttribute="bottom" constant="8" symbolic="YES" id="fbp-xb-olh"/>
-                            <constraint firstItem="msS-6u-trT" firstAttribute="top" secondItem="Iwn-nG-Syq" secondAttribute="top" constant="189" id="hll-bQ-OsY"/>
                             <constraint firstItem="Mzx-HI-emz" firstAttribute="leading" secondItem="mdT-5c-oOh" secondAttribute="leading" id="rTR-Qo-xyb"/>
-                            <constraint firstItem="msS-6u-trT" firstAttribute="leading" secondItem="mdT-5c-oOh" secondAttribute="leading" id="rzS-8A-ajH"/>
-                            <constraint firstItem="msS-6u-trT" firstAttribute="top" secondItem="mdT-5c-oOh" secondAttribute="bottom" constant="8" symbolic="YES" id="twx-ez-cfu"/>
+                            <constraint firstItem="iTT-eI-xMU" firstAttribute="leading" secondItem="mdT-5c-oOh" secondAttribute="leading" id="tnd-9a-KVw"/>
+                            <constraint firstItem="fel-0d-w4b" firstAttribute="top" secondItem="iTT-eI-xMU" secondAttribute="bottom" constant="22" id="uKJ-DB-mr6"/>
+                            <constraint firstItem="iTT-eI-xMU" firstAttribute="top" secondItem="mdT-5c-oOh" secondAttribute="bottom" constant="8" symbolic="YES" id="uOL-u4-C7B"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Post" id="s7x-Bt-yUX">
@@ -936,6 +910,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         </barButtonItem>
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="ajD-1t-TBS"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="description" destination="iTT-eI-xMU" id="AVV-e9-fWN"/>
+                        <outlet property="selectedImageView" destination="fel-0d-w4b" id="BEJ-J4-7C7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XpP-o6-W7r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -981,9 +959,7 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        //This area was messed with by git, make sure everything is okay
         <segue reference="s8O-t9-C42"/>
-
-        <segue reference="l1k-gD-2k0"/>
+        <segue reference="HLf-ae-AOb"/>
     </inferredMetricsTieBreakers>
 </document>

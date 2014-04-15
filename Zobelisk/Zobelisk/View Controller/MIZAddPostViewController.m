@@ -9,7 +9,7 @@
 #import "MIZAddPostViewController.h"
 
 @interface MIZAddPostViewController ()
-
+@property (nonatomic, strong) UIImagePickerController *picker;
 @end
 
 @implementation MIZAddPostViewController
@@ -27,7 +27,28 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.description.layer.borderColor = [[UIColor grayColor] CGColor];
+    self.description.layer.borderWidth = 1.0;
+    self.description.layer.cornerRadius = 8;
 }
+
+-(void) choosePhotoBtn:(id)sender {
+    self.picker = [[UIImagePickerController alloc] init];
+    self.picker.delegate = self;
+    //SWITCH SAVED PHOTOS TO CAMERA!!!!!!!!!
+    self.picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    [self presentViewController:self.picker animated:YES completion:nil];
+    
+    }
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        self.selectedImageView.image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];
+    }];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+
 
 - (void)didReceiveMemoryWarning
 {
