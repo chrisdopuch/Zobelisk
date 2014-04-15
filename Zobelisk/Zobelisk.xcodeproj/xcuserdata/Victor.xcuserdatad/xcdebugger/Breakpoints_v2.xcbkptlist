@@ -4,22 +4,6 @@
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Zobelisk/MIZMapViewController.m"
-            timestampString = "418864124.98561"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "15"
-            endingLineNumber = "15"
-            landmarkName = "@implementation MIZMapViewController"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
          <BreakpointContent
             shouldBeEnabled = "Yes"
@@ -36,43 +20,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zobelisk/View Controller/MIZAddPostViewController.h"
-            timestampString = "419201962.009614"
+            timestampString = "419221568.001165"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
-            landmarkName = "-MIZAddPostViewControllerDidCancel:"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "-cancel:"
             landmarkType = "4">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[MIZAddPostViewController delegate]"
-                  moduleName = "Zobelisk"
-                  urlString = "file:///Users/Victor/Zobelisk/Zobelisk/Zobelisk/View%20Controller/MIZAddPostViewController.h"
-                  timestampString = "419201962.055243"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "24">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[MIZAddPostViewController setDelegate:]"
-                  moduleName = "Zobelisk"
-                  urlString = "file:///Users/Victor/Zobelisk/Zobelisk/Zobelisk/View%20Controller/MIZAddPostViewController.h"
-                  timestampString = "419201962.055546"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
-                  offsetFromSymbolStart = "31">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -81,14 +35,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Zobelisk/View Controller/MIZAddPostViewController.h"
-            timestampString = "419216221.451545"
+            filePath = "Zobelisk/View Controller/MIZAddPostViewController.m"
+            timestampString = "419223621.483611"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
-            landmarkName = "@interface MIZAddPostViewController"
-            landmarkType = "2">
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -10,6 +10,8 @@
 
 @interface MIZAddPostViewController ()
 @property (nonatomic, strong) UIImagePickerController *picker;
+@property (nonatomic, strong) UIDatePicker *datePicker;
+
 @end
 
 @implementation MIZAddPostViewController
@@ -30,6 +32,8 @@
     self.description.layer.borderColor = [[UIColor grayColor] CGColor];
     self.description.layer.borderWidth = 1.0;
     self.description.layer.cornerRadius = 8;
+    self.datePicker = [[UIDatePicker alloc] initWithFrame:CGRectZero];
+    [self.setDate setInputView:self.datePicker];
 }
 
 -(void) choosePhotoBtn:(id)sender {

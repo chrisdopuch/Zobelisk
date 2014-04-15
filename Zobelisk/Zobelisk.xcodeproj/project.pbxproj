@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57990E1F18FD7FBA00AAA9C4 /* MIZCommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57990E1E18FD7FBA00AAA9C4 /* MIZCommentsViewController.m */; };
 		57EE0E1018F75DF5003F0293 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57EE0E0F18F75DF5003F0293 /* MapKit.framework */; };
 		E6C0ED6718F46FF3006402B5 /* MIZPocketTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C0ED6618F46FF3006402B5 /* MIZPocketTableViewController.m */; };
 		E6C0ED6D18F470A8006402B5 /* MIZSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C0ED6C18F470A8006402B5 /* MIZSignUpViewController.m */; };
@@ -46,6 +47,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		57990E1D18FD7FBA00AAA9C4 /* MIZCommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZCommentsViewController.h; path = "View Controller/MIZCommentsViewController.h"; sourceTree = "<group>"; };
+		57990E1E18FD7FBA00AAA9C4 /* MIZCommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZCommentsViewController.m; path = "View Controller/MIZCommentsViewController.m"; sourceTree = "<group>"; };
 		57EE0E0F18F75DF5003F0293 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		E6C0ED6518F46FF3006402B5 /* MIZPocketTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZPocketTableViewController.h; path = "View Controller/MIZPocketTableViewController.h"; sourceTree = "<group>"; };
 		E6C0ED6618F46FF3006402B5 /* MIZPocketTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZPocketTableViewController.m; path = "View Controller/MIZPocketTableViewController.m"; sourceTree = "<group>"; };
@@ -207,6 +210,8 @@
 				E6E5F6A718EB40360001FBAF /* MIZMeViewController.h */,
 				E6E5F6A818EB40360001FBAF /* MIZMeViewController.m */,
 				E6C0ED6B18F470A8006402B5 /* MIZSignUpViewController.h */,
+				57990E1D18FD7FBA00AAA9C4 /* MIZCommentsViewController.h */,
+				57990E1E18FD7FBA00AAA9C4 /* MIZCommentsViewController.m */,
 				E6C0ED6C18F470A8006402B5 /* MIZSignUpViewController.m */,
 				E6C0ED7118F4719E006402B5 /* MIZMapViewController.h */,
 				E6C0ED7218F4719E006402B5 /* MIZMapViewController.m */,
@@ -370,6 +375,7 @@
 				E6C0ED6718F46FF3006402B5 /* MIZPocketTableViewController.m in Sources */,
 				E6E5F6A418E397A70001FBAF /* MIZFeedTableViewController.m in Sources */,
 				E6C0ED7F18F4BAF2006402B5 /* MIZPocketNavigationController.m in Sources */,
+				57990E1F18FD7FBA00AAA9C4 /* MIZCommentsViewController.m in Sources */,
 				E6C0ED7018F470FB006402B5 /* MIZPostTableViewController.m in Sources */,
 				E6C0ED7918F4BAB5006402B5 /* MIZMeNavigationViewController.m in Sources */,
 				E6C0ED6D18F470A8006402B5 /* MIZSignUpViewController.m in Sources */,
