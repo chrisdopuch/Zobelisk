@@ -11,7 +11,7 @@
 #import "MIZAddPostViewController.h"
 
 @interface MIZMapViewController : UIViewController
-<MKMapViewDelegate> //<MIZAddPostViewControllerDelegate>
+<MKMapViewDelegate, MIZAddPostViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (nonatomic, retain) CLLocation* initialLocation;
