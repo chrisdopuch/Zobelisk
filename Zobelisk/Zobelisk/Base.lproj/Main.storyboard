@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Piy-dZ-9S3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Piy-dZ-9S3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -25,11 +25,11 @@
             </objects>
             <point key="canvasLocation" x="-1036" y="1"/>
         </scene>
-        <!--Feed Navigation View Controller - Feed -->
+        <!--Feed Navigation View Controller - Feed-->
         <scene sceneID="tng-XN-Ebs">
             <objects>
                 <navigationController definesPresentationContext="YES" id="bpr-IB-zuQ" customClass="MIZFeedNavigationViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Feed " id="ijI-Tc-KQs"/>
+                    <tabBarItem key="tabBarItem" title="Feed" id="ijI-Tc-KQs"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dzq-NV-zDK">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -831,7 +831,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EhK-Za-O08" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="781" y="-1204"/>
+            <point key="canvasLocation" x="787" y="-1185"/>
         </scene>
         <!--Comments View Controller-->
         <scene sceneID="ccB-lx-LM4">
@@ -969,7 +969,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XpP-o6-W7r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="895" y="-480"/>
+            <point key="canvasLocation" x="755" y="-475"/>
         </scene>
         <!--Me Navigation View Controller - Me-->
         <scene sceneID="T8N-JA-NxQ">
@@ -1012,6 +1012,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="hzS-ei-Ffr"/>
-        <segue reference="s8O-t9-C42"/>
+        <segue reference="GRj-5l-xn9"/>
     </inferredMetricsTieBreakers>
 </document>
