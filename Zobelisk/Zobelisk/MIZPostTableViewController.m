@@ -38,15 +38,18 @@
 }
 
 - (void)addPostButtonTapped:(id)sender{
+    //Action when add button tapped segues to addPostView
     [self performSegueWithIdentifier:@"addPost" sender:sender];
 }
 - (void)MIZAddPostViewControllerDidCancel:(MIZAddPostViewController *)controller
 {
+    //Dismissal of addPostView
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(IBAction)done:(id)sender
 {
+    //Action when done button on top left of nav bar pressed
     [self.navigationController popToRootViewControllerAnimated:true];
 }
 
@@ -113,9 +116,12 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    //Controls what view to segue based on identifier
     if([segue.identifier isEqualToString:@"addPost"])
     {
+        //Sets navigation controller as destination
         UINavigationController *navigationController = segue.destinationViewController;
+        //Goes to first view controller in navigation stack
         MIZAddPostViewController* AddPostViewController = [navigationController viewControllers][0];
         AddPostViewController.delegate = self;
     }

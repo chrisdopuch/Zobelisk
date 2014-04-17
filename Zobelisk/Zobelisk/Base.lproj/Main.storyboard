@@ -377,7 +377,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bVM-Vh-1HM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="242" y="967"/>
+            <point key="canvasLocation" x="224" y="967"/>
         </scene>
         <!--Comments View Controller - Comments-->
         <scene sceneID="f9n-dU-PqB">
@@ -698,7 +698,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ms7-C4-XTn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="242" y="279"/>
+            <point key="canvasLocation" x="224" y="275"/>
         </scene>
         <!--PostView-->
         <scene sceneID="gSy-1J-xoW">
@@ -846,7 +846,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xVX-lt-BZt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="258" y="-475"/>
+            <point key="canvasLocation" x="224" y="-475"/>
         </scene>
         <!--NewPostView-->
         <scene sceneID="cxQ-oe-sab">

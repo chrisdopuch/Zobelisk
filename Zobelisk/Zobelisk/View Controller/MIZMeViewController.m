@@ -28,6 +28,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    //creates add button object on right of nav bar
     UIBarButtonItem *addPost = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addPostButtonTapped:)];
     self.navigationItem.rightBarButtonItem = addPost;
 }
@@ -37,6 +38,7 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)addPostButtonTapped:(id)sender{
+    //Add button taps begins segue to addPostView
     [self performSegueWithIdentifier:@"addPost" sender:sender];
 }
 - (void)didReceiveMemoryWarning
@@ -51,15 +53,15 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    //[segue destinationViewController];
+    //Controls what view to segue based on identifier
     if([segue.identifier isEqualToString:@"addPost"])
     {
+        //Sets navigation controller as destination
         UINavigationController *navigationController = segue.destinationViewController;
+        //Goes to first view controller in navigation stack
         MIZAddPostViewController* AddPostViewController = [navigationController viewControllers][0];
         AddPostViewController.delegate = self;
     }
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
 
 
