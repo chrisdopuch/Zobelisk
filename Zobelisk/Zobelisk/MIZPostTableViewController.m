@@ -37,6 +37,15 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    UITouch *touch = [[event allTouches] anyObject];
+    if ([_search isFirstResponder] && [touch view] != _search) {
+        [_search resignFirstResponder];
+    }
+    [super touchesBegan:touches withEvent:event];
+}
+
 - (void)addPostButtonTapped:(id)sender{
     //Action when add button tapped segues to addPostView
     [self performSegueWithIdentifier:@"addPost" sender:sender];

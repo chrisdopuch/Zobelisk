@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "MIZAddPostViewController.h"
 
-@interface MIZFeedTableViewController : UITableViewController <MIZAddPostViewControllerDelegate>
+@interface MIZFeedTableViewController: UITableViewController <MIZAddPostViewControllerDelegate>
+
+@property (weak, nonatomic) IBOutlet UISearchBar *search;
+
 @end
