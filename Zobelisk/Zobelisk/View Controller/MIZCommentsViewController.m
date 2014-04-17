@@ -31,9 +31,20 @@
     self.comment.layer.borderWidth = 1.0;
     self.comment.layer.cornerRadius = 8;
 }
+
+
+
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    UITouch *touch = [[event allTouches] anyObject];
+    if ([_comment isFirstResponder] && [touch view] != _comment) {
+        [_comment resignFirstResponder];
+    }
+    [super touchesBegan:touches withEvent:event];
+}
 - (void) postComment:(id)sender {
   //INSERT COMMENT POSTING CODE HERE!!!
-    [self dismissViewControllerAnimated:YES completion:nil];
     
 }
 - (void)didReceiveMemoryWarning

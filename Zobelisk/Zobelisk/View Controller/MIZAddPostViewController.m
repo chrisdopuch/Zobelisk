@@ -34,6 +34,23 @@
     self.description.layer.cornerRadius = 8;
     self.datePicker = [[UIDatePicker alloc] initWithFrame:CGRectZero];
     [self.setDate setInputView:self.datePicker];
+    
+    
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    UITouch *touch = [[event allTouches] anyObject];
+    if ([_description isFirstResponder] && [touch view] != _description) {
+        [_description resignFirstResponder];
+    }
+    else if  ([_setDate isFirstResponder] && [touch view] != _setDate) {
+        [_setDate resignFirstResponder];
+    }
+    else if  ([_postTitle isFirstResponder] && [touch view] != _postTitle) {
+        [_postTitle resignFirstResponder];
+    }
+    [super touchesBegan:touches withEvent:event];
 }
 
 -(void) choosePhotoBtn:(id)sender {

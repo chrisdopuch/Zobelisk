@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zobelisk/View Controller/MIZAddPostViewController.h"
-            timestampString = "419221568.001165"
+            timestampString = "419297553.06966"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "-cancel:"
             landmarkType = "4">
          </BreakpointContent>
@@ -36,7 +36,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zobelisk/View Controller/MIZAddPostViewController.m"
-            timestampString = "419223621.483611"
+            timestampString = "419297323.145056"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"

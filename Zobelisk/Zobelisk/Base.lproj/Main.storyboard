@@ -397,7 +397,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Enter your comment here..." translatesAutoresizingMaskIntoConstraints="NO" id="nsZ-Te-A0g">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nsZ-Te-A0g">
                                 <rect key="frame" x="20" y="111" width="240" height="144"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -962,8 +962,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="description" destination="iTT-eI-xMU" id="AVV-e9-fWN"/>
+                        <outlet property="postTitle" destination="DF5-JB-tZn" id="hE5-CG-5z0"/>
                         <outlet property="selectedImageView" destination="fel-0d-w4b" id="BEJ-J4-7C7"/>
-                        <outlet property="setDate" destination="HyU-Kn-gkz" id="byA-RN-Mqs"/>
+                        <outlet property="setDate" destination="HyU-Kn-gkz" id="waY-Y6-YNA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XpP-o6-W7r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1010,7 +1011,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="hzS-ei-Ffr"/>
         <segue reference="s8O-t9-C42"/>
-        <segue reference="xZd-zG-OGC"/>
     </inferredMetricsTieBreakers>
 </document>

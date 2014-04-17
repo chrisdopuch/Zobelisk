@@ -34,6 +34,7 @@
     [self.view addSubview:_mapView];
 }
 
+
 - (void)MIZAddPostViewControllerDidCancel:(MIZAddPostViewController *)controller
 {
     [self dismissViewControllerAnimated:YES completion:nil];
