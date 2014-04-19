@@ -26,6 +26,7 @@
 -(IBAction)choosePhotoBtn:(id)sender;
 
 - (IBAction)cancel:(id)sender;
+@property (weak, nonatomic) IBOutlet UITextField *expDate;
 
 
 

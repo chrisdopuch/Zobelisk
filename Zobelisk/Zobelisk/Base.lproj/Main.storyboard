@@ -9,10 +9,10 @@
             <objects>
                 <tabBarController definesPresentationContext="YES" id="Piy-dZ-9S3" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" barStyle="black" id="KwS-6Q-VtU">
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="KwS-6Q-VtU">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="selectedImageTintColor" red="0.44289174460000003" green="0.23455783629999999" blue="0.90957828439999999" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="bpr-IB-zuQ" kind="relationship" relationship="viewControllers" id="SOj-eT-cYA"/>
@@ -29,7 +29,7 @@
         <scene sceneID="tng-XN-Ebs">
             <objects>
                 <navigationController definesPresentationContext="YES" id="bpr-IB-zuQ" customClass="MIZFeedNavigationViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Feed" id="ijI-Tc-KQs"/>
+                    <tabBarItem key="tabBarItem" title="Feed" image="feed_purple" id="ijI-Tc-KQs"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dzq-NV-zDK">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -289,7 +289,7 @@
             <objects>
                 <tableViewController id="Wps-4x-CIP" userLabel="PocketView" customClass="MIZPocketTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="xg6-EF-ddc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -546,7 +546,7 @@
         <scene sceneID="Esf-6F-ZJ1">
             <objects>
                 <navigationController definesPresentationContext="YES" id="eOT-98-so9" customClass="MIZMapsNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Maps" id="pHc-tx-R3J"/>
+                    <tabBarItem key="tabBarItem" title="Maps" image="map_gray" id="pHc-tx-R3J"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tLP-B7-pSQ">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -567,15 +567,15 @@
                         <viewControllerLayoutGuide type="bottom" id="ZGY-db-dCL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="RHn-Sp-ku9">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="b8d-V7-bTS">
-                                <rect key="frame" x="0.0" y="76" width="321" height="394"/>
+                                <rect key="frame" x="0.0" y="76" width="321" height="345"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </mapView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uu9-P8-r67">
-                                <rect key="frame" x="0.0" y="475" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="426" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
                                     <barButtonItem title="Find Nearest Zobelisk" id="5Kt-rG-ckE"/>
@@ -589,7 +589,7 @@
                             <constraint firstItem="Uu9-P8-r67" firstAttribute="top" secondItem="b8d-V7-bTS" secondAttribute="bottom" constant="5" id="b7U-Zf-oAn"/>
                             <constraint firstItem="b8d-V7-bTS" firstAttribute="leading" secondItem="Uu9-P8-r67" secondAttribute="leading" id="fr7-pf-Yy1"/>
                             <constraint firstItem="Uu9-P8-r67" firstAttribute="leading" secondItem="RHn-Sp-ku9" secondAttribute="leading" id="kCS-xD-zhC"/>
-                            <constraint firstItem="ZGY-db-dCL" firstAttribute="top" secondItem="Uu9-P8-r67" secondAttribute="bottom" id="mxA-XZ-cWo"/>
+                            <constraint firstItem="ZGY-db-dCL" firstAttribute="top" secondItem="Uu9-P8-r67" secondAttribute="bottom" constant="49" id="mxA-XZ-cWo"/>
                             <constraint firstAttribute="trailing" secondItem="Uu9-P8-r67" secondAttribute="trailing" id="wTl-pb-6rz"/>
                         </constraints>
                     </view>
@@ -612,7 +612,7 @@
                         <viewControllerLayoutGuide type="bottom" id="X6j-sV-geI"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FwA-Vd-KRS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wiy-bs-11u">
@@ -962,6 +962,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="description" destination="iTT-eI-xMU" id="AVV-e9-fWN"/>
+                        <outlet property="expDate" destination="HyU-Kn-gkz" id="Hjc-FG-qSM"/>
                         <outlet property="postTitle" destination="DF5-JB-tZn" id="hE5-CG-5z0"/>
                         <outlet property="selectedImageView" destination="fel-0d-w4b" id="BEJ-J4-7C7"/>
                         <outlet property="setDate" destination="HyU-Kn-gkz" id="waY-Y6-YNA"/>
@@ -975,7 +976,7 @@
         <scene sceneID="T8N-JA-NxQ">
             <objects>
                 <navigationController definesPresentationContext="YES" id="JWy-IE-ANd" customClass="MIZMeNavigationViewController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Me" id="j3d-gn-gqt"/>
+                    <tabBarItem key="tabBarItem" title="Me" image="me_gray" id="j3d-gn-gqt"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="dpf-C0-cKT">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -991,7 +992,7 @@
         <scene sceneID="eL3-hE-6Ry">
             <objects>
                 <navigationController definesPresentationContext="YES" id="Jm0-AR-PeT" customClass="MIZPocketNavigationController" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Pocket" id="9i5-sh-neB"/>
+                    <tabBarItem key="tabBarItem" title="Pocket" image="pocket_gray22x22" id="9i5-sh-neB"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aNH-rO-d9N">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1004,6 +1005,12 @@
             <point key="canvasLocation" x="-234" y="967"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="feed_purple" width="22" height="22"/>
+        <image name="map_gray" width="22" height="22"/>
+        <image name="me_gray" width="22" height="22"/>
+        <image name="pocket_gray22x22" width="22" height="22"/>
+    </resources>
     <color key="tintColor" red="0.44289174456942643" green="0.2345578363436317" blue="0.90957828443877553" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

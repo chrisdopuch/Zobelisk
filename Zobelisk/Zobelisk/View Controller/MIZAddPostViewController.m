@@ -12,6 +12,7 @@
 @property (nonatomic, strong) UIImagePickerController *picker;
 @property (nonatomic, strong) UIDatePicker *datePicker;
 
+
 @end
 
 @implementation MIZAddPostViewController
@@ -34,10 +35,24 @@
     self.description.layer.cornerRadius = 8;
     self.datePicker = [[UIDatePicker alloc] initWithFrame:CGRectZero];
     [self.setDate setInputView:self.datePicker];
+ 
+   
+    
+    [self.datePicker addTarget:self action:@selector(updateLabelFromPicker) forControlEvents:UIControlEventValueChanged];
     
     
 }
-
+-(void)updateLabelFromPicker
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    
+    [formatter setDateFormat:@"MM-dd-yyyy 'at' HH:mm"];
+    NSString *expirationDate = [formatter stringFromDate:self.datePicker.date];
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        self.expDate.text = expirationDate;
+    }];
+    
+}
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
     UITouch *touch = [[event allTouches] anyObject];
@@ -49,6 +64,10 @@
     }
     else if  ([_postTitle isFirstResponder] && [touch view] != _postTitle) {
         [_postTitle resignFirstResponder];
+    }
+    else if ([_datePicker isSelected] && [touch view]!= _datePicker)
+    {
+        [_datePicker resignFirstResponder];
     }
     [super touchesBegan:touches withEvent:event];
 }
@@ -68,8 +87,6 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
-
-
 
 - (void)didReceiveMemoryWarning
 {
