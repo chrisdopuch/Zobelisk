@@ -30,6 +30,10 @@
     self.comment.layer.borderColor = [[UIColor grayColor] CGColor];
     self.comment.layer.borderWidth = 1.0;
     self.comment.layer.cornerRadius = 8;
+    
+    _comment.delegate = self;
+    _comment.text = @"Post comment here...";
+    _comment.textColor = [UIColor lightGrayColor];
 }
 
 
@@ -43,6 +47,24 @@
     }
     [super touchesBegan:touches withEvent:event];
 }
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    if ([textView.text isEqualToString:@"Post comment here..."]) {
+        textView.text = @"";
+        textView.textColor = [UIColor blackColor]; //optional
+    }
+    [textView becomeFirstResponder];
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    if ([textView.text isEqualToString:@""]) {
+        textView.text = @"Post comment here...";
+        textView.textColor = [UIColor lightGrayColor]; //optional
+    }
+    [textView resignFirstResponder];
+}
+
 - (void) postComment:(id)sender {
   //INSERT COMMENT POSTING CODE HERE!!!
     
