@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UITextView *description;
 @property (weak, nonatomic) IBOutlet UITextField *setDate;
 @property (weak, nonatomic) IBOutlet UITextField *postTitle;
+@property (weak, nonatomic) IBOutlet UILabel *defaultLabel;
 
 -(IBAction)choosePhotoBtn:(id)sender;
 

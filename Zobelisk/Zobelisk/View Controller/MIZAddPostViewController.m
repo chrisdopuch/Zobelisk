@@ -8,11 +8,15 @@
 
 #import "MIZAddPostViewController.h"
 
-@interface MIZAddPostViewController ()
+@interface MIZAddPostViewController () <UITextViewDelegate>
 @property (nonatomic, strong) UIImagePickerController *picker;
 @property (nonatomic, strong) UIDatePicker *datePicker;
-
 @end
+
+
+NSDateFormatter *dateFormatter;
+
+NSDate *selectedDate;
 
 @implementation MIZAddPostViewController
 
@@ -32,12 +36,51 @@
     self.description.layer.borderColor = [[UIColor grayColor] CGColor];
     self.description.layer.borderWidth = 1.0;
     self.description.layer.cornerRadius = 8;
+    
     self.datePicker = [[UIDatePicker alloc] initWithFrame:CGRectZero];
+    [self.datePicker setDate:[NSDate dateWithTimeIntervalSinceNow:0] animated:true ];
+
     [self.setDate setInputView:self.datePicker];
     
+
+    _description.delegate = self;
+    _description.text = @"Breifly describe your post...";
+    _description.textColor = [UIColor lightGrayColor];
     
+    
+    dateFormatter = [[NSDateFormatter alloc] init];
+    
+    [_datePicker setDatePickerMode:UIDatePickerModeDate];
+    [_datePicker setHidden:NO];
+    [_datePicker setDate:[NSDate date]];
+    [_datePicker setMinimumDate: [NSDate date]]; //no.4
+    [_datePicker addTarget:self action:@selector(dateFromChangedValue) forControlEvents:UIControlEventValueChanged]; //no.2
+    _selectedImageView.contentMode = UIViewContentModeScaleAspectFit;
 }
 
+- (void)textViewDidBeginEditing:(UITextView *)textView
+{
+    if ([textView.text isEqualToString:@"Breifly describe your post..."]) {
+        textView.text = @"";
+        textView.textColor = [UIColor blackColor]; //optional
+    }
+    [textView becomeFirstResponder];
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView
+{
+    if ([textView.text isEqualToString:@""]) {
+        textView.text = @"Breifly describe your post...";
+        textView.textColor = [UIColor lightGrayColor]; //optional
+    }
+    [textView resignFirstResponder];
+}
+
+- (void) dateFromChangedValue {
+    selectedDate = _datePicker.date;
+    [dateFormatter setDateFormat:@"EEEE MMMM dd, YYYY"]; //no.3
+    _setDate.text = [NSString stringWithFormat:@"%@", [dateFormatter stringFromDate:selectedDate]]; //no.1
+                           }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
@@ -54,6 +97,7 @@
     [super touchesBegan:touches withEvent:event];
 }
 
+
 -(void) choosePhotoBtn:(id)sender {
     self.picker = [[UIImagePickerController alloc] init];
     self.picker.delegate = self;
@@ -69,7 +113,6 @@
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
-
 
 
 - (void)didReceiveMemoryWarning

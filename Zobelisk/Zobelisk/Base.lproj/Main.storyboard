@@ -887,12 +887,12 @@
                                 <rect key="frame" x="20" y="299" width="260" height="176"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iTT-eI-xMU">
-                                <rect key="frame" x="20" y="134" width="260" height="90"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iTT-eI-xMU">
+                                <rect key="frame" x="20" y="131" width="260" height="102"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="90" id="Zbu-we-liN"/>
+                                    <constraint firstAttribute="height" constant="102" id="Zbu-we-liN"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -917,19 +917,19 @@
                             <constraint firstItem="AA8-gt-1Er" firstAttribute="leading" secondItem="Iwn-nG-Syq" secondAttribute="leading" constant="20" id="1MG-En-hTF"/>
                             <constraint firstItem="DF5-JB-tZn" firstAttribute="top" secondItem="MNg-XD-q5l" secondAttribute="bottom" constant="23" id="2L3-A7-e1U"/>
                             <constraint firstItem="DF5-JB-tZn" firstAttribute="leading" secondItem="Iwn-nG-Syq" secondAttribute="leading" constant="20" symbolic="YES" id="4tA-f6-mGs"/>
-                            <constraint firstItem="HyU-Kn-gkz" firstAttribute="top" secondItem="iTT-eI-xMU" secondAttribute="bottom" constant="22" id="5Dx-0y-KPx"/>
+                            <constraint firstItem="HyU-Kn-gkz" firstAttribute="top" secondItem="iTT-eI-xMU" secondAttribute="bottom" constant="15" id="5Dx-0y-KPx"/>
                             <constraint firstItem="AA8-gt-1Er" firstAttribute="top" secondItem="fel-0d-w4b" secondAttribute="bottom" constant="15" id="7Ag-ct-a3Y"/>
                             <constraint firstAttribute="trailing" secondItem="iTT-eI-xMU" secondAttribute="trailing" constant="40" id="CND-FY-Mkq"/>
                             <constraint firstAttribute="trailing" secondItem="fel-0d-w4b" secondAttribute="trailing" constant="40" id="H5u-rK-6Tr"/>
                             <constraint firstAttribute="centerX" secondItem="fel-0d-w4b" secondAttribute="centerX" constant="10" id="JmG-6J-eK1"/>
                             <constraint firstItem="fel-0d-w4b" firstAttribute="leading" secondItem="Iwn-nG-Syq" secondAttribute="leading" constant="20" id="Llj-4S-i8F"/>
                             <constraint firstItem="iTT-eI-xMU" firstAttribute="leading" secondItem="HyU-Kn-gkz" secondAttribute="leading" id="MNg-4R-j0Q"/>
-                            <constraint firstItem="iTT-eI-xMU" firstAttribute="top" secondItem="DF5-JB-tZn" secondAttribute="bottom" constant="19" id="MT2-hf-FaO"/>
+                            <constraint firstItem="iTT-eI-xMU" firstAttribute="top" secondItem="DF5-JB-tZn" secondAttribute="bottom" constant="14" id="MT2-hf-FaO"/>
                             <constraint firstAttribute="bottom" secondItem="AA8-gt-1Er" secondAttribute="bottom" constant="48" id="OIO-M3-epZ"/>
                             <constraint firstItem="Q81-tK-9JC" firstAttribute="top" secondItem="fel-0d-w4b" secondAttribute="bottom" constant="15" id="RfN-qD-qG0"/>
                             <constraint firstItem="HyU-Kn-gkz" firstAttribute="trailing" secondItem="fel-0d-w4b" secondAttribute="trailing" id="cJ9-06-t6j"/>
                             <constraint firstItem="Q81-tK-9JC" firstAttribute="trailing" secondItem="iTT-eI-xMU" secondAttribute="trailing" id="qK4-J2-yzD"/>
-                            <constraint firstItem="fel-0d-w4b" firstAttribute="top" secondItem="iTT-eI-xMU" secondAttribute="bottom" constant="73" id="uKJ-DB-mr6"/>
+                            <constraint firstItem="fel-0d-w4b" firstAttribute="top" secondItem="iTT-eI-xMU" secondAttribute="bottom" constant="66" id="uKJ-DB-mr6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="New Post" id="s7x-Bt-yUX">
