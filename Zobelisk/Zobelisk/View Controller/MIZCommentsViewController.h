@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MIZCommentsViewController : UIViewController
+@interface MIZCommentsViewController : UIViewController <UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *comment;
 
 -(IBAction)postComment:(id)sender;

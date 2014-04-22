@@ -215,8 +215,8 @@
 				E6C0ED6C18F470A8006402B5 /* MIZSignUpViewController.m */,
 				E6C0ED7118F4719E006402B5 /* MIZMapViewController.h */,
 				E6C0ED7218F4719E006402B5 /* MIZMapViewController.m */,
-				E6C0ED8418F50094006402B5 /* MIZAddPostViewController.h */,
 				E6C0ED8518F50094006402B5 /* MIZAddPostViewController.m */,
+				E6C0ED8418F50094006402B5 /* MIZAddPostViewController.h */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";

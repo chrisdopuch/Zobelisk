@@ -10,4 +10,5 @@
 
 @interface MIZFeedNavigationViewController : UINavigationController
 
+
 @end

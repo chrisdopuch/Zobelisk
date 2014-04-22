@@ -38,6 +38,16 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    UITouch *touch = [[event allTouches] anyObject];
+    if ([_search isFirstResponder] && [touch view] != _search) {
+        [_search resignFirstResponder];
+    }
+    [super touchesBegan:touches withEvent:event];
+}
+
 - (void)MIZAddPostViewControllerDidCancel:(MIZAddPostViewController *)controller
 {
     [self dismissViewControllerAnimated:YES completion:nil];

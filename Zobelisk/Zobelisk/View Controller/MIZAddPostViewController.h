@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *setDate;
 @property (weak, nonatomic) IBOutlet UITextField *postTitle;
 
+
 -(IBAction)choosePhotoBtn:(id)sender;
 
 - (IBAction)cancel:(id)sender;
