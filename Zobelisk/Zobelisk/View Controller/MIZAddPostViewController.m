@@ -91,17 +91,7 @@ NSDate *selectedDate;
     }
     [textView resignFirstResponder];
 }
--(void)updateLabelFromPicker
-{
-    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-    
-    [formatter setDateFormat:@"MM-dd-yyyy 'at' HH:mm"];
-    NSString *expirationDate = [formatter stringFromDate:self.datePicker.date];
-    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-        self.expDate.text = expirationDate;
-    }];
-    
-}
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
     UITouch *touch = [[event allTouches] anyObject];
