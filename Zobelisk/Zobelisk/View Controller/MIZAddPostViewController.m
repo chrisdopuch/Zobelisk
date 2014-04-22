@@ -47,7 +47,6 @@ NSDate *selectedDate;
    
     
     [self.datePicker addTarget:self action:@selector(updateLabelFromPicker) forControlEvents:UIControlEventValueChanged];
-    
 
     _description.delegate = self;
     _description.text = @"Breifly describe your post...";
@@ -63,9 +62,20 @@ NSDate *selectedDate;
     [_datePicker addTarget:self action:@selector(dateFromChangedValue) forControlEvents:UIControlEventValueChanged]; //no.2
     _selectedImageView.contentMode = UIViewContentModeScaleAspectFit;
 }
-
+-(void)updateLabelFromPicker
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    
+    [formatter setDateFormat:@"MM-dd-yyyy 'at' HH:mm"];
+    NSString *expirationDate = [formatter stringFromDate:self.datePicker.date];
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        self.expDate.text = expirationDate;
+    }];
+}
+    
 - (void)textViewDidBeginEditing:(UITextView *)textView
 {
+
     if ([textView.text isEqualToString:@"Breifly describe your post..."]) {
         textView.text = @"";
         textView.textColor = [UIColor blackColor]; //optional
@@ -127,6 +137,7 @@ NSDate *selectedDate;
     [self dismissViewControllerAnimated:YES completion:nil];
     
 }
+
 
 - (void)didReceiveMemoryWarning
 {
