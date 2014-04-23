@@ -11,6 +11,8 @@
 @interface MIZAddPostViewController () <UITextViewDelegate>
 @property (nonatomic, strong) UIImagePickerController *picker;
 @property (nonatomic, strong) UIDatePicker *datePicker;
+
+
 @end
 
 
@@ -41,7 +43,10 @@ NSDate *selectedDate;
     [self.datePicker setDate:[NSDate dateWithTimeIntervalSinceNow:0] animated:true ];
 
     [self.setDate setInputView:self.datePicker];
+ 
+   
     
+    [self.datePicker addTarget:self action:@selector(updateLabelFromPicker) forControlEvents:UIControlEventValueChanged];
 
     self.description.delegate = self;
     self.description.text = @"Breifly describe your post...";
@@ -57,9 +62,20 @@ NSDate *selectedDate;
     [self.datePicker addTarget:self action:@selector(dateFromChangedValue) forControlEvents:UIControlEventValueChanged]; //no.2
     self.selectedImageView.contentMode = UIViewContentModeScaleAspectFit;
 }
-
+-(void)updateLabelFromPicker
+{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    
+    [formatter setDateFormat:@"MM-dd-yyyy 'at' HH:mm"];
+    NSString *expirationDate = [formatter stringFromDate:self.datePicker.date];
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        self.expDate.text = expirationDate;
+    }];
+}
+    
 - (void)textViewDidBeginEditing:(UITextView *)textView
 {
+
     if ([textView.text isEqualToString:@"Breifly describe your post..."]) {
         textView.text = @"";
         textView.textColor = [UIColor blackColor]; //optional
@@ -76,12 +92,6 @@ NSDate *selectedDate;
     [textView resignFirstResponder];
 }
 
-- (void) dateFromChangedValue {
-    selectedDate = _datePicker.date;
-    [dateFormatter setDateFormat:@"EEEE MMMM dd, YYYY"]; //no.3
-    _setDate.text = [NSString stringWithFormat:@"%@", [dateFormatter stringFromDate:selectedDate]]; //no.1
-                           }
-
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
     UITouch *touch = [[event allTouches] anyObject];
@@ -93,6 +103,10 @@ NSDate *selectedDate;
     }
     else if  ([self.postTitle isFirstResponder] && [touch view] != self.postTitle) {
         [self.postTitle resignFirstResponder];
+    }
+    else if ([_datePicker isSelected] && [touch view]!= _datePicker)
+    {
+        [_datePicker resignFirstResponder];
     }
     [super touchesBegan:touches withEvent:event];
 }
