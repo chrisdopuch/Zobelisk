@@ -8,8 +8,9 @@
 
 #import "MIZPocketTableViewController.h"
 
-@interface MIZPocketTableViewController ()
+@interface MIZPocketTableViewController () <UISearchBarDelegate>
 
+@property (nonatomic, strong)UIGestureRecognizer *tapGestureRecognizer;
 @end
 
 @implementation MIZPocketTableViewController
@@ -31,11 +32,35 @@
     UIBarButtonItem *addPost = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addPostButtonTapped:)];
     
     self.navigationItem.rightBarButtonItem = addPost;
+        self.search.delegate = self;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard:)];
+    [self.view addGestureRecognizer:self.tapGestureRecognizer];
+}
+
+//- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+//{
+//    [self dismissKeyboard:self];
+//}
+
+- (void)dismissKeyboard:(id)sender
+{
+    [self.search resignFirstResponder];
+    [self.view removeGestureRecognizer:self.tapGestureRecognizer];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
+    // Do the search...
 }
 
 - (void)addPostButtonTapped:(id)sender{

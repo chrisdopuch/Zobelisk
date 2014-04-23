@@ -29,6 +29,10 @@
     UIBarButtonItem *addPost = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:nil];
     self.navigationItem.rightBarButtonItem = addPost;
     // Do any additional setup after loading the view.
+    [_profileImage setBackgroundColor: [UIColor clearColor]];
+    [_profileImage setImage:[UIImage imageNamed:@"dummy_staff.gif"]];
+    [self.view addSubview: _profileImage];
+
 }
 
 - (void)didReceiveMemoryWarning

@@ -8,7 +8,8 @@
 
 #import "MIZFeedTableViewController.h"
 
-@interface MIZFeedTableViewController ()
+@interface MIZFeedTableViewController () <UISearchBarDelegate>
+@property (nonatomic, strong)UIGestureRecognizer *tapGestureRecognizer;
 
 @end
 
@@ -31,6 +32,7 @@
     
     UIBarButtonItem *addPost = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addPostButtonTapped:)];
     self.navigationItem.rightBarButtonItem = addPost;
+     self.search.delegate = self;
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -39,14 +41,29 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    
-    UITouch *touch = [[event allTouches] anyObject];
-    if ([_search isFirstResponder] && [touch view] != _search) {
-        [_search resignFirstResponder];
-    }
-    [super touchesBegan:touches withEvent:event];
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
+{
+    self.tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard:)];
+    [self.view addGestureRecognizer:self.tapGestureRecognizer];
 }
+
+//- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar
+//{
+//    [self dismissKeyboard:self];
+//}
+
+- (void)dismissKeyboard:(id)sender
+{
+    [self.search resignFirstResponder];
+    [self.view removeGestureRecognizer:self.tapGestureRecognizer];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar
+{
+    [searchBar resignFirstResponder];
+    // Do the search...
+}
+
 
 - (void)MIZAddPostViewControllerDidCancel:(MIZAddPostViewController *)controller
 {
