@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		57990E1F18FD7FBA00AAA9C4 /* MIZCommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57990E1E18FD7FBA00AAA9C4 /* MIZCommentsViewController.m */; };
+		57990E2119056F5A00AAA9C4 /* dummy_staff.gif in Resources */ = {isa = PBXBuildFile; fileRef = 57990E2019056F5A00AAA9C4 /* dummy_staff.gif */; };
+		57990E241905741000AAA9C4 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 57990E231905741000AAA9C4 /* placeholder.png */; };
 		57EE0E1018F75DF5003F0293 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57EE0E0F18F75DF5003F0293 /* MapKit.framework */; };
 		852350B6190887E30002C0C5 /* MIZAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 852350B5190887E30002C0C5 /* MIZAuthentication.m */; };
 		E6C0ED6718F46FF3006402B5 /* MIZPocketTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C0ED6618F46FF3006402B5 /* MIZPocketTableViewController.m */; };
@@ -50,6 +52,8 @@
 /* Begin PBXFileReference section */
 		57990E1D18FD7FBA00AAA9C4 /* MIZCommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZCommentsViewController.h; path = "View Controller/MIZCommentsViewController.h"; sourceTree = "<group>"; };
 		57990E1E18FD7FBA00AAA9C4 /* MIZCommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZCommentsViewController.m; path = "View Controller/MIZCommentsViewController.m"; sourceTree = "<group>"; };
+		57990E2019056F5A00AAA9C4 /* dummy_staff.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = dummy_staff.gif; path = ../../../Desktop/dummy_staff.gif; sourceTree = "<group>"; };
+		57990E231905741000AAA9C4 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = placeholder.png; path = ../../../Desktop/placeholder.png; sourceTree = "<group>"; };
 		57EE0E0F18F75DF5003F0293 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		852350B4190887E30002C0C5 /* MIZAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZAuthentication.h; path = Model/MIZAuthentication.h; sourceTree = "<group>"; };
 		852350B5190887E30002C0C5 /* MIZAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZAuthentication.m; path = Model/MIZAuthentication.m; sourceTree = "<group>"; };
@@ -121,6 +125,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57990E22190570FD00AAA9C4 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				57990E231905741000AAA9C4 /* placeholder.png */,
+				57990E2019056F5A00AAA9C4 /* dummy_staff.gif */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		E6C0ED8018F4F8FF006402B5 /* Tab Bar View Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,6 +183,7 @@
 				E6E5F69818E350B60001FBAF /* View Controller */,
 				E6E5F67518E350A90001FBAF /* Main.storyboard */,
 				E6E5F67B18E350A90001FBAF /* Images.xcassets */,
+				57990E22190570FD00AAA9C4 /* Images */,
 				E6E5F66A18E350A90001FBAF /* Supporting Files */,
 			);
 			path = Zobelisk;
@@ -356,6 +370,8 @@
 			files = (
 				E6E5F67C18E350A90001FBAF /* Images.xcassets in Resources */,
 				E6E5F66E18E350A90001FBAF /* InfoPlist.strings in Resources */,
+				57990E2119056F5A00AAA9C4 /* dummy_staff.gif in Resources */,
+				57990E241905741000AAA9C4 /* placeholder.png in Resources */,
 				E6E5F67718E350A90001FBAF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

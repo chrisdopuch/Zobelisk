@@ -48,25 +48,26 @@ NSDate *selectedDate;
     
     [self.datePicker addTarget:self action:@selector(updateLabelFromPicker) forControlEvents:UIControlEventValueChanged];
 
-    _description.delegate = self;
-    _description.text = @"Breifly describe your post...";
-    _description.textColor = [UIColor lightGrayColor];
+    self.description.delegate = self;
+    self.description.text = @"Breifly describe your post...";
+    self.description.textColor = [UIColor lightGrayColor];
     
     
     dateFormatter = [[NSDateFormatter alloc] init];
     
-    [_datePicker setDatePickerMode:UIDatePickerModeDate];
-    [_datePicker setHidden:NO];
-    [_datePicker setDate:[NSDate date]];
-    [_datePicker setMinimumDate: [NSDate date]]; //no.4
-    [_datePicker addTarget:self action:@selector(dateFromChangedValue) forControlEvents:UIControlEventValueChanged]; //no.2
-    _selectedImageView.contentMode = UIViewContentModeScaleAspectFit;
+    [self.datePicker setDatePickerMode:UIDatePickerModeDate];
+    [self.datePicker setHidden:NO];
+    [self.datePicker setDate:[NSDate date]];
+    [self.datePicker setMinimumDate: [NSDate date]]; //no.4
+   // [self.datePicker addTarget:self action:@selector(selectedDate) forControlEvents:UIControlEventValueChanged]; //no.2
+    //scale image
+    self.selectedImageView.contentMode = UIViewContentModeScaleAspectFit;
 }
 -(void)updateLabelFromPicker
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     
-    [formatter setDateFormat:@"MM-dd-yyyy 'at' HH:mm"];
+    [formatter setDateFormat:@"EEEE MMMM dd, yyyy"];
     NSString *expirationDate = [formatter stringFromDate:self.datePicker.date];
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         self.expDate.text = expirationDate;
@@ -95,14 +96,14 @@ NSDate *selectedDate;
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
     UITouch *touch = [[event allTouches] anyObject];
-    if ([_description isFirstResponder] && [touch view] != _description) {
-        [_description resignFirstResponder];
+    if ([self.description isFirstResponder] && [touch view] != self.description) {
+        [self.description resignFirstResponder];
     }
-    else if  ([_setDate isFirstResponder] && [touch view] != _setDate) {
+    else if  ([self.setDate isFirstResponder] && [touch view] != self.setDate) {
         [_setDate resignFirstResponder];
     }
-    else if  ([_postTitle isFirstResponder] && [touch view] != _postTitle) {
-        [_postTitle resignFirstResponder];
+    else if  ([self.postTitle isFirstResponder] && [touch view] != self.postTitle) {
+        [self.postTitle resignFirstResponder];
     }
     else if ([_datePicker isSelected] && [touch view]!= _datePicker)
     {

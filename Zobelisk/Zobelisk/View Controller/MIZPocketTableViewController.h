@@ -11,4 +11,6 @@
 
 @interface MIZPocketTableViewController : UITableViewController <MIZAddPostViewControllerDelegate>
 
+@property (weak, nonatomic) IBOutlet UISearchBar *search;
+
 @end
