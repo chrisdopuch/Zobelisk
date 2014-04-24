@@ -266,18 +266,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Comment:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdz-yx-FJT">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdz-yx-FJT">
                                 <rect key="frame" x="20" y="74" width="81" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nsZ-Te-A0g">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nsZ-Te-A0g">
                                 <rect key="frame" x="20" y="111" width="280" height="144"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="144" id="tAC-p8-1oy"/>
+                                    <constraint firstAttribute="height" constant="144" id="SHS-xE-gDi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -295,11 +295,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="pdz-yx-FJT" firstAttribute="top" secondItem="wvU-va-yyi" secondAttribute="bottom" constant="10" id="2cc-0c-Q9n"/>
-                            <constraint firstItem="nsZ-Te-A0g" firstAttribute="top" secondItem="pdz-yx-FJT" secondAttribute="bottom" constant="16" id="3pa-VN-lk4"/>
-                            <constraint firstItem="nsZ-Te-A0g" firstAttribute="leading" secondItem="pdz-yx-FJT" secondAttribute="leading" id="hCC-eA-2xv"/>
+                            <constraint firstItem="pdz-yx-FJT" firstAttribute="top" secondItem="wvU-va-yyi" secondAttribute="bottom" constant="10" id="23j-18-55K"/>
+                            <constraint firstAttribute="trailing" secondItem="nsZ-Te-A0g" secondAttribute="trailing" constant="20" symbolic="YES" id="FzF-rI-XXZ"/>
+                            <constraint firstItem="zcg-nI-NYA" firstAttribute="top" secondItem="nsZ-Te-A0g" secondAttribute="bottom" constant="8" symbolic="YES" id="ThP-MU-rDh"/>
+                            <constraint firstItem="nsZ-Te-A0g" firstAttribute="top" secondItem="pdz-yx-FJT" secondAttribute="bottom" constant="16" id="XkM-Yn-1Kd"/>
+                            <constraint firstItem="nsZ-Te-A0g" firstAttribute="leading" secondItem="pdz-yx-FJT" secondAttribute="leading" id="Ycy-h8-wCB"/>
                             <constraint firstItem="zcg-nI-NYA" firstAttribute="leading" secondItem="MwH-Yi-fbM" secondAttribute="leading" constant="20" id="rV9-FR-4Rs"/>
-                            <constraint firstItem="zcg-nI-NYA" firstAttribute="top" secondItem="nsZ-Te-A0g" secondAttribute="bottom" constant="8" symbolic="YES" id="sDt-Ii-Oqe"/>
+                            <constraint firstItem="pdz-yx-FJT" firstAttribute="leading" secondItem="zcg-nI-NYA" secondAttribute="leading" id="uIr-h3-r4Y"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Comment" id="Ii2-oh-xnT"/>
@@ -731,7 +733,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DF5-JB-tZn">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DF5-JB-tZn">
                                 <rect key="frame" x="20" y="87" width="260" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -750,11 +752,11 @@
                                     <action selector="choosePhotoBtn:" destination="vT2-x3-SuC" eventType="touchUpInside" id="atl-se-Ljf"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="fel-0d-w4b">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="placeholder.png" translatesAutoresizingMaskIntoConstraints="NO" id="fel-0d-w4b">
                                 <rect key="frame" x="30" y="295" width="264" height="215"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iTT-eI-xMU">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iTT-eI-xMU">
                                 <rect key="frame" x="20" y="131" width="260" height="102"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -764,7 +766,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Set Your Expiration Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HyU-Kn-gkz">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Set Your Expiration Date" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HyU-Kn-gkz">
                                 <rect key="frame" x="20" y="248" width="260" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
