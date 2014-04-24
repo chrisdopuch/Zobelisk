@@ -59,14 +59,15 @@ NSDate *selectedDate;
     [self.datePicker setHidden:NO];
     [self.datePicker setDate:[NSDate date]];
     [self.datePicker setMinimumDate: [NSDate date]]; //no.4
-    [self.datePicker addTarget:self action:@selector(dateFromChangedValue) forControlEvents:UIControlEventValueChanged]; //no.2
+   // [self.datePicker addTarget:self action:@selector(selectedDate) forControlEvents:UIControlEventValueChanged]; //no.2
+    //scale image
     self.selectedImageView.contentMode = UIViewContentModeScaleAspectFit;
 }
 -(void)updateLabelFromPicker
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     
-    [formatter setDateFormat:@"MM-dd-yyyy 'at' HH:mm"];
+    [formatter setDateFormat:@"EEEE MMMM dd, yyyy"];
     NSString *expirationDate = [formatter stringFromDate:self.datePicker.date];
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         self.expDate.text = expirationDate;
