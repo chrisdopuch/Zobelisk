@@ -49,24 +49,17 @@ NSDate *selectedDate;
     [self.datePicker addTarget:self action:@selector(updateLabelFromPicker) forControlEvents:UIControlEventValueChanged];
 
     _description.delegate = self;
-    _description.text = @"Breifly describe your post...";
-    _description.textColor = [UIColor lightGrayColor];
+    self.description.text = @"Breifly describe your post...";
+    self.description.textColor = [UIColor lightGrayColor];
     
-    
-    dateFormatter = [[NSDateFormatter alloc] init];
-    
-    [_datePicker setDatePickerMode:UIDatePickerModeDate];
-    [_datePicker setHidden:NO];
-    [_datePicker setDate:[NSDate date]];
-    [_datePicker setMinimumDate: [NSDate date]]; //no.4
-    [_datePicker addTarget:self action:@selector(dateFromChangedValue) forControlEvents:UIControlEventValueChanged]; //no.2
+
     _selectedImageView.contentMode = UIViewContentModeScaleAspectFit;
 }
 -(void)updateLabelFromPicker
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     
-    [formatter setDateFormat:@"MM-dd-yyyy 'at' HH:mm"];
+    [formatter setDateFormat:@"EEEE MMMM dd, yyyy"];
     NSString *expirationDate = [formatter stringFromDate:self.datePicker.date];
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         self.expDate.text = expirationDate;
