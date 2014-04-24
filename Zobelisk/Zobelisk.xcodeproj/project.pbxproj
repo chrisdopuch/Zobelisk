@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		57990E1F18FD7FBA00AAA9C4 /* MIZCommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57990E1E18FD7FBA00AAA9C4 /* MIZCommentsViewController.m */; };
 		57EE0E1018F75DF5003F0293 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57EE0E0F18F75DF5003F0293 /* MapKit.framework */; };
+		852350B6190887E30002C0C5 /* MIZAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 852350B5190887E30002C0C5 /* MIZAuthentication.m */; };
 		E6C0ED6718F46FF3006402B5 /* MIZPocketTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C0ED6618F46FF3006402B5 /* MIZPocketTableViewController.m */; };
 		E6C0ED6D18F470A8006402B5 /* MIZSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C0ED6C18F470A8006402B5 /* MIZSignUpViewController.m */; };
 		E6C0ED7018F470FB006402B5 /* MIZPostTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C0ED6F18F470FB006402B5 /* MIZPostTableViewController.m */; };
@@ -50,6 +51,8 @@
 		57990E1D18FD7FBA00AAA9C4 /* MIZCommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZCommentsViewController.h; path = "View Controller/MIZCommentsViewController.h"; sourceTree = "<group>"; };
 		57990E1E18FD7FBA00AAA9C4 /* MIZCommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZCommentsViewController.m; path = "View Controller/MIZCommentsViewController.m"; sourceTree = "<group>"; };
 		57EE0E0F18F75DF5003F0293 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		852350B4190887E30002C0C5 /* MIZAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZAuthentication.h; path = Model/MIZAuthentication.h; sourceTree = "<group>"; };
+		852350B5190887E30002C0C5 /* MIZAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZAuthentication.m; path = Model/MIZAuthentication.m; sourceTree = "<group>"; };
 		E6C0ED6518F46FF3006402B5 /* MIZPocketTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZPocketTableViewController.h; path = "View Controller/MIZPocketTableViewController.h"; sourceTree = "<group>"; };
 		E6C0ED6618F46FF3006402B5 /* MIZPocketTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZPocketTableViewController.m; path = "View Controller/MIZPocketTableViewController.m"; sourceTree = "<group>"; };
 		E6C0ED6B18F470A8006402B5 /* MIZSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZSignUpViewController.h; path = "View Controller/MIZSignUpViewController.h"; sourceTree = "<group>"; };
@@ -231,6 +234,8 @@
 		E6E5F69A18E350DA0001FBAF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				852350B4190887E30002C0C5 /* MIZAuthentication.h */,
+				852350B5190887E30002C0C5 /* MIZAuthentication.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -384,6 +389,7 @@
 				E6E5F6A918EB40360001FBAF /* MIZMeViewController.m in Sources */,
 				E6C0ED8618F50094006402B5 /* MIZAddPostViewController.m in Sources */,
 				E6C0ED7318F4719E006402B5 /* MIZMapViewController.m in Sources */,
+				852350B6190887E30002C0C5 /* MIZAuthentication.m in Sources */,
 				E6C0ED7C18F4BAD5006402B5 /* MIZMapsNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
