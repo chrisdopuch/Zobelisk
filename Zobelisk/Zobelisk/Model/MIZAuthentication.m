@@ -64,6 +64,11 @@
     
 }
 
++ (void) logout
+{
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"email"];
+}
+
 + (void) loginWithEmail:(NSString*)email withPassword:(NSString*)password
 {
     NSString* urlString = @"http://zobelisk-backend.herokuapp.com/users/sign_in";
