@@ -14,4 +14,5 @@
 
 + (void) loginWithEmail:(NSString*)email withPassword:(NSString*)password;
 
+- (BOOL) verifyLogin;
 @end

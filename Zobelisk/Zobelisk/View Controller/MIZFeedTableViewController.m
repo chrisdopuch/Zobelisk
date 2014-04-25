@@ -7,6 +7,7 @@
 //
 
 #import "MIZFeedTableViewController.h"
+#import "MIZAuthentication.h"
 
 @interface MIZFeedTableViewController () <UISearchBarDelegate>
 @property (nonatomic, strong)UIGestureRecognizer *tapGestureRecognizer;
@@ -29,6 +30,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    MIZAuthentication *authenticator = [MIZAuthentication new];
+    BOOL isLoggedIn = [authenticator verifyLogin];
+    if (isLoggedIn == NO){
+        [self performSegueWithIdentifier:@"SignUpSegue" sender:self];
+    }
     
     UIBarButtonItem *addPost = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addPostButtonTapped:)];
     self.navigationItem.rightBarButtonItem = addPost;

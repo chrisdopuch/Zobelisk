@@ -105,9 +105,9 @@ NSDate *selectedDate;
     else if  ([self.postTitle isFirstResponder] && [touch view] != self.postTitle) {
         [self.postTitle resignFirstResponder];
     }
-    else if ([_datePicker isSelected] && [touch view]!= _datePicker)
+    else if ([self.datePicker isSelected] && [touch view]!= self.datePicker)
     {
-        [_datePicker resignFirstResponder];
+        [self.datePicker resignFirstResponder];
     }
     [super touchesBegan:touches withEvent:event];
 }

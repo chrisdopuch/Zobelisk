@@ -64,6 +64,18 @@
     
 }
 
+- (BOOL) verifyLogin{
+    NSString *storedEmail = [[NSUserDefaults standardUserDefaults] objectForKey:@"email"];
+    if(storedEmail != nil){
+        NSLog(@"logged in");
+        return YES;
+    }
+    else{
+         NSLog(@"NOT logged in");
+        return NO;
+    }
+}
+
 + (void) loginWithEmail:(NSString*)email withPassword:(NSString*)password
 {
     NSString* urlString = @"http://zobelisk-backend.herokuapp.com/users/sign_in";

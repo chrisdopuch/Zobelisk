@@ -7,6 +7,7 @@
 //
 
 #import "MIZSignUpViewController.h"
+#import "MIZAuthentication.h"
 
 @interface MIZSignUpViewController ()
 
@@ -27,8 +28,30 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+  
 }
 
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    UITouch *touch = [[event allTouches] anyObject];
+    if ([self.passwordField isFirstResponder] && [touch view] != self.passwordField) {
+        [self.passwordField resignFirstResponder];
+    }
+    else if  ([self.firstName isFirstResponder] && [touch view] != self.firstName) {
+        [self.firstName resignFirstResponder];
+    }
+    else if  ([self.lastName isFirstResponder] && [touch view] != self.lastName) {
+        [self.lastName resignFirstResponder];
+    }
+    else if ([self.email isFirstResponder] && [touch view]!= self.email)
+    {
+        [self.email resignFirstResponder];
+    }
+    else if  ([self.confirmPassword isFirstResponder] && [touch view] != self.confirmPassword) {
+        [self.confirmPassword resignFirstResponder];
+    }
+    [super touchesBegan:touches withEvent:event];
+}
 
 
 - (void)didReceiveMemoryWarning
@@ -50,11 +73,16 @@
 
 - (IBAction)passFieldDidChange:(id)sender {
     
-    if(_passTextField.text.length > 8)
+    if(_passwordField.text.length > 8)
     {
-        _signUpButton.enabled = true;
+        self.signUpButton.enabled = true;
     }
     
     
+}
+
+- (IBAction)signUpButtonClick:(id)sender{
+    [MIZAuthentication registerEmail:@"email" withPassword:@"passwordField" andConfirmationPassword:@"confirmPassword"];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 @end

@@ -10,7 +10,11 @@
 
 @interface MIZSignUpViewController : UIViewController
 @property (nonatomic, weak) IBOutlet UIButton *signUpButton;
-@property (weak, nonatomic) IBOutlet UITextField *passTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passwordField;
+@property (weak, nonatomic) IBOutlet UITextField *firstName;
+@property (weak, nonatomic) IBOutlet UITextField *lastName;
+@property (weak, nonatomic) IBOutlet UITextField *email;
+@property (weak, nonatomic) IBOutlet UITextField *confirmPassword;
 
 - (IBAction)passFieldDidChange:(id)sender;
 
