@@ -52,8 +52,8 @@
 /* Begin PBXFileReference section */
 		57990E1D18FD7FBA00AAA9C4 /* MIZCommentsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZCommentsViewController.h; path = "View Controller/MIZCommentsViewController.h"; sourceTree = "<group>"; };
 		57990E1E18FD7FBA00AAA9C4 /* MIZCommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZCommentsViewController.m; path = "View Controller/MIZCommentsViewController.m"; sourceTree = "<group>"; };
-		57990E2019056F5A00AAA9C4 /* dummy_staff.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = dummy_staff.gif; path = ../../../Desktop/dummy_staff.gif; sourceTree = "<group>"; };
-		57990E231905741000AAA9C4 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = placeholder.png; path = ../../../Desktop/placeholder.png; sourceTree = "<group>"; };
+		57990E2019056F5A00AAA9C4 /* dummy_staff.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = dummy_staff.gif; path = Images/dummy_staff.gif; sourceTree = "<group>"; };
+		57990E231905741000AAA9C4 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = placeholder.png; path = Images/placeholder.png; sourceTree = "<group>"; };
 		57EE0E0F18F75DF5003F0293 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		852350B4190887E30002C0C5 /* MIZAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZAuthentication.h; path = Model/MIZAuthentication.h; sourceTree = "<group>"; };
 		852350B5190887E30002C0C5 /* MIZAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZAuthentication.m; path = Model/MIZAuthentication.m; sourceTree = "<group>"; };

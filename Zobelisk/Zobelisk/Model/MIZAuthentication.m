@@ -67,7 +67,7 @@
 - (BOOL) verifyLogin{
     NSString *storedEmail = [[NSUserDefaults standardUserDefaults] objectForKey:@"email"];
     if(storedEmail != nil){
-        NSLog(@"logged in");
+        NSLog(@"%@", storedEmail);
         return YES;
     }
     else{
