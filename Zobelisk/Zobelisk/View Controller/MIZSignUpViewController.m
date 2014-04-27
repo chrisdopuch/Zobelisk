@@ -71,6 +71,9 @@
 }
 */
 
+- (IBAction)nextButton:(id)sender {
+}
+
 - (IBAction)passFieldDidChange:(id)sender {
     
     if(_passwordField.text.length > 8)

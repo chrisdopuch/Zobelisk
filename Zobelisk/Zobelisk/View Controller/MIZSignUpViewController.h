@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *lastName;
 @property (weak, nonatomic) IBOutlet UITextField *email;
 @property (weak, nonatomic) IBOutlet UITextField *confirmPassword;
+- (IBAction)nextButton:(id)sender;
 
 - (IBAction)passFieldDidChange:(id)sender;
 
