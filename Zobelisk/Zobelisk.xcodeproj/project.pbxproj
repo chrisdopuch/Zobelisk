@@ -10,6 +10,7 @@
 		57990E1F18FD7FBA00AAA9C4 /* MIZCommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57990E1E18FD7FBA00AAA9C4 /* MIZCommentsViewController.m */; };
 		57990E2119056F5A00AAA9C4 /* dummy_staff.gif in Resources */ = {isa = PBXBuildFile; fileRef = 57990E2019056F5A00AAA9C4 /* dummy_staff.gif */; };
 		57990E241905741000AAA9C4 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 57990E231905741000AAA9C4 /* placeholder.png */; };
+		57990E27190D6FFF00AAA9C4 /* UIView+FormScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 57990E26190D6FFF00AAA9C4 /* UIView+FormScroll.m */; };
 		57EE0E1018F75DF5003F0293 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57EE0E0F18F75DF5003F0293 /* MapKit.framework */; };
 		852350B6190887E30002C0C5 /* MIZAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 852350B5190887E30002C0C5 /* MIZAuthentication.m */; };
 		E6C0ED6718F46FF3006402B5 /* MIZPocketTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C0ED6618F46FF3006402B5 /* MIZPocketTableViewController.m */; };
@@ -54,6 +55,8 @@
 		57990E1E18FD7FBA00AAA9C4 /* MIZCommentsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZCommentsViewController.m; path = "View Controller/MIZCommentsViewController.m"; sourceTree = "<group>"; };
 		57990E2019056F5A00AAA9C4 /* dummy_staff.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = dummy_staff.gif; path = Images/dummy_staff.gif; sourceTree = "<group>"; };
 		57990E231905741000AAA9C4 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = placeholder.png; path = Images/placeholder.png; sourceTree = "<group>"; };
+		57990E25190D6FFF00AAA9C4 /* UIView+FormScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FormScroll.h"; sourceTree = "<group>"; };
+		57990E26190D6FFF00AAA9C4 /* UIView+FormScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FormScroll.m"; sourceTree = "<group>"; };
 		57EE0E0F18F75DF5003F0293 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		852350B4190887E30002C0C5 /* MIZAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZAuthentication.h; path = Model/MIZAuthentication.h; sourceTree = "<group>"; };
 		852350B5190887E30002C0C5 /* MIZAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZAuthentication.m; path = Model/MIZAuthentication.m; sourceTree = "<group>"; };
@@ -230,6 +233,8 @@
 				57990E1E18FD7FBA00AAA9C4 /* MIZCommentsViewController.m */,
 				E6C0ED6B18F470A8006402B5 /* MIZSignUpViewController.h */,
 				E6C0ED6C18F470A8006402B5 /* MIZSignUpViewController.m */,
+				57990E25190D6FFF00AAA9C4 /* UIView+FormScroll.h */,
+				57990E26190D6FFF00AAA9C4 /* UIView+FormScroll.m */,
 				E6C0ED7118F4719E006402B5 /* MIZMapViewController.h */,
 				E6C0ED7218F4719E006402B5 /* MIZMapViewController.m */,
 				E6C0ED8518F50094006402B5 /* MIZAddPostViewController.m */,
@@ -399,6 +404,7 @@
 				57990E1F18FD7FBA00AAA9C4 /* MIZCommentsViewController.m in Sources */,
 				E6C0ED7018F470FB006402B5 /* MIZPostTableViewController.m in Sources */,
 				E6C0ED7918F4BAB5006402B5 /* MIZMeNavigationViewController.m in Sources */,
+				57990E27190D6FFF00AAA9C4 /* UIView+FormScroll.m in Sources */,
 				E6C0ED6D18F470A8006402B5 /* MIZSignUpViewController.m in Sources */,
 				E6C0ED8318F4F974006402B5 /* MIZTabViewController.m in Sources */,
 				E6C0ED7618F4BA8F006402B5 /* MIZFeedNavigationViewController.m in Sources */,

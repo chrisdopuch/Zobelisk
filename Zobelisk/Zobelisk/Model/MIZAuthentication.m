@@ -69,7 +69,7 @@
     if(storedEmail != nil){
         NSLog(@"%@", storedEmail);
         storedEmail = nil;
-        return YES;
+        return NO;
     }
     else{
          NSLog(@"NOT logged in");
