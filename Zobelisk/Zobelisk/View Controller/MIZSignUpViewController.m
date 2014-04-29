@@ -100,7 +100,7 @@
 
 - (IBAction)passFieldDidChange:(id)sender {
     
-    if(_passwordField.text.length > 8)
+    if(self.passwordField.text.length > 8)
     {
         self.signUpButton.enabled = true;
     }
@@ -108,8 +108,8 @@
     
 }
 
-- (IBAction)signUpButtonClick:(id)sender{
+/*- (IBAction)nextButtonClicked:(id)sender:(id)sender{
     [MIZAuthentication registerEmail:@"email" withPassword:@"passwordField" andConfirmationPassword:@"confirmPassword"];
     [self dismissViewControllerAnimated:YES completion:nil];
-}
+}*/
 @end

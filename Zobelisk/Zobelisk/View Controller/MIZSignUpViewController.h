@@ -9,14 +9,21 @@
 #import <UIKit/UIKit.h>
 
 @interface MIZSignUpViewController : UIViewController
-@property (nonatomic, weak) IBOutlet UIButton *signUpButton;
+
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;
 @property (weak, nonatomic) IBOutlet UITextField *firstName;
 @property (weak, nonatomic) IBOutlet UITextField *lastName;
 @property (weak, nonatomic) IBOutlet UITextField *email;
 @property (weak, nonatomic) IBOutlet UITextField *confirmPassword;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-- (IBAction)nextButton:(id)sender;
+@property (nonatomic, weak) IBOutlet UIButton *signUpButton;
+@property (weak, nonatomic) IBOutlet UITextField *DOB;
+@property (weak, nonatomic) IBOutlet UITextField *address;
+@property (weak, nonatomic) IBOutlet UITextField *twitter;
+@property (weak, nonatomic) IBOutlet UITextField *phone;
+@property (weak, nonatomic) IBOutlet UIImageView *profilePicture;
+
+- (IBAction)signUpButton:(id)sender;
 
 - (IBAction)passFieldDidChange:(id)sender;
 
