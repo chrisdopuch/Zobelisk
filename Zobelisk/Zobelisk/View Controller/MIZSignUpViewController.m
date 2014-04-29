@@ -7,7 +7,8 @@
 //
 
 #import "MIZSignUpViewController.h"
-//#import "MIZAuthentication.h"
+#import "MIZAuthentication.h"
+#import "UIView+FormScroll.h"
 
 @interface MIZSignUpViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *passCheck;
@@ -27,15 +28,27 @@
 
 - (void)viewDidLoad
 {
+    
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+       UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
     self.passwordField.secureTextEntry = YES;
     self.confirmPassword.secureTextEntry = YES;
     self.passwordField.placeholder = @"8 character min";
     
+    // prevents the scroll view from swallowing up the touch event of child buttons
+    tapGesture.cancelsTouchesInView = NO;
+    
+    [self.scrollView addGestureRecognizer:tapGesture];
+    
+  
 }
-
 - (void)viewWillAppear:(BOOL)animated {
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     
     [super viewWillAppear:animated];
     
@@ -49,44 +62,47 @@
     
     [super viewWillDisappear:animated];
     
-}
-- (void)viewWillAppear:(BOOL)animated {
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
-}
-
-- (void)viewWillDisappear:(BOOL)animated {
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
 }
 
-#pragma mark - keyboard movements
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        CGRect f = self.view.frame;
+        f.origin.y = -35.0f;  //set the -35.0f to your required value
+        self.view.frame = f;
+    }];
+}
+
+-(void)keyboardWillHide:(NSNotification *)notification
+{
+    [UIView animateWithDuration:0.3 animations:^{
+        CGRect f = self.view.frame;
+        f.origin.y = 0.0f;
+        self.view.frame = f;
+    }];
+}
+
 - (void)keyboardWillShow:(NSNotification *)notification
 {
     
-    UITouch *touch = [[event allTouches] anyObject];
-    
-    
-    if ([self.passwordField isFirstResponder] && [touch view] != self.passwordField) {
-        [self.passwordField resignFirstResponder];
-    }
-    else if  ([self.firstName isFirstResponder] && [touch view] != self.firstName) {
-        [self.firstName resignFirstResponder];
-    }
-    else if  ([self.lastName isFirstResponder] && [touch view] != self.lastName) {
-        [self.lastName resignFirstResponder];
-    }
-    else if ([self.email isFirstResponder] && [touch view]!= self.email)
-    {
-        [self.email resignFirstResponder];
-    }
-    else if  ([self.confirmPassword isFirstResponder] && [touch view] != self.confirmPassword) {
-        [self.confirmPassword resignFirstResponder];
-    }
-    [super touchesBegan:touches withEvent:event];
+    [UIView animateWithDuration:0.3 animations:^{
+        CGRect f = self.view.frame;
+        f.origin.y = -35.0f;  //set the -35.0f to your required value
+        self.view.frame = f;
+    }];
 }
 
 
+-(void)hideKeyboard
+{
+    [self.firstName resignFirstResponder];
+    [self.lastName resignFirstResponder];
+    [self.email resignFirstResponder];
+    [self.passwordField resignFirstResponder];
+    [self.confirmPassword resignFirstResponder];
+}
 - (void)registerForKeyboardNotifications{
     
     //Register notifications to identify when keyboard appears
