@@ -15,8 +15,6 @@
 
 @property (weak, nonatomic) IBOutlet UISearchBar *search;
 
-- (IBAction)done:(id)sender;
-
 @property (nonatomic, strong) NSArray *post;
 
 

@@ -18,8 +18,4 @@
 @property (nonatomic, strong) NSString *media;
 @property (nonatomic) NSInteger likes;
 
-@property (nonatomic, assign) NSUInteger season;
-@property (nonatomic, assign) NSUInteger episodeNumber;
-@property (nonatomic, assign) CGFloat starDate;
-
 @end

@@ -11,7 +11,7 @@
 
 @implementation MIZPostFetch
 
-+ (void) createPost:(NSString *)title atBeacon:(short)beaconId withBody:(NSString *)body forEventOn:(NSString *)day duringMonth:(NSString *)month andYear:(NSString *)year taggedWithList:(NSString *)taglist{
+/*+ (void) createPost:(NSString *)title atBeacon:(short)beaconId withBody:(NSString *)body forEventOn:(NSString *)day duringMonth:(NSString *)month andYear:(NSString *)year taggedWithList:(NSString *)taglist{
     
     NSURLSessionConfiguration* config = [NSURLSessionConfiguration defaultSessionConfiguration];
 
@@ -77,7 +77,7 @@
     //resumes the Datarequest.
     [dataRequest resume];
     
-}
+}*/
 
 + (void)fetchPost
 {
@@ -87,7 +87,7 @@
     [[session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
         if (httpResponse.statusCode == 200) {
-            [MIZPostFetch processEpisodeListFromData:data];
+            [MIZPostFetch processPostListFromData:data];
         } else {
             [[NSNotificationCenter defaultCenter] postNotificationName:@"MIZPostFetchFailed" object:nil userInfo:nil];
         }
@@ -95,7 +95,7 @@
 }
 
 
-+ (void)processEpisodeListFromData:(NSData *)data
++ (void)processPostListFromData:(NSData *)data
 {
     NSMutableArray *posts = [[NSMutableArray alloc] init];
     
