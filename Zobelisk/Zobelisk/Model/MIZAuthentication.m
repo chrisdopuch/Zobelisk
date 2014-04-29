@@ -82,7 +82,7 @@
 
 /*+ (void) loginWithEmail:(NSString*)email withPassword:(NSString*)password
 {
-    NSString* urlString = @"http://zobelisk-backend.herokuapp.com/users/sign_in";
+    //NSString* urlString = @"http://zobelisk-backend.herokuapp.com/users/sign_in";
 }
 */
 @end
