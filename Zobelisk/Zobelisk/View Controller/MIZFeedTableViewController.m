@@ -9,12 +9,40 @@
 #import "MIZFeedTableViewController.h"
 #import "MIZAuthentication.h"
 
+
 @interface MIZFeedTableViewController () <UISearchBarDelegate>
 @property (nonatomic, strong)UIGestureRecognizer *tapGestureRecognizer;
+@property (nonatomic, strong) UIRefreshControl *refreshControl;
 
 @end
 
+
 @implementation MIZFeedTableViewController
+
+static NSString *cellIdentifier = @"Cell";
+
+- (void)refresh
+{
+    // Get data
+    [self.refreshControl beginRefreshing];
+    [self.tableView setContentOffset:CGPointMake(0.0f, -60.0f)];
+    [MIZPostFetch fetchPost];
+}
+
+#pragma mark - Notification handling
+
+- (void)respondToProcessingComplete:(NSNotification *)notification
+{
+    NSLog(@"PROCESSING COMPLETE");
+    NSDictionary *userInfo = notification.userInfo;
+    self.post = userInfo[@"post"];
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        [self.tableView reloadData];
+        [self.refreshControl endRefreshing];
+    }];
+    
+}
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -46,7 +74,32 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    // Register the view controller to listen for notifications
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(respondToProcessingComplete:) name:@"MIZPostFinishedProcessing" object:nil];
+    
+    // Tell the refresh control to stop
+    [[NSNotificationCenter defaultCenter] addObserverForName:@"MIZPostFetchingFailed" object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+        [self.refreshControl endRefreshing];
+    }];
+    
+    // Pull to refresh
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
+    
+    // Unarchive saved episodes
+    NSString* path = [NSSearchPathForDirectoriesInDomains(
+                                                          NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    path = [path stringByAppendingPathComponent:@"post.miz"];
+    self.post = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+    [self.tableView reloadData];
+    
+    [self refresh];
+    
 }
+
+
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
@@ -82,6 +135,39 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+#pragma mark - TableView Data Source
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MIZPostFeedCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    MIZPost *post = self.post[indexPath.row];
+    
+    cell.email.text = post.email;
+    cell.date.text = post.date;
+    cell.title.text = post.title;
+    cell.body.text = post.content;
+    
+  
+    
+    return cell;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.post.count;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [NSString stringWithFormat:@"Posts"];
+}
+
 
 #pragma mark - Table view data source
 
