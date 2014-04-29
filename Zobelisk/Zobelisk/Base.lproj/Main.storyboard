@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Piy-dZ-9S3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Piy-dZ-9S3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -45,7 +45,7 @@
         <scene sceneID="PFD-00-SVL">
             <objects>
                 <tableViewController storyboardIdentifier="ZobeliskFeed" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AcZ-Iv-5n2" userLabel="HomeView" customClass="MIZFeedTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="131" sectionHeaderHeight="22" sectionFooterHeight="22" id="YeW-bJ-SRx">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="131" sectionHeaderHeight="22" sectionFooterHeight="22" id="YeW-bJ-SRx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -127,14 +127,38 @@
                                                 <constraint firstItem="ubL-JB-lby" firstAttribute="leading" secondItem="IGH-G1-Gkx" secondAttribute="leading" constant="20" symbolic="YES" id="nFj-Dz-dMc"/>
                                                 <constraint firstItem="3R4-da-WUB" firstAttribute="top" secondItem="ubL-JB-lby" secondAttribute="bottom" constant="16" id="xEU-fC-gJ6"/>
                                             </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="E4M-uS-NfJ" kind="push" identifier="FeedToPost" id="tiP-aU-YwM"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
+                                            <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="Rur-4J-Za1" firstAttribute="top" secondItem="EZ6-lS-Qmc" secondAttribute="bottom" constant="9" id="0zz-Qm-iCY"/>
+                                        <constraint firstItem="EZ6-lS-Qmc" firstAttribute="top" secondItem="3R4-da-WUB" secondAttribute="bottom" constant="5" id="2c2-Jf-Cnj"/>
+                                        <constraint firstItem="VuC-Qp-nXA" firstAttribute="baseline" secondItem="ubL-JB-lby" secondAttribute="baseline" id="CqL-Ey-cN7"/>
+                                        <constraint firstItem="VuC-Qp-nXA" firstAttribute="top" secondItem="IGH-G1-Gkx" secondAttribute="top" constant="6" id="Ft4-pu-ZYa"/>
+                                        <constraint firstItem="EZ6-lS-Qmc" firstAttribute="leading" secondItem="Rur-4J-Za1" secondAttribute="leading" id="GK8-c5-RXG"/>
+                                        <constraint firstItem="3R4-da-WUB" firstAttribute="leading" secondItem="IGH-G1-Gkx" secondAttribute="leading" constant="20" id="Q0c-MN-0rD"/>
+                                        <constraint firstItem="VuC-Qp-nXA" firstAttribute="trailing" secondItem="oUv-ED-tRn" secondAttribute="trailing" constant="-31" id="V5K-MA-ljs"/>
+                                        <constraint firstItem="Rur-4J-Za1" firstAttribute="leading" secondItem="IGH-G1-Gkx" secondAttribute="leading" constant="20" id="d1R-aD-3ZR"/>
+                                        <constraint firstItem="3R4-da-WUB" firstAttribute="top" secondItem="ubL-JB-lby" secondAttribute="bottom" constant="18" id="hye-oO-j52"/>
+                                        <constraint firstItem="EZ6-lS-Qmc" firstAttribute="leading" secondItem="IGH-G1-Gkx" secondAttribute="leading" constant="20" id="ipC-ns-jl6"/>
+                                        <constraint firstAttribute="bottom" secondItem="Rur-4J-Za1" secondAttribute="bottom" constant="10" id="oUQ-P3-22W"/>
+                                        <constraint firstItem="ubL-JB-lby" firstAttribute="leading" secondItem="IGH-G1-Gkx" secondAttribute="leading" constant="20" id="qsM-aE-71Z"/>
+                                        <constraint firstItem="ubL-JB-lby" firstAttribute="top" secondItem="IGH-G1-Gkx" secondAttribute="top" constant="6" id="rw6-Mj-MtE"/>
+                                        <constraint firstAttribute="bottom" secondItem="oUv-ED-tRn" secondAttribute="bottom" constant="17" id="t1x-ct-RGZ"/>
+                                        <constraint firstAttribute="trailing" secondItem="oUv-ED-tRn" secondAttribute="trailing" constant="3" id="wxy-ka-D5w"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="body" destination="EZ6-lS-Qmc" id="bEN-hT-PyD"/>
+                                    <outlet property="date" destination="VuC-Qp-nXA" id="eNo-vx-4z2"/>
+                                    <outlet property="email" destination="ubL-JB-lby" id="V44-tq-yYB"/>
+                                    <outlet property="title" destination="3R4-da-WUB" id="yer-ds-CZY"/>
+                                    <segue destination="E4M-uS-NfJ" kind="push" identifier="FeedToPost" id="tiP-aU-YwM"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <sections/>
                         <connections>
                             <outlet property="dataSource" destination="AcZ-Iv-5n2" id="V9f-nD-thW"/>
                             <outlet property="delegate" destination="AcZ-Iv-5n2" id="GiE-q7-BVr"/>

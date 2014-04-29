@@ -8,9 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "MIZAddPostViewController.h"
+#import"MIZPostFetch.h"
+#import "MIZPostFeedCellTableViewCell.h"
 
 @interface MIZFeedTableViewController: UITableViewController <MIZAddPostViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UISearchBar *search;
+
+- (IBAction)done:(id)sender;
+
+@property (nonatomic, strong) NSArray *post;
+
 
 @end
