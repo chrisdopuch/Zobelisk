@@ -55,7 +55,10 @@
         
         if(error == nil && [[jsonDict objectForKey:@"status"] intValue] == 0)
         {
-            [[NSUserDefaults standardUserDefaults] setValue:email forKey:@"email"];
+            NSUserDefaults *standardDefaults = [NSUserDefaults standardUserDefaults];
+            [standardDefaults setObject:email forKey:@"email"];
+            [standardDefaults synchronize];
+            
         }
     }];
     
@@ -77,9 +80,9 @@
     }
 }
 
-+ (void) loginWithEmail:(NSString*)email withPassword:(NSString*)password
+/*+ (void) loginWithEmail:(NSString*)email withPassword:(NSString*)password
 {
-    NSString* urlString = @"http://zobelisk-backend.herokuapp.com/users/sign_in";
+    //NSString* urlString = @"http://zobelisk-backend.herokuapp.com/users/sign_in";
 }
-
+*/
 @end
