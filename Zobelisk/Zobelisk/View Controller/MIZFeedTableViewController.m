@@ -141,7 +141,9 @@ static NSString *cellIdentifier = @"Cell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     MIZPostFeedCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    MIZPost *post = self.post[indexPath.row];
+    
+    MIZPost *post = self.post[self.post.count - indexPath.row-1];
+    
     
     cell.email.text = post.email;
     cell.date.text = post.date;
@@ -225,7 +227,7 @@ static NSString *cellIdentifier = @"Cell";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 71;
+    return 150;
 }
 
 #pragma mark - Navigation

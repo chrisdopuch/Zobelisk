@@ -25,6 +25,7 @@
     }] resume];
 }
 
+
 + (void)processEpisodeListFromData:(NSData *)data
 {
     NSMutableArray *posts = [[NSMutableArray alloc] init];
@@ -33,6 +34,7 @@
     NSError *error;
     // Turn the data into a dictionary
     NSArray *postArray = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+    
     // get the root array for the JSON
       NSLog(@"Success?");
 //    NSArray *postDictionaries = postDictionary[@"posts"];

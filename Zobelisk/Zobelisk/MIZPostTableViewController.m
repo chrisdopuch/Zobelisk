@@ -34,7 +34,15 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)MIZAddPostViewControllerDidCancel:(MIZAddPostViewController *)controller
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
+- (void)addPostButtonTapped:(id)sender{
+    //Add button taps begins segue to addPostView
+    [self performSegueWithIdentifier:@"addPost" sender:sender];
+}
 
 
 #pragma mark - Navigation

@@ -31,9 +31,9 @@
     self.comment.layer.borderWidth = 1.0;
     self.comment.layer.cornerRadius = 8;
     
-    _comment.delegate = self;
-    _comment.text = @"Post comment here...";
-    _comment.textColor = [UIColor lightGrayColor];
+    self.comment.delegate = self;
+    self.comment.text = @"Post comment here...";
+    self.comment.textColor = [UIColor lightGrayColor];
 }
 
 
@@ -42,8 +42,8 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
     UITouch *touch = [[event allTouches] anyObject];
-    if ([_comment isFirstResponder] && [touch view] != _comment) {
-        [_comment resignFirstResponder];
+    if ([self.comment isFirstResponder] && [touch view] != self.comment) {
+        [self.comment resignFirstResponder];
     }
     [super touchesBegan:touches withEvent:event];
 }
