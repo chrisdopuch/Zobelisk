@@ -180,7 +180,7 @@
 - (IBAction)passFieldDidChange:(id)sender {
     
     //Checks length of initial password
-    if(self.passwordField.text.length > 8)
+    if(self.passwordField.text.length >= 8)
     {
         self.confirmPassword.enabled = true;
     }

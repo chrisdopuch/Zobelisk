@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Piy-dZ-9S3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Piy-dZ-9S3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -651,13 +651,12 @@
                     </view>
                     <navigationItem key="navigationItem" id="aWx-kk-7qT"/>
                     <connections>
-                        <outlet property="addressText" destination="kTF-qo-paj" id="aJR-8R-vMS"/>
-                        <outlet property="dateOfBirth" destination="XXr-on-fVH" id="H1E-tA-88k"/>
-                        <outlet property="phoneText" destination="rI5-xP-AfB" id="U5z-ly-nNf"/>
-                        <outlet property="profilePic" destination="ghS-ZU-69T" id="GLJ-o5-SBm"/>
-                        <outlet property="scrollView" destination="bPf-CP-W1b" id="tHB-19-pZ9"/>
-                        <outlet property="signUpButton" destination="yaU-FC-525" id="7La-iJ-lEd"/>
-                        <outlet property="twitterHandleText" destination="Tpn-oK-yhH" id="UcW-da-fGF"/>
+                        <outlet property="addressTextField" destination="kTF-qo-paj" id="uiq-Ky-kOw"/>
+                        <outlet property="dobTextField" destination="XXr-on-fVH" id="EMo-qI-heK"/>
+                        <outlet property="phoneTextField" destination="rI5-xP-AfB" id="6gI-yb-Qne"/>
+                        <outlet property="scrollView" destination="bPf-CP-W1b" id="kJD-Xf-hIk"/>
+                        <outlet property="signUpButton" destination="yaU-FC-525" id="4qA-Oy-W3q"/>
+                        <outlet property="twitterHandleTextField" destination="Tpn-oK-yhH" id="WwW-9b-6Mn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gE0-GR-aVS" userLabel="First Responder" sceneMemberID="firstResponder"/>

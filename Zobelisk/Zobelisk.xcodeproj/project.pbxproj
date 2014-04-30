@@ -17,6 +17,7 @@
 		57EE0E1018F75DF5003F0293 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57EE0E0F18F75DF5003F0293 /* MapKit.framework */; };
 		852350B6190887E30002C0C5 /* MIZAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 852350B5190887E30002C0C5 /* MIZAuthentication.m */; };
 		853D3FAD190F405B00CE49CD /* MIZGregorianDateComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 853D3FAC190F405B00CE49CD /* MIZGregorianDateComponents.m */; };
+		E66B6AA61910726700097833 /* MIZRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E66B6AA51910726700097833 /* MIZRegisterViewController.m */; };
 		E6C0ED6718F46FF3006402B5 /* MIZPocketTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C0ED6618F46FF3006402B5 /* MIZPocketTableViewController.m */; };
 		E6C0ED6D18F470A8006402B5 /* MIZSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C0ED6C18F470A8006402B5 /* MIZSignUpViewController.m */; };
 		E6C0ED7018F470FB006402B5 /* MIZPostTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C0ED6F18F470FB006402B5 /* MIZPostTableViewController.m */; };
@@ -72,6 +73,8 @@
 		852350B5190887E30002C0C5 /* MIZAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZAuthentication.m; path = Model/MIZAuthentication.m; sourceTree = "<group>"; };
 		853D3FAB190F405B00CE49CD /* MIZGregorianDateComponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZGregorianDateComponents.h; path = Model/MIZGregorianDateComponents.h; sourceTree = "<group>"; };
 		853D3FAC190F405B00CE49CD /* MIZGregorianDateComponents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZGregorianDateComponents.m; path = Model/MIZGregorianDateComponents.m; sourceTree = "<group>"; };
+		E66B6AA41910726700097833 /* MIZRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZRegisterViewController.h; path = "View Controller/MIZRegisterViewController.h"; sourceTree = "<group>"; };
+		E66B6AA51910726700097833 /* MIZRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZRegisterViewController.m; path = "View Controller/MIZRegisterViewController.m"; sourceTree = "<group>"; };
 		E6C0ED6518F46FF3006402B5 /* MIZPocketTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZPocketTableViewController.h; path = "View Controller/MIZPocketTableViewController.h"; sourceTree = "<group>"; };
 		E6C0ED6618F46FF3006402B5 /* MIZPocketTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZPocketTableViewController.m; path = "View Controller/MIZPocketTableViewController.m"; sourceTree = "<group>"; };
 		E6C0ED6B18F470A8006402B5 /* MIZSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZSignUpViewController.h; path = "View Controller/MIZSignUpViewController.h"; sourceTree = "<group>"; };
@@ -260,6 +263,8 @@
 				E6C0ED7218F4719E006402B5 /* MIZMapViewController.m */,
 				E6C0ED8518F50094006402B5 /* MIZAddPostViewController.m */,
 				E6C0ED8418F50094006402B5 /* MIZAddPostViewController.h */,
+				E66B6AA41910726700097833 /* MIZRegisterViewController.h */,
+				E66B6AA51910726700097833 /* MIZRegisterViewController.m */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -438,6 +443,7 @@
 				E6C0ED7918F4BAB5006402B5 /* MIZMeNavigationViewController.m in Sources */,
 				57990E27190D6FFF00AAA9C4 /* UIView+FormScroll.m in Sources */,
 				E6C0ED6D18F470A8006402B5 /* MIZSignUpViewController.m in Sources */,
+				E66B6AA61910726700097833 /* MIZRegisterViewController.m in Sources */,
 				E6C0ED8318F4F974006402B5 /* MIZTabViewController.m in Sources */,
 				E6C0ED7618F4BA8F006402B5 /* MIZFeedNavigationViewController.m in Sources */,
 				E6E5F6A918EB40360001FBAF /* MIZMeViewController.m in Sources */,

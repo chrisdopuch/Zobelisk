@@ -2,14 +2,13 @@
 //  MIZRegisterViewController.m
 //  Zobelisk
 //
-//  Created by Clifford Green on 4/28/14.
+//  Created by Clifford Green on 4/29/14.
 //  Copyright (c) 2014 Mizzou IT. All rights reserved.
 //
 
 #import "MIZRegisterViewController.h"
 
 @interface MIZRegisterViewController ()
-@property (weak, nonatomic) IBOutlet UIButton *signUpButton;
 
 @end
 
@@ -28,13 +27,68 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+    
+        tapGesture.cancelsTouchesInView = NO;
+    
+        [self.scrollView addGestureRecognizer:tapGesture];
 }
 
+
+- (void)viewWillAppear:(BOOL)animated {
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
+    
+    [super viewWillAppear:animated];
+    
+    [self registerForKeyboardNotifications];
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    
+    [self deregisterFromKeyboardNotifications];
+    
+    [super viewWillDisappear:animated];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillShowNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardWillHideNotification object:nil];
+}
+-(void)keyboardWillHide:(NSNotification *)notification
+{
+    [UIView animateWithDuration:0.3 animations:^{
+        CGRect f = self.view.frame;
+        f.origin.y = 0.0f;
+        self.view.frame = f;
+    }];
+}
+
+- (void)keyboardWillShow:(NSNotification *)notification
+{
+    
+    [UIView animateWithDuration:0.3 animations:^{
+        CGRect f = self.view.frame;
+        f.origin.y = -35.0f;  //set the -35.0f to your required value
+        self.view.frame = f;
+    }];
+}
+
+
+-(void)hideKeyboard
+{
+    [self.dobTextField resignFirstResponder];
+    [self.addressTextField resignFirstResponder];
+    [self.twitterHandleTextField resignFirstResponder];
+    [self.phoneTextField resignFirstResponder];
+}
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 - (void)registerForKeyboardNotifications{
     
     //Register notifications to identify when keyboard appears
@@ -66,7 +120,7 @@
     //Finds keyboard size based on phone
     CGSize keyboardSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
     
-    //Origin of button
+    //Origin of text box
     CGPoint buttonOrigin = self.signUpButton.frame.origin;
     
     
@@ -84,9 +138,9 @@
             
             
             [self.scrollView setContentInset:UIEdgeInsetsMake(0.0f, 0.0f, keyboardSize.height, 0.0f)];
+            
+        }
         
-        
-    }
     
 }
 
@@ -106,6 +160,4 @@
 }
 */
 
-- (IBAction)signUp:(UIButton *)sender {
-}
 @end
