@@ -164,6 +164,15 @@
 			name = Fetching;
 			sourceTree = "<group>";
 		};
+		857B46B41912C00B0097EF9D /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				853D3FAC190F405B00CE49CD /* MIZGregorianDateComponents.m */,
+				853D3FAB190F405B00CE49CD /* MIZGregorianDateComponents.h */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
 		E6C0ED8018F4F8FF006402B5 /* Tab Bar View Controller */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,8 +298,7 @@
 				57B9CF25190EB8CA00813028 /* Fetching */,
 				852350B4190887E30002C0C5 /* MIZAuthentication.h */,
 				852350B5190887E30002C0C5 /* MIZAuthentication.m */,
-				853D3FAB190F405B00CE49CD /* MIZGregorianDateComponents.h */,
-				853D3FAC190F405B00CE49CD /* MIZGregorianDateComponents.m */,
+				857B46B41912C00B0097EF9D /* Helper */,
 				857B46B11912BDD70097EF9D /* MIZFavorite.h */,
 				857B46B21912BDD70097EF9D /* MIZFavorite.m */,
 			);
