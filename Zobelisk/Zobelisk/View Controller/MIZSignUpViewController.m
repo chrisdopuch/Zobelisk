@@ -12,7 +12,7 @@
 
 @interface MIZSignUpViewController ()
 @property (weak, nonatomic) IBOutlet UIButton *passCheck;
-
+@property (weak, nonatomic) NSObject* registerBlock;
 @end
 
 @implementation MIZSignUpViewController
@@ -198,6 +198,18 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     [segue destinationViewController];
+    //create mutable dictionary to store information from signup view controller
+    NSMutableDictionary *registerObject = [[NSMutableDictionary alloc] initWithObjectsAndKeys:self.firstName.text, @"first name", self.lastName.text, @"last name", self.passwordField.text, @"password", self.email.text, @"email", nil];
+    
+    //Performs segue based on the identifier
+    if([segue.identifier isEqualToString:@"signUpToRegister"])
+    {
+        //Segue to Register controller
+        MIZRegisterViewController* controller = (MIZRegisterViewController*)segue.destinationViewController;
+        //pass the registration object into Registration view controller.
+        controller.registrationObject = registerObject;
+    }
+    
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }

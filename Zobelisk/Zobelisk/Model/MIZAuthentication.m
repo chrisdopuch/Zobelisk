@@ -80,6 +80,10 @@
     }
 }
 
++ (void) registerEmail:(NSString *)email withPassword:(NSString *)password confirmationPassword:(NSString *)password_confirmation firstName:(NSString *)fName lastName:(NSString *)lname dateOfBirth:(NSDate *)dob address:(NSString *)loc twitter:(NSString *)twiterHandle andPhonenumber:(NSString *)number
+{
+    
+}
 /*+ (void) loginWithEmail:(NSString*)email withPassword:(NSString*)password
 {
     //NSString* urlString = @"http://zobelisk-backend.herokuapp.com/users/sign_in";

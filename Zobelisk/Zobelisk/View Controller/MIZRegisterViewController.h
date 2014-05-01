@@ -9,12 +9,13 @@
 #import <UIKit/UIKit.h>
 
 @interface MIZRegisterViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UITextField *dobTextField;
-
+@property (strong, nonatomic) NSMutableDictionary* registrationObject;
 @property (weak, nonatomic) IBOutlet UITextField *addressTextField;
 @property (weak, nonatomic) IBOutlet UITextField *twitterHandleTextField;
 @property (weak, nonatomic) IBOutlet UITextField *phoneTextField;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIButton *signUpButton;
+
+- (IBAction)signUp:(UIButton *)sender;
 
 @end
