@@ -13,5 +13,4 @@
 
 + (void)fetchPost;
 
-//+ (void)createPost:(NSString*)title atBeacon:(short) beaconId withBody:(NSString*)body forEventOn:(NSString*)Day duringMonth:(NSString*) andYear:(NSString*)year taggedWithList: (NSString*) taglist;
 @end
