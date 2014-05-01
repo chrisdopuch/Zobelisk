@@ -10,6 +10,17 @@
 
 @implementation MIZAuthentication
 
++ (void) registerEmail:(NSString*)email withPassword:(NSString*)password confirmationPassword:(NSString*)password_confirmation firstName:(NSString*)fName lastName:(NSString*)lname dateOfBirth:(NSDate*)dob address:(NSString*)loc twitter:(NSString*)twiterHandle andPhonenumber:(NSString*)number
+{
+    [MIZAuthentication registerEmail:email withPassword:password andConfirmationPassword:password_confirmation];
+    
+}
+
++ (void)updateProfileForEmail:(NSString*)email withPassword:(NSString*)password firstName:(NSString*)fname lastName:(NSString*)lName dateOfBirth:(NSDate*) dob address:(NSString*)address twitter:(NSString*)handle phone:(NSString*)number {
+    
+    
+}
+
 + (void) registerEmail:(NSString*)email withPassword:(NSString*)password andConfirmationPassword:(NSString*)password_confirmation
 {
     NSURLSessionConfiguration* config = [NSURLSessionConfiguration defaultSessionConfiguration];
