@@ -174,9 +174,6 @@
 
 
 
-
-
-
 - (IBAction)passFieldDidChange:(id)sender {
     
     //Checks length of initial password
