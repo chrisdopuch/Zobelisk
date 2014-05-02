@@ -20,14 +20,15 @@
 @property (nonatomic, strong) id <MIZAddPostViewControllerDelegate> delegate;
 @property (nonatomic, weak) IBOutlet UIImageView *selectedImageView;
 @property (weak, nonatomic) IBOutlet UITextView *description;
-@property (weak, nonatomic) IBOutlet UITextField *setDate;
 @property (weak, nonatomic) IBOutlet UITextField *postTitle;
+@property (weak, nonatomic) IBOutlet UITextField *expDate;
+- (IBAction)createPost:(UIButton *)sender;
 
 
 -(IBAction)choosePhotoBtn:(id)sender;
 
 - (IBAction)cancel:(id)sender;
-@property (weak, nonatomic) IBOutlet UITextField *expDate;
+
 
 
 

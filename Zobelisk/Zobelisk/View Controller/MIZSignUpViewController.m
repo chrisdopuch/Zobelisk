@@ -43,6 +43,12 @@
     
     [self.scrollView addGestureRecognizer:tapGesture];
     
+    //Set text field defaults
+    self.firstName.text = @"";
+    self.lastName.text = @"";
+    self.email.text = @"";
+    
+    
   
 }
 - (void)viewWillAppear:(BOOL)animated {

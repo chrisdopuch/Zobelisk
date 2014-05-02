@@ -1056,6 +1056,9 @@
                                 <state key="normal" title="Post">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="createPost:" destination="vT2-x3-SuC" eventType="touchUpInside" id="iHI-aU-27K"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -1097,7 +1100,6 @@
                         <outlet property="expDate" destination="HyU-Kn-gkz" id="Hjc-FG-qSM"/>
                         <outlet property="postTitle" destination="DF5-JB-tZn" id="hE5-CG-5z0"/>
                         <outlet property="selectedImageView" destination="fel-0d-w4b" id="BEJ-J4-7C7"/>
-                        <outlet property="setDate" destination="HyU-Kn-gkz" id="waY-Y6-YNA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XpP-o6-W7r" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1154,5 +1156,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="s8O-t9-C42"/>
         <segue reference="1bf-fU-SyB"/>
+        <segue reference="s8O-t9-C42"/>
     </inferredMetricsTieBreakers>
 </document>

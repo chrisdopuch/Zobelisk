@@ -34,6 +34,11 @@
         tapGesture.cancelsTouchesInView = NO;
     
         [self.scrollView addGestureRecognizer:tapGesture];
+    
+    //sets text defaults
+    self.addressTextField.text = @"";
+    self.twitterHandleTextField.text = @"";
+    self.phoneTextField.text = @"";
 }
 
 

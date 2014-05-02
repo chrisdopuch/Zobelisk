@@ -38,7 +38,7 @@
         [user setObject:[userProfile objectForKey:@"first name"] forKey:@"first_name"];
         [user setObject:[userProfile objectForKey:@"last name"] forKey:@"last_name"];
         [user setObject:[userProfile objectForKey:@"address"] forKey:@"address"];
-        [user setObject:[userProfile objectForKey:@"twitter"] forKey:@"twitter"];
+        [user setObject:[userProfile objectForKey:@"twitterHandle"] forKey:@"twitter"];
         
         [form setObject:@"✓" forKey:@"utf8"];
         [form setObject:@"put" forKey:@"_method"];

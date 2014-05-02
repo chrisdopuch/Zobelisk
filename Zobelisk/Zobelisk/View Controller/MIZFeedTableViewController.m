@@ -31,7 +31,7 @@ static NSString *cellIdentifier = @"Cell";
     // Get data
     [self.refreshControl beginRefreshing];
     [self.tableView setContentOffset:CGPointMake(0.0f, -60.0f)];
-    [MIZPostFetch fetchPost];
+    //[MIZPostFetch fetchPost];
 }
 
 #pragma mark - Notification handling
