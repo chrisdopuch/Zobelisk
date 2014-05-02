@@ -12,7 +12,7 @@
 
 @property (nonatomic, strong) NSString *email;
 @property (nonatomic, strong) NSString *date;
-@property (nonatomic, strong) NSString *title;
+@property (nonatomic, strong) NSString *postTitle;
 @property (nonatomic, strong) NSString *content;
 @property (nonatomic, strong) NSString *eventDate;
 @property (nonatomic, strong) NSString *media;

@@ -1,14 +1,20 @@
 //
-//  MIZPostFeedCellTableViewCell.h
+//  MIZPostViewController.h
 //  Zobelisk
 //
-//  Created by Victor Tran on 4/28/14.
+//  Created by Victor Tran on 4/30/14.
 //  Copyright (c) 2014 Mizzou IT. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface MIZPostFeedCellTableViewCell : UITableViewCell
+#import "MIZAddPostViewController.h"
+#import "MIZPost.h"
+
+
+@interface MIZPostViewController : UIViewController <MIZAddPostViewControllerDelegate>
+
+@property (nonatomic, strong) MIZPost *post;
 
 @property (nonatomic, weak) IBOutlet UILabel *email;
 @property (nonatomic, weak) IBOutlet UILabel *date;

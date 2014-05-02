@@ -11,6 +11,7 @@
 #import"MIZPostFetch.h"
 #import "MIZPostFeedCellTableViewCell.h"
 
+
 @interface MIZFeedTableViewController: UITableViewController <MIZAddPostViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UISearchBar *search;

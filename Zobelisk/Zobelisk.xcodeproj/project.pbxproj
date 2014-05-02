@@ -11,14 +11,15 @@
 		57990E2119056F5A00AAA9C4 /* dummy_staff.gif in Resources */ = {isa = PBXBuildFile; fileRef = 57990E2019056F5A00AAA9C4 /* dummy_staff.gif */; };
 		57990E241905741000AAA9C4 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 57990E231905741000AAA9C4 /* placeholder.png */; };
 		57990E27190D6FFF00AAA9C4 /* UIView+FormScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 57990E26190D6FFF00AAA9C4 /* UIView+FormScroll.m */; };
+		57A067801913281B00459AF2 /* MIZRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A0677F1913281B00459AF2 /* MIZRegisterViewController.m */; };
 		57B9CF28190EB8E300813028 /* MIZPostFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B9CF27190EB8E300813028 /* MIZPostFetch.m */; };
 		57B9CF2B190EB96400813028 /* MIZPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B9CF2A190EB96400813028 /* MIZPost.m */; };
 		57B9CF2E190EE94600813028 /* MIZPostFeedCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B9CF2D190EE94600813028 /* MIZPostFeedCellTableViewCell.m */; };
+		57D25FD019117AFC009FE0E4 /* MIZPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D25FCF19117AFC009FE0E4 /* MIZPostViewController.m */; };
 		57EE0E1018F75DF5003F0293 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57EE0E0F18F75DF5003F0293 /* MapKit.framework */; };
 		852350B6190887E30002C0C5 /* MIZAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 852350B5190887E30002C0C5 /* MIZAuthentication.m */; };
 		853D3FAD190F405B00CE49CD /* MIZGregorianDateComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 853D3FAC190F405B00CE49CD /* MIZGregorianDateComponents.m */; };
 		857B46B31912BDD70097EF9D /* MIZFavorite.m in Sources */ = {isa = PBXBuildFile; fileRef = 857B46B21912BDD70097EF9D /* MIZFavorite.m */; };
-		E66B6AA61910726700097833 /* MIZRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E66B6AA51910726700097833 /* MIZRegisterViewController.m */; };
 		E6C0ED6718F46FF3006402B5 /* MIZPocketTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C0ED6618F46FF3006402B5 /* MIZPocketTableViewController.m */; };
 		E6C0ED6D18F470A8006402B5 /* MIZSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C0ED6C18F470A8006402B5 /* MIZSignUpViewController.m */; };
 		E6C0ED7018F470FB006402B5 /* MIZPostTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C0ED6F18F470FB006402B5 /* MIZPostTableViewController.m */; };
@@ -63,12 +64,16 @@
 		57990E231905741000AAA9C4 /* placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = placeholder.png; path = Images/placeholder.png; sourceTree = "<group>"; };
 		57990E25190D6FFF00AAA9C4 /* UIView+FormScroll.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+FormScroll.h"; sourceTree = "<group>"; };
 		57990E26190D6FFF00AAA9C4 /* UIView+FormScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FormScroll.m"; sourceTree = "<group>"; };
+		57A0677E1913281B00459AF2 /* MIZRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZRegisterViewController.h; path = "View Controller/MIZRegisterViewController.h"; sourceTree = "<group>"; };
+		57A0677F1913281B00459AF2 /* MIZRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZRegisterViewController.m; path = "View Controller/MIZRegisterViewController.m"; sourceTree = "<group>"; };
 		57B9CF26190EB8E300813028 /* MIZPostFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIZPostFetch.h; sourceTree = "<group>"; };
 		57B9CF27190EB8E300813028 /* MIZPostFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIZPostFetch.m; sourceTree = "<group>"; };
 		57B9CF29190EB96400813028 /* MIZPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIZPost.h; sourceTree = "<group>"; };
 		57B9CF2A190EB96400813028 /* MIZPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIZPost.m; sourceTree = "<group>"; };
 		57B9CF2C190EE94600813028 /* MIZPostFeedCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIZPostFeedCellTableViewCell.h; sourceTree = "<group>"; };
 		57B9CF2D190EE94600813028 /* MIZPostFeedCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIZPostFeedCellTableViewCell.m; sourceTree = "<group>"; };
+		57D25FCE19117AFC009FE0E4 /* MIZPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIZPostViewController.h; sourceTree = "<group>"; };
+		57D25FCF19117AFC009FE0E4 /* MIZPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIZPostViewController.m; sourceTree = "<group>"; };
 		57EE0E0F18F75DF5003F0293 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		852350B4190887E30002C0C5 /* MIZAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZAuthentication.h; path = Model/MIZAuthentication.h; sourceTree = "<group>"; };
 		852350B5190887E30002C0C5 /* MIZAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZAuthentication.m; path = Model/MIZAuthentication.m; sourceTree = "<group>"; };
@@ -76,8 +81,6 @@
 		853D3FAC190F405B00CE49CD /* MIZGregorianDateComponents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZGregorianDateComponents.m; path = Model/MIZGregorianDateComponents.m; sourceTree = "<group>"; };
 		857B46B11912BDD70097EF9D /* MIZFavorite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZFavorite.h; path = Model/MIZFavorite.h; sourceTree = "<group>"; };
 		857B46B21912BDD70097EF9D /* MIZFavorite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZFavorite.m; path = Model/MIZFavorite.m; sourceTree = "<group>"; };
-		E66B6AA41910726700097833 /* MIZRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZRegisterViewController.h; path = "View Controller/MIZRegisterViewController.h"; sourceTree = "<group>"; };
-		E66B6AA51910726700097833 /* MIZRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZRegisterViewController.m; path = "View Controller/MIZRegisterViewController.m"; sourceTree = "<group>"; };
 		E6C0ED6518F46FF3006402B5 /* MIZPocketTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZPocketTableViewController.h; path = "View Controller/MIZPocketTableViewController.h"; sourceTree = "<group>"; };
 		E6C0ED6618F46FF3006402B5 /* MIZPocketTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZPocketTableViewController.m; path = "View Controller/MIZPocketTableViewController.m"; sourceTree = "<group>"; };
 		E6C0ED6B18F470A8006402B5 /* MIZSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZSignUpViewController.h; path = "View Controller/MIZSignUpViewController.h"; sourceTree = "<group>"; };
@@ -167,8 +170,8 @@
 		857B46B41912C00B0097EF9D /* Helper */ = {
 			isa = PBXGroup;
 			children = (
-				853D3FAC190F405B00CE49CD /* MIZGregorianDateComponents.m */,
 				853D3FAB190F405B00CE49CD /* MIZGregorianDateComponents.h */,
+				853D3FAC190F405B00CE49CD /* MIZGregorianDateComponents.m */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -265,6 +268,8 @@
 				E6E5F6A518EB36B90001FBAF /* Navigation Controller */,
 				E6E5F6A718EB40360001FBAF /* MIZMeViewController.h */,
 				E6E5F6A818EB40360001FBAF /* MIZMeViewController.m */,
+				57A0677E1913281B00459AF2 /* MIZRegisterViewController.h */,
+				57A0677F1913281B00459AF2 /* MIZRegisterViewController.m */,
 				57990E1D18FD7FBA00AAA9C4 /* MIZCommentsViewController.h */,
 				57990E1E18FD7FBA00AAA9C4 /* MIZCommentsViewController.m */,
 				E6C0ED6B18F470A8006402B5 /* MIZSignUpViewController.h */,
@@ -275,8 +280,8 @@
 				E6C0ED7218F4719E006402B5 /* MIZMapViewController.m */,
 				E6C0ED8518F50094006402B5 /* MIZAddPostViewController.m */,
 				E6C0ED8418F50094006402B5 /* MIZAddPostViewController.h */,
-				E66B6AA41910726700097833 /* MIZRegisterViewController.h */,
-				E66B6AA51910726700097833 /* MIZRegisterViewController.m */,
+				57D25FCE19117AFC009FE0E4 /* MIZPostViewController.h */,
+				57D25FCF19117AFC009FE0E4 /* MIZPostViewController.m */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -450,17 +455,18 @@
 				853D3FAD190F405B00CE49CD /* MIZGregorianDateComponents.m in Sources */,
 				E6E5F6A418E397A70001FBAF /* MIZFeedTableViewController.m in Sources */,
 				E6C0ED7F18F4BAF2006402B5 /* MIZPocketNavigationController.m in Sources */,
+				57A067801913281B00459AF2 /* MIZRegisterViewController.m in Sources */,
 				57990E1F18FD7FBA00AAA9C4 /* MIZCommentsViewController.m in Sources */,
 				E6C0ED7018F470FB006402B5 /* MIZPostTableViewController.m in Sources */,
 				57B9CF28190EB8E300813028 /* MIZPostFetch.m in Sources */,
 				E6C0ED7918F4BAB5006402B5 /* MIZMeNavigationViewController.m in Sources */,
 				57990E27190D6FFF00AAA9C4 /* UIView+FormScroll.m in Sources */,
 				E6C0ED6D18F470A8006402B5 /* MIZSignUpViewController.m in Sources */,
-				E66B6AA61910726700097833 /* MIZRegisterViewController.m in Sources */,
 				857B46B31912BDD70097EF9D /* MIZFavorite.m in Sources */,
 				E6C0ED8318F4F974006402B5 /* MIZTabViewController.m in Sources */,
 				E6C0ED7618F4BA8F006402B5 /* MIZFeedNavigationViewController.m in Sources */,
 				E6E5F6A918EB40360001FBAF /* MIZMeViewController.m in Sources */,
+				57D25FD019117AFC009FE0E4 /* MIZPostViewController.m in Sources */,
 				E6C0ED8618F50094006402B5 /* MIZAddPostViewController.m in Sources */,
 				E6C0ED7318F4719E006402B5 /* MIZMapViewController.m in Sources */,
 				852350B6190887E30002C0C5 /* MIZAuthentication.m in Sources */,
