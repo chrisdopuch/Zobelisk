@@ -14,7 +14,7 @@
 {
     [aCoder encodeObject:self.email forKey:@"emai"];
     [aCoder encodeObject:self.date forKey:@"timestamp"];
-    [aCoder encodeObject:self.title forKey:@"title"];
+    [aCoder encodeObject:self.postTitle forKey:@"title"];
     [aCoder encodeObject:self.content forKey:@"body_text"];
     [aCoder encodeObject:self.eventDate forKey:@"event_date"];
     [aCoder encodeObject:self.media forKey:@"media"];
@@ -27,7 +27,7 @@
     if (self) {
         self.email = [aDecoder decodeObjectForKey:@"email"];
         self.date = [aDecoder decodeObjectForKey:@"timestamp"];
-        self.title = [aDecoder decodeObjectForKey:@"title"];
+        self.postTitle = [aDecoder decodeObjectForKey:@"title"];
         self.content = [aDecoder decodeObjectForKey:@"body_text"];
         self.eventDate = [aDecoder decodeObjectForKey:@"event_date"];
         self.media = [aDecoder decodeObjectForKey:@"media"];

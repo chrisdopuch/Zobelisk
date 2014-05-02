@@ -8,11 +8,13 @@
 
 #import "MIZFeedTableViewController.h"
 #import "MIZAuthentication.h"
+#import "MIZPostViewController.h"
 
 
 @interface MIZFeedTableViewController () <UISearchBarDelegate>
 @property (nonatomic, strong)UIGestureRecognizer *tapGestureRecognizer;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
+@property (nonatomic, strong) MIZPost *selectedPost;
 
 @end
 
@@ -135,6 +137,9 @@ static NSString *cellIdentifier = @"Cell";
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
++ (UIFont *)customCellFont {
+    return [UIFont systemFontOfSize:17];
+}
 
 #pragma mark - TableView Data Source
 
@@ -143,18 +148,20 @@ static NSString *cellIdentifier = @"Cell";
 
     MIZPostFeedCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
+    
     MIZPost *post = self.post[self.post.count - indexPath.row-1];
     
     
     cell.email.text = post.email;
     cell.date.text = post.date;
-    cell.title.text = post.title;
+    cell.postTitle.text = post.postTitle;
     cell.body.text = post.content;
     
-  
-    
+    cell.body.numberOfLines = 0;
+
     return cell;
 }
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -171,6 +178,23 @@ static NSString *cellIdentifier = @"Cell";
     return [NSString stringWithFormat:@"Posts"];
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.selectedPost = self.post[self.post.count - indexPath.row-1];
+      [self performSegueWithIdentifier:@"FeedToPost" sender:self];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MIZPost *post = self.post[self.post.count - indexPath.row-1];
+    MIZPostFeedCellTableViewCell *cell = (MIZPostFeedCellTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"Cell"];
+
+    CGSize labelSize = CGSizeZero;
+    CGRect boundingRect = [post.content boundingRectWithSize:CGSizeMake(self.tableView.frame.size.width - 40, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:[cell.body.attributedText attributesAtIndex:0 effectiveRange:NULL] context:nil];
+    labelSize = boundingRect.size;
+    
+    return boundingRect.size.height+120.0f;
+}
 
 #pragma mark - Table view data source
 
@@ -226,10 +250,6 @@ static NSString *cellIdentifier = @"Cell";
 }
 */
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    return 150;
-}
 
 #pragma mark - Navigation
 
@@ -245,7 +265,11 @@ static NSString *cellIdentifier = @"Cell";
         MIZAddPostViewController* AddPostViewController = [navigationController viewControllers][0];
         AddPostViewController.delegate = self;
     }
-    
+    if([segue.identifier isEqualToString:@"FeedToPost"])
+    {
+        MIZPostViewController *select = segue.destinationViewController;
+        select.post = self.selectedPost;
+    }
 }
 
 @end

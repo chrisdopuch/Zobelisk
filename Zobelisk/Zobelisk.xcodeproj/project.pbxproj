@@ -14,6 +14,7 @@
 		57B9CF28190EB8E300813028 /* MIZPostFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B9CF27190EB8E300813028 /* MIZPostFetch.m */; };
 		57B9CF2B190EB96400813028 /* MIZPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B9CF2A190EB96400813028 /* MIZPost.m */; };
 		57B9CF2E190EE94600813028 /* MIZPostFeedCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B9CF2D190EE94600813028 /* MIZPostFeedCellTableViewCell.m */; };
+		57D25FD019117AFC009FE0E4 /* MIZPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57D25FCF19117AFC009FE0E4 /* MIZPostViewController.m */; };
 		57EE0E1018F75DF5003F0293 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57EE0E0F18F75DF5003F0293 /* MapKit.framework */; };
 		852350B6190887E30002C0C5 /* MIZAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 852350B5190887E30002C0C5 /* MIZAuthentication.m */; };
 		853D3FAD190F405B00CE49CD /* MIZGregorianDateComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 853D3FAC190F405B00CE49CD /* MIZGregorianDateComponents.m */; };
@@ -67,6 +68,8 @@
 		57B9CF2A190EB96400813028 /* MIZPost.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIZPost.m; sourceTree = "<group>"; };
 		57B9CF2C190EE94600813028 /* MIZPostFeedCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIZPostFeedCellTableViewCell.h; sourceTree = "<group>"; };
 		57B9CF2D190EE94600813028 /* MIZPostFeedCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIZPostFeedCellTableViewCell.m; sourceTree = "<group>"; };
+		57D25FCE19117AFC009FE0E4 /* MIZPostViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIZPostViewController.h; sourceTree = "<group>"; };
+		57D25FCF19117AFC009FE0E4 /* MIZPostViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIZPostViewController.m; sourceTree = "<group>"; };
 		57EE0E0F18F75DF5003F0293 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		852350B4190887E30002C0C5 /* MIZAuthentication.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZAuthentication.h; path = Model/MIZAuthentication.h; sourceTree = "<group>"; };
 		852350B5190887E30002C0C5 /* MIZAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZAuthentication.m; path = Model/MIZAuthentication.m; sourceTree = "<group>"; };
@@ -260,6 +263,8 @@
 				E6C0ED7218F4719E006402B5 /* MIZMapViewController.m */,
 				E6C0ED8518F50094006402B5 /* MIZAddPostViewController.m */,
 				E6C0ED8418F50094006402B5 /* MIZAddPostViewController.h */,
+				57D25FCE19117AFC009FE0E4 /* MIZPostViewController.h */,
+				57D25FCF19117AFC009FE0E4 /* MIZPostViewController.m */,
 			);
 			name = "View Controller";
 			sourceTree = "<group>";
@@ -441,6 +446,7 @@
 				E6C0ED8318F4F974006402B5 /* MIZTabViewController.m in Sources */,
 				E6C0ED7618F4BA8F006402B5 /* MIZFeedNavigationViewController.m in Sources */,
 				E6E5F6A918EB40360001FBAF /* MIZMeViewController.m in Sources */,
+				57D25FD019117AFC009FE0E4 /* MIZPostViewController.m in Sources */,
 				E6C0ED8618F50094006402B5 /* MIZAddPostViewController.m in Sources */,
 				E6C0ED7318F4719E006402B5 /* MIZMapViewController.m in Sources */,
 				852350B6190887E30002C0C5 /* MIZAuthentication.m in Sources */,

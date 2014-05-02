@@ -11,7 +11,7 @@
 
 @implementation MIZPostFetch
 
-/*+ (void) createPost:(NSString *)title atBeacon:(short)beaconId withBody:(NSString *)body forEventOn:(NSString *)day duringMonth:(NSString *)month andYear:(NSString *)year taggedWithList:(NSString *)taglist{
++ (void) createPost:(NSString *)title atBeacon:(short)beaconId withBody:(NSString *)body forEventOn:(NSString *)day duringMonth:(NSString *)month andYear:(NSString *)year taggedWithList:(NSString *)taglist{
     
     NSURLSessionConfiguration* config = [NSURLSessionConfiguration defaultSessionConfiguration];
 
@@ -77,7 +77,7 @@
     //resumes the Datarequest.
     [dataRequest resume];
     
-}*/
+}
 
 + (void)fetchPost
 {
@@ -111,10 +111,11 @@
         MIZPost *post = [[MIZPost alloc] init];
         post.email = dictionary[@"email"];
         post.date = dictionary[@"timestamp"];
-        post.title = dictionary[@"title"];
+        post.postTitle = dictionary[@"title"];
         post.content = dictionary[@"body_text"];
         post.eventDate = dictionary[@"event_date"];
         post.media = dictionary[@"media"];
+        
         if (dictionary[@"likes"] == [NSNull null]) {
             post.likes = 0;
         }

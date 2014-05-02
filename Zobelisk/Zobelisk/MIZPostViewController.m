@@ -1,23 +1,15 @@
 //
-//  MIZPostTableViewController.m
+//  MIZPostViewController.m
 //  Zobelisk
 //
-//  Created by Clifford Green on 4/8/14.
+//  Created by Victor Tran on 4/30/14.
 //  Copyright (c) 2014 Mizzou IT. All rights reserved.
 //
 
-#import "MIZPostTableViewController.h"
+#import "MIZPostViewController.h"
 #import "MIZPostFeedCellTableViewCell.h"
 
-@interface MIZPostTableViewController ()<UISearchBarDelegate>
-
-@property (nonatomic, strong) UIRefreshControl *refreshControl;
-
-@end
-
-@implementation MIZPostTableViewController
-
-#pragma mark - Actions
+@implementation MIZPostViewController
 
 - (void)viewDidLoad
 {
@@ -27,13 +19,27 @@
     
     self.navigationItem.rightBarButtonItem = addPost;
     
-   
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+     //self.body.numberOfLines = 0;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        self.email.text = self.post.email;
+        self.date.text = self.post.date;
+        self.postTitle.text = self.post.postTitle;
+        self.body.text = self.post.content;
+    }];
 }
+
+/*- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MIZPost *post = self.post[self.post.count - indexPath.row-1];
+    MIZPostFeedCellTableViewCell *cell = (MIZPostFeedCellTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    
+    CGSize labelSize = CGSizeZero;
+    CGRect boundingRect = [post.content boundingRectWithSize:CGSizeMake(self.tableView.frame.size.width - 40, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:[cell.body.attributedText attributesAtIndex:0 effectiveRange:NULL] context:nil];
+    labelSize = boundingRect.size;
+    
+    return boundingRect.size.height+120.0f;
+}*/
 
 - (void)MIZAddPostViewControllerDidCancel:(MIZAddPostViewController *)controller
 {
@@ -64,5 +70,14 @@
     // Pass the selected object to the new view controller.
 }
 
+
+/*
+// Only override drawRect: if you perform custom drawing.
+// An empty implementation adversely affects performance during animation.
+- (void)drawRect:(CGRect)rect
+{
+    // Drawing code
+}
+*/
 
 @end
