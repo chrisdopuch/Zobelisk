@@ -131,6 +131,11 @@
     
 }
 
++ (void) logout
+{
+    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"email"];
+}
+
 - (BOOL) verifyLogin{
     NSString *storedEmail = [[NSUserDefaults standardUserDefaults] stringForKey:@"email"];
     if(storedEmail != nil){
