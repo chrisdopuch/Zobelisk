@@ -7,6 +7,7 @@
 //
 
 #import "MIZPostFetch.h"
+#import "MIZGregorianDateComponents.h"
 
 @implementation MIZPostFetch
 
@@ -78,9 +79,10 @@
     
 }
 
-+ (void)fetchPost
++ (void)fetchPostforBeacon:(int)id
 {
-    NSString *urlString = @"http://zobelisk-backend.herokuapp.com/posts.json";
+    NSString *urlString = [NSString stringWithFormat:@"%@%d%@", @"http://zobelisk-backend.herokuapp.com/posts?beacon=", id, @".json"];
+    //NSString *urlString = @"http://zobelisk-backend.herokuapp.com/posts.json";
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLSession *session = [NSURLSession sharedSession];
     [[session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
