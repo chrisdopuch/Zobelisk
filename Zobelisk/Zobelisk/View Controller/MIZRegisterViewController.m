@@ -8,6 +8,7 @@
 
 #import "MIZRegisterViewController.h"
 
+
 @interface MIZRegisterViewController ()
 
 @end
@@ -164,8 +165,12 @@
 
 //Sign up button pressed
 - (IBAction)signUp:(UIButton *)sender {
+    
+    
     //adds new entries into registration object
     [self.registrationObject addEntriesFromDictionary:@{@"address":self.addressTextField.text,@"twitterHandle":self.twitterHandleTextField.text, @"phone":self.phoneTextField.text}];
+    
+    [MIZAuthentication registerUser:self.registrationObject];
     
     [self dismissViewControllerAnimated:YES completion:^
      {

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MIZAuthentication.h"
 
 @interface MIZRegisterViewController : UIViewController
 @property (strong, nonatomic) NSMutableDictionary* registrationObject;
