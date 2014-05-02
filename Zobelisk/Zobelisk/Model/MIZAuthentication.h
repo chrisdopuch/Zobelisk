@@ -10,7 +10,7 @@
 
 @interface MIZAuthentication : NSObject
 
-+ (void) registerEmail:(NSString*)email withPassword:(NSString*)password confirmationPassword:(NSString*)password_confirmation firstName:(NSString*)fName lastName:(NSString*)lname dateOfBirth:(NSDate*)dob address:(NSString*)loc twitter:(NSString*)twiterHandle andPhonenumber:(NSString*)number;
++ (void) registerUser:(NSMutableDictionary*)user;
 
 + (void) registerEmail:(NSString*)email withPassword:(NSString*)password andConfirmationPassword:(NSString*)password_confirmation;
 
