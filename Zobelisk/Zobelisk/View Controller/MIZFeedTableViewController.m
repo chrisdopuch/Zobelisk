@@ -63,7 +63,7 @@ static NSString *cellIdentifier = @"Cell";
     
     MIZAuthentication *authenticator = [MIZAuthentication new];
     BOOL isLoggedIn = [authenticator verifyLogin];
-    if (isLoggedIn == NO){
+    if (isLoggedIn == YES){
         [self performSegueWithIdentifier:@"SignUpSegue" sender:self];
     }
     
