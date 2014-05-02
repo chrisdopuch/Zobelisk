@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MIZRegisterViewController.h"
 
 @interface MIZSignUpViewController : UIViewController
 @property (weak, nonatomic) IBOutlet UITextField *passwordField;

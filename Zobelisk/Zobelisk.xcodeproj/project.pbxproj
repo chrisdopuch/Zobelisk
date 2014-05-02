@@ -18,6 +18,8 @@
 		57EE0E1018F75DF5003F0293 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57EE0E0F18F75DF5003F0293 /* MapKit.framework */; };
 		852350B6190887E30002C0C5 /* MIZAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 852350B5190887E30002C0C5 /* MIZAuthentication.m */; };
 		853D3FAD190F405B00CE49CD /* MIZGregorianDateComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 853D3FAC190F405B00CE49CD /* MIZGregorianDateComponents.m */; };
+		857B46B31912BDD70097EF9D /* MIZFavorite.m in Sources */ = {isa = PBXBuildFile; fileRef = 857B46B21912BDD70097EF9D /* MIZFavorite.m */; };
+		E66B6AA61910726700097833 /* MIZRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E66B6AA51910726700097833 /* MIZRegisterViewController.m */; };
 		E6C0ED6718F46FF3006402B5 /* MIZPocketTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C0ED6618F46FF3006402B5 /* MIZPocketTableViewController.m */; };
 		E6C0ED6D18F470A8006402B5 /* MIZSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C0ED6C18F470A8006402B5 /* MIZSignUpViewController.m */; };
 		E6C0ED7018F470FB006402B5 /* MIZPostTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C0ED6F18F470FB006402B5 /* MIZPostTableViewController.m */; };
@@ -75,6 +77,10 @@
 		852350B5190887E30002C0C5 /* MIZAuthentication.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZAuthentication.m; path = Model/MIZAuthentication.m; sourceTree = "<group>"; };
 		853D3FAB190F405B00CE49CD /* MIZGregorianDateComponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZGregorianDateComponents.h; path = Model/MIZGregorianDateComponents.h; sourceTree = "<group>"; };
 		853D3FAC190F405B00CE49CD /* MIZGregorianDateComponents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZGregorianDateComponents.m; path = Model/MIZGregorianDateComponents.m; sourceTree = "<group>"; };
+		857B46B11912BDD70097EF9D /* MIZFavorite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZFavorite.h; path = Model/MIZFavorite.h; sourceTree = "<group>"; };
+		857B46B21912BDD70097EF9D /* MIZFavorite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZFavorite.m; path = Model/MIZFavorite.m; sourceTree = "<group>"; };
+		E66B6AA41910726700097833 /* MIZRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZRegisterViewController.h; path = "View Controller/MIZRegisterViewController.h"; sourceTree = "<group>"; };
+		E66B6AA51910726700097833 /* MIZRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZRegisterViewController.m; path = "View Controller/MIZRegisterViewController.m"; sourceTree = "<group>"; };
 		E6C0ED6518F46FF3006402B5 /* MIZPocketTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZPocketTableViewController.h; path = "View Controller/MIZPocketTableViewController.h"; sourceTree = "<group>"; };
 		E6C0ED6618F46FF3006402B5 /* MIZPocketTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZPocketTableViewController.m; path = "View Controller/MIZPocketTableViewController.m"; sourceTree = "<group>"; };
 		E6C0ED6B18F470A8006402B5 /* MIZSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZSignUpViewController.h; path = "View Controller/MIZSignUpViewController.h"; sourceTree = "<group>"; };
@@ -159,6 +165,15 @@
 				57B9CF27190EB8E300813028 /* MIZPostFetch.m */,
 			);
 			name = Fetching;
+			sourceTree = "<group>";
+		};
+		857B46B41912C00B0097EF9D /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				853D3FAC190F405B00CE49CD /* MIZGregorianDateComponents.m */,
+				853D3FAB190F405B00CE49CD /* MIZGregorianDateComponents.h */,
+			);
+			name = Helper;
 			sourceTree = "<group>";
 		};
 		E6C0ED8018F4F8FF006402B5 /* Tab Bar View Controller */ = {
@@ -286,8 +301,9 @@
 				57B9CF25190EB8CA00813028 /* Fetching */,
 				852350B4190887E30002C0C5 /* MIZAuthentication.h */,
 				852350B5190887E30002C0C5 /* MIZAuthentication.m */,
-				853D3FAB190F405B00CE49CD /* MIZGregorianDateComponents.h */,
-				853D3FAC190F405B00CE49CD /* MIZGregorianDateComponents.m */,
+				857B46B41912C00B0097EF9D /* Helper */,
+				857B46B11912BDD70097EF9D /* MIZFavorite.h */,
+				857B46B21912BDD70097EF9D /* MIZFavorite.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -443,6 +459,8 @@
 				E6C0ED7918F4BAB5006402B5 /* MIZMeNavigationViewController.m in Sources */,
 				57990E27190D6FFF00AAA9C4 /* UIView+FormScroll.m in Sources */,
 				E6C0ED6D18F470A8006402B5 /* MIZSignUpViewController.m in Sources */,
+				E66B6AA61910726700097833 /* MIZRegisterViewController.m in Sources */,
+				857B46B31912BDD70097EF9D /* MIZFavorite.m in Sources */,
 				E6C0ED8318F4F974006402B5 /* MIZTabViewController.m in Sources */,
 				E6C0ED7618F4BA8F006402B5 /* MIZFeedNavigationViewController.m in Sources */,
 				E6E5F6A918EB40360001FBAF /* MIZMeViewController.m in Sources */,

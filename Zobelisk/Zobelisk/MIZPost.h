@@ -18,4 +18,8 @@
 @property (nonatomic, strong) NSString *media;
 @property (nonatomic) NSInteger likes;
 
+
++ (void) createPost:(NSString *)title atBeacon:(short)beaconId withBody:(NSString *)body forEventOn:(NSString *)day duringMonth:(NSString *)month andYear:(NSString *)year taggedWithList:(NSString *)taglist;
+
++ (void) favoritePost:(int)postId;
 @end
