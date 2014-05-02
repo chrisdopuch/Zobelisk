@@ -11,6 +11,6 @@
 
 @interface MIZPostFetch : NSObject
 
-+ (void)fetchPost;
++ (void)fetchPostforBeacon(int)id;
 
 @end
