@@ -25,7 +25,7 @@
         
         
         //converts url into a string
-        NSString* urlString = @"http://zobelisk-backend.herokuapp.com/users.json";
+        NSString* urlString = @"http://zobelisk-backend.herokuapp.com/users";
         
         //converts string into URL var
         NSURL *restURL = [NSURL URLWithString:urlString];
@@ -41,6 +41,7 @@
         [user setObject:[userProfile objectForKey:@"twitter"] forKey:@"twitter"];
         
         [form setObject:@"✓" forKey:@"utf8"];
+        [form setObject:@"put" forKey:@"_method"];
         [form setObject:userProfile forKey:@"user"];
         [form setObject:@"Sign up" forKey:@"commit"];
         
@@ -63,7 +64,7 @@
             
             
             NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
-                    
+            
         }];
         
         //resumes the Datarequest.
