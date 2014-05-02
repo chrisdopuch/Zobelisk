@@ -68,7 +68,6 @@
  [post setObject:taglist forKey:@"tag_list"];
  
  
- 
  [form setObject:@"✓" forKey:@"utf8"];
  [form setObject:post forKey:@"post"];
  [form setObject:@"Sign up" forKey:@"commit"];
@@ -95,8 +94,7 @@
  
  if(error == nil )
  {
- NSLog(@"post");
- 
+     NSLog(@"post");
  }
  }];
  
@@ -104,5 +102,51 @@
  [dataRequest resume];
  
  }
+
++ (void) favoritePost:(int)postId
+{
+    
+    NSURLSessionConfiguration* config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    
+    NSString *urlString = @"http://zobelisk-backend.herokuapp.com/favorites";
+    NSURL *restURL = [NSURL URLWithString:urlString];
+
+    NSMutableDictionary *favorite = [[NSMutableDictionary alloc] init];
+    [favorite setObject: [NSNumber numberWithInt:postId] forKey:@"favorable_id"];
+    [favorite setObject: @"post" forKey:@"favorable_type"];
+    
+    NSMutableDictionary *form = [[NSMutableDictionary alloc]init];
+    [form setObject:favorite forKey:@"favorite"];
+    [form setObject:@"✓" forKey:@"utf8"];
+    [form setObject:@"Create Favorite" forKey:@"commit"];
+    
+    NSData* requestData = [NSJSONSerialization dataWithJSONObject:form options:0 error:nil];
+    
+    //sets up URL session using config
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
+    
+    //sets up URL request with POST method to url
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:restURL];
+    [request setHTTPMethod:@"POST"];
+    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setHTTPBody:requestData];
+    
+    //Data task request sent to server
+    NSURLSessionDataTask *dataRequest = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        
+        NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        
+        if(error == nil )
+        {
+            NSLog(@"post");
+        }
+    }];
+    
+    //resumes the Datarequest.
+    [dataRequest resume];
+}
 
 @end
