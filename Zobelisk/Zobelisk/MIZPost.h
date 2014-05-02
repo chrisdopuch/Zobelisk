@@ -16,6 +16,11 @@
 @property (nonatomic, strong) NSString *content;
 @property (nonatomic, strong) NSString *eventDate;
 @property (nonatomic, strong) NSString *media;
+
+@property (nonatomic, strong) NSString *firstName;
+@property (nonatomic, strong) NSString *lastName;
+@property (nonatomic, strong) NSString *phone;
+@property (nonatomic, strong) NSString *twitter;
 @property (nonatomic) NSInteger likes;
 
 

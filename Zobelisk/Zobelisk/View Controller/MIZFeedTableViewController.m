@@ -15,8 +15,11 @@
 @property (nonatomic, strong)UIGestureRecognizer *tapGestureRecognizer;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (nonatomic, strong) MIZPost *selectedPost;
-
+@property (strong, nonatomic) CLBeaconRegion *beaconRegion;
+@property (strong, nonatomic) NSDictionary *beaconPeripheralData;
+@property (strong, nonatomic) CBPeripheralManager *peripheralManager;
 @end
+
 
 
 @implementation MIZFeedTableViewController
@@ -63,7 +66,7 @@ static NSString *cellIdentifier = @"Cell";
     
     MIZAuthentication *authenticator = [MIZAuthentication new];
     BOOL isLoggedIn = [authenticator verifyLogin];
-    if (isLoggedIn == NO){
+    if (isLoggedIn == YES){
         [self performSegueWithIdentifier:@"SignUpSegue" sender:self];
     }
     

@@ -8,6 +8,7 @@
 
 #import "MIZFeedNavigationViewController.h"
 
+
 @interface MIZFeedNavigationViewController () <UISearchBarDelegate>
 @property (strong, nonatomic) UIGestureRecognizer *viewTap;
 @end

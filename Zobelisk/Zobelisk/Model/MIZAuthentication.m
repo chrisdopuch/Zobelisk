@@ -141,7 +141,6 @@
     NSString *storedEmail = [[NSUserDefaults standardUserDefaults] stringForKey:@"email"];
     if(storedEmail != nil){
         NSLog(@"%@", storedEmail);
-        storedEmail = nil;
         return YES;
     }
     else{

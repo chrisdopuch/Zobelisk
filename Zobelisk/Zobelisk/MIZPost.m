@@ -20,6 +20,12 @@
     [aCoder encodeObject:self.eventDate forKey:@"event_date"];
     [aCoder encodeObject:self.media forKey:@"media"];
     [aCoder encodeInteger:self.likes forKey:@"likes"];
+    
+     [aCoder encodeObject:self.firstName forKey:@"first_name"];
+     [aCoder encodeObject:self.lastName forKey:@"last_name"];
+     [aCoder encodeObject:self.phone forKey:@"phone"];
+     [aCoder encodeObject:self.twitter forKey:@"twitter"];
+    
 }
 
 - (id)initWithCoder:(NSCoder *)aDecoder
@@ -33,9 +39,15 @@
         self.eventDate = [aDecoder decodeObjectForKey:@"event_date"];
         self.media = [aDecoder decodeObjectForKey:@"media"];
         self.likes = [aDecoder decodeIntegerForKey:@"likes"];
+        
+        self.firstName= [aDecoder decodeObjectForKey:@"first_name"];
+        self.lastName = [aDecoder decodeObjectForKey:@"last_name"];
+        self.phone = [aDecoder decodeObjectForKey:@"phone"];
+        self.phone = [aDecoder decodeObjectForKey:@"twitter"];
     }
     return self;
 }
+
 
 + (void) createPost:(NSString *)title atBeacon:(short)beaconId withBody:(NSString *)body forEventOn:(NSString *)day duringMonth:(NSString *)month andYear:(NSString *)year taggedWithList:(NSString *)taglist{
  

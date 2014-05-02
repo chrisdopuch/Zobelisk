@@ -8,7 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "MIZAddPostViewController.h"
+#import"MIZPostFetch.h"
 
 @interface MIZMeViewController : UIViewController <MIZAddPostViewControllerDelegate>
+
+@property (nonatomic, weak) IBOutlet UILabel *firstName;
+@property (nonatomic, weak) IBOutlet UILabel *lastName;
+@property (nonatomic, weak) IBOutlet UILabel *email;
+@property (nonatomic, weak) IBOutlet UILabel *phone;
+@property (nonatomic, weak) IBOutlet UILabel *twitter;
 
 @end

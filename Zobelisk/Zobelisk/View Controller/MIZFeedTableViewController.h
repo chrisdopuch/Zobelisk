@@ -10,6 +10,8 @@
 #import "MIZAddPostViewController.h"
 #import"MIZPostFetch.h"
 #import "MIZPostFeedCellTableViewCell.h"
+#import <CoreLocation/CoreLocation.h>
+#import <CoreBluetooth/CoreBluetooth.h>
 
 
 @interface MIZFeedTableViewController: UITableViewController <MIZAddPostViewControllerDelegate>

@@ -7,6 +7,10 @@
 //
 
 #import "MIZMeViewController.h"
+#import "MIZAuthentication.h"
+
+
+
 //#import "MIZMyProfileView.h"
 
 @interface MIZMeViewController ()
@@ -32,7 +36,19 @@
     //creates add button object on right of nav bar
     UIBarButtonItem *addPost = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addPostButtonTapped:)];
     self.navigationItem.rightBarButtonItem = addPost;
+    
+        
+        MIZPost *user;
+        
+        
+        self.firstName.text = user.firstName;
+       self.lastName.text = user.lastName;
+        self.email.text = user.email;
+        self.twitter.text = user.twitter;
+    self.phone.text = user.phone;
+    
 }
+
 
 - (void)MIZAddPostViewControllerDidCancel:(MIZAddPostViewController *)controller
 {
