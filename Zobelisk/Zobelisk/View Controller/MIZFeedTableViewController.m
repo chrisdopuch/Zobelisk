@@ -28,7 +28,7 @@ static NSString *cellIdentifier = @"Cell";
     // Get data
     [self.refreshControl beginRefreshing];
     [self.tableView setContentOffset:CGPointMake(0.0f, -60.0f)];
-    [MIZPostFetch fetchPost];
+    //[MIZPostFetch fetchPost];
 }
 
 #pragma mark - Notification handling
@@ -63,7 +63,7 @@ static NSString *cellIdentifier = @"Cell";
     
     MIZAuthentication *authenticator = [MIZAuthentication new];
     BOOL isLoggedIn = [authenticator verifyLogin];
-    if (isLoggedIn == YES){
+    if (isLoggedIn == NO){
         [self performSegueWithIdentifier:@"SignUpSegue" sender:self];
     }
     
