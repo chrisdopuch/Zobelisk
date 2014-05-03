@@ -42,9 +42,7 @@ NSDate *selectedDate;
     self.datePicker = [[UIDatePicker alloc] initWithFrame:CGRectZero];
     [self.datePicker setDate:[NSDate dateWithTimeIntervalSinceNow:0] animated:true ];
 
-    [self.setDate setInputView:self.datePicker];
- 
-   
+    [self.expDate setInputView:self.datePicker];
     
     [self.datePicker addTarget:self action:@selector(updateLabelFromPicker) forControlEvents:UIControlEventValueChanged];
 
@@ -63,6 +61,8 @@ NSDate *selectedDate;
     //scale image
     self.selectedImageView.contentMode = UIViewContentModeScaleAspectFit;
 }
+
+
 -(void)updateLabelFromPicker
 {
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
@@ -99,8 +99,8 @@ NSDate *selectedDate;
     if ([self.description isFirstResponder] && [touch view] != self.description) {
         [self.description resignFirstResponder];
     }
-    else if  ([self.setDate isFirstResponder] && [touch view] != self.setDate) {
-        [_setDate resignFirstResponder];
+    else if  ([self.expDate isFirstResponder] && [touch view] != self.expDate) {
+        [self.expDate resignFirstResponder];
     }
     else if  ([self.postTitle isFirstResponder] && [touch view] != self.postTitle) {
         [self.postTitle resignFirstResponder];
@@ -112,6 +112,12 @@ NSDate *selectedDate;
     [super touchesBegan:touches withEvent:event];
 }
 
+
+- (IBAction)createPost:(UIButton *)sender {
+    //Create post dictionary object 
+    NSDictionary* postInfo = [[NSDictionary alloc] initWithObjectsAndKeys:self.postTitle.text, @"title",self.description.text, @"description", self.expDate.text, @"expiration_date", self.selectedImageView, @"image", nil];
+    
+}
 
 -(void) choosePhotoBtn:(id)sender {
     self.picker = [[UIImagePickerController alloc] init];
