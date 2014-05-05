@@ -18,4 +18,6 @@
 @property (nonatomic, weak) IBOutlet UILabel *phone;
 @property (nonatomic, weak) IBOutlet UILabel *twitter;
 
+@property (nonatomic, strong) NSArray *users;
+
 @end

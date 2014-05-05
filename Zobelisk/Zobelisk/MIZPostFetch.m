@@ -97,6 +97,7 @@
 }*/
 + (void)fetchPost
 {
+    NSLog(@"Here");
     NSString *urlString = @"http://zobelisk-backend.herokuapp.com/posts.json";
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLSession *session = [NSURLSession sharedSession];
@@ -109,7 +110,7 @@
         }
     }] resume];
 }
-
+//grab list of posts for the backend
 + (void)processPostListFromData:(NSData *)data
 {
     NSMutableArray *posts = [[NSMutableArray alloc] init];
@@ -153,17 +154,19 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"MIZPostFinishedProcessing" object:nil userInfo:@{@"post": posts}];
 }
 
+//grab a specifi users information from the backend
 + (void)fetchUser
 {
+
     NSString *urlString = @"http://zobelisk-backend.herokuapp.com/get_user.json";
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLSession *session = [NSURLSession sharedSession];
     [[session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
         if (httpResponse.statusCode == 200) {
-            [MIZPostFetch processPostListFromData:data];
+            [MIZPostFetch processUsersListFromData:data];
         } else {
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"MIZPostFetchFailed" object:nil userInfo:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"MIZUserFetchFailed" object:nil userInfo:nil];
         }
     }] resume];
 }

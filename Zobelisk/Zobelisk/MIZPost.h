@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MIZPost : UIViewController
+//creating variables to be read in by the app
 
 @property (nonatomic, strong) NSString *email;
 @property (nonatomic, strong) NSString *date;

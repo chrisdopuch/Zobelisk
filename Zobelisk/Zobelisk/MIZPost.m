@@ -10,9 +10,11 @@
 #import "MIZGregorianDateComponents.h"
 
 @implementation MIZPost
+//ecoding and decoding variables read in the JSON file
 
 - (void)encodeWithCoder:(NSCoder *)aCoder
 {
+    
     [aCoder encodeObject:self.email forKey:@"emai"];
     [aCoder encodeObject:self.date forKey:@"timestamp"];
     [aCoder encodeObject:self.postTitle forKey:@"title"];
@@ -21,10 +23,10 @@
     [aCoder encodeObject:self.media forKey:@"media"];
     [aCoder encodeInteger:self.likes forKey:@"likes"];
     
-     [aCoder encodeObject:self.firstName forKey:@"first_name"];
-     [aCoder encodeObject:self.lastName forKey:@"last_name"];
-     [aCoder encodeObject:self.phone forKey:@"phone"];
-     [aCoder encodeObject:self.twitter forKey:@"twitter"];
+    [aCoder encodeObject:self.firstName forKey:@"first_name"];
+    [aCoder encodeObject:self.lastName forKey:@"last_name"];
+    [aCoder encodeObject:self.phone forKey:@"phone"];
+    [aCoder encodeObject:self.twitter forKey:@"twitter"];
     
 }
 
@@ -43,10 +45,11 @@
         self.firstName= [aDecoder decodeObjectForKey:@"first_name"];
         self.lastName = [aDecoder decodeObjectForKey:@"last_name"];
         self.phone = [aDecoder decodeObjectForKey:@"phone"];
-        self.phone = [aDecoder decodeObjectForKey:@"twitter"];
+        self.twitter = [aDecoder decodeObjectForKey:@"twitter"];
     }
     return self;
 }
+//creating post at a specific iBeacon
 
 
 + (void) createPost:(NSString *)title atBeacon:(short)beaconId withBody:(NSString *)body forEventOn:(NSString *)day duringMonth:(NSString *)month andYear:(NSString *)year taggedWithList:(NSString *)taglist{
@@ -114,6 +117,7 @@
  [dataRequest resume];
  
  }
+//pocket post function
 
 + (void) favoritePost:(int)postId
 {

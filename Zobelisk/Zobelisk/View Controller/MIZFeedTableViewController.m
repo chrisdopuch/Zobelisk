@@ -15,6 +15,7 @@
 @property (nonatomic, strong)UIGestureRecognizer *tapGestureRecognizer;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (nonatomic, strong) MIZPost *selectedPost;
+
 @property (strong, nonatomic) CLBeaconRegion *beaconRegion;
 @property (strong, nonatomic) NSDictionary *beaconPeripheralData;
 @property (strong, nonatomic) CBPeripheralManager *peripheralManager;
@@ -31,7 +32,7 @@ static NSString *cellIdentifier = @"Cell";
     // Get data
     [self.refreshControl beginRefreshing];
     [self.tableView setContentOffset:CGPointMake(0.0f, -60.0f)];
-    //[MIZPostFetch fetchPost];
+    [MIZPostFetch fetchPost];
 }
 
 #pragma mark - Notification handling
@@ -66,9 +67,10 @@ static NSString *cellIdentifier = @"Cell";
     
     MIZAuthentication *authenticator = [MIZAuthentication new];
     BOOL isLoggedIn = [authenticator verifyLogin];
-    if (isLoggedIn == YES){
+    if (isLoggedIn == NO){
         [self performSegueWithIdentifier:@"SignUpSegue" sender:self];
     }
+    
     
     UIBarButtonItem *addPost = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addPostButtonTapped:)];
     self.navigationItem.rightBarButtonItem = addPost;
@@ -101,6 +103,7 @@ static NSString *cellIdentifier = @"Cell";
     [self.tableView reloadData];
     
     [self refresh];
+    
     
 }
 
@@ -148,6 +151,7 @@ static NSString *cellIdentifier = @"Cell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
 
     MIZPostFeedCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     
