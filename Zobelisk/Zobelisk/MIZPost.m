@@ -52,7 +52,8 @@
 //creating post at a specific iBeacon
 
 
-+ (void) createPost:(NSString *)title atBeacon:(short)beaconId withBody:(NSString *)body forEventOn:(NSString *)day duringMonth:(NSString *)month andYear:(NSString *)year taggedWithList:(NSString *)taglist{
++ (void) createPost:(NSString *)title atBeacon:(short)beaconId withBody:(NSString *)body forEventOn:(NSString *)day duringMonth:(NSString *)month andYear:(NSString *)year taggedWithList:(NSString *)taglist
+{
  
  NSURLSessionConfiguration* config = [NSURLSessionConfiguration defaultSessionConfiguration];
  
@@ -126,7 +127,6 @@
     
     NSString *urlString = @"http://zobelisk-backend.herokuapp.com/favorites";
     NSURL *restURL = [NSURL URLWithString:urlString];
-
     NSMutableDictionary *favorite = [[NSMutableDictionary alloc] init];
     [favorite setObject: [NSNumber numberWithInt:postId] forKey:@"favorable_id"];
     [favorite setObject: @"post" forKey:@"favorable_type"];
@@ -157,7 +157,7 @@
         
         if(error == nil )
         {
-            NSLog(@"post");
+            //NSLog(@"post");
         }
     }];
     
