@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MIZFeedNavigationViewController : UINavigationController
+@interface MIZFeedNavigationViewController : UINavigationController;
 
 
 

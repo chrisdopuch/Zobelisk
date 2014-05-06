@@ -12,6 +12,8 @@
 		57990E241905741000AAA9C4 /* placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 57990E231905741000AAA9C4 /* placeholder.png */; };
 		57990E27190D6FFF00AAA9C4 /* UIView+FormScroll.m in Sources */ = {isa = PBXBuildFile; fileRef = 57990E26190D6FFF00AAA9C4 /* UIView+FormScroll.m */; };
 		57A067801913281B00459AF2 /* MIZRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A0677F1913281B00459AF2 /* MIZRegisterViewController.m */; };
+		57A067821913340500459AF2 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A067811913340500459AF2 /* CoreBluetooth.framework */; };
+		57A067841913340E00459AF2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A067831913340E00459AF2 /* CoreLocation.framework */; };
 		57B9CF28190EB8E300813028 /* MIZPostFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B9CF27190EB8E300813028 /* MIZPostFetch.m */; };
 		57B9CF2B190EB96400813028 /* MIZPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B9CF2A190EB96400813028 /* MIZPost.m */; };
 		57B9CF2E190EE94600813028 /* MIZPostFeedCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B9CF2D190EE94600813028 /* MIZPostFeedCellTableViewCell.m */; };
@@ -66,6 +68,8 @@
 		57990E26190D6FFF00AAA9C4 /* UIView+FormScroll.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+FormScroll.m"; sourceTree = "<group>"; };
 		57A0677E1913281B00459AF2 /* MIZRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZRegisterViewController.h; path = "View Controller/MIZRegisterViewController.h"; sourceTree = "<group>"; };
 		57A0677F1913281B00459AF2 /* MIZRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZRegisterViewController.m; path = "View Controller/MIZRegisterViewController.m"; sourceTree = "<group>"; };
+		57A067811913340500459AF2 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		57A067831913340E00459AF2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		57B9CF26190EB8E300813028 /* MIZPostFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIZPostFetch.h; sourceTree = "<group>"; };
 		57B9CF27190EB8E300813028 /* MIZPostFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIZPostFetch.m; sourceTree = "<group>"; };
 		57B9CF29190EB96400813028 /* MIZPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIZPost.h; sourceTree = "<group>"; };
@@ -129,6 +133,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57A067841913340E00459AF2 /* CoreLocation.framework in Frameworks */,
+				57A067821913340500459AF2 /* CoreBluetooth.framework in Frameworks */,
 				57EE0E1018F75DF5003F0293 /* MapKit.framework in Frameworks */,
 				E6E5F66618E350A90001FBAF /* CoreGraphics.framework in Frameworks */,
 				E6E5F66818E350A90001FBAF /* UIKit.framework in Frameworks */,
@@ -207,6 +213,8 @@
 		E6E5F66218E350A90001FBAF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				57A067831913340E00459AF2 /* CoreLocation.framework */,
+				57A067811913340500459AF2 /* CoreBluetooth.framework */,
 				57EE0E0F18F75DF5003F0293 /* MapKit.framework */,
 				E6E5F66318E350A90001FBAF /* Foundation.framework */,
 				E6E5F66518E350A90001FBAF /* CoreGraphics.framework */,

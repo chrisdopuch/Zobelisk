@@ -141,7 +141,6 @@
     NSString *storedEmail = [[NSUserDefaults standardUserDefaults] stringForKey:@"email"];
     if(storedEmail != nil){
         NSLog(@"%@", storedEmail);
-        storedEmail = nil;
         return YES;
     }
     else{
@@ -154,9 +153,8 @@
 {
     
 }
-/*+ (void) loginWithEmail:(NSString*)email withPassword:(NSString*)password
++ (void) loginWithEmail:(NSString*)email withPassword:(NSString*)password
 {
     //NSString* urlString = @"http://zobelisk-backend.herokuapp.com/users/sign_in";
 }
-*/
 @end

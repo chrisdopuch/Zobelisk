@@ -80,9 +80,9 @@
     
 }
 
-+ (void)fetchPostforBeacon:(int)id
+/*+ (void)fetchPostforBeacon:(int)id
 {
-    NSString *urlString = [NSString stringWithFormat:@"%@%d", @"http://zobelisk-backend.herokuapp.com/posts.json?beacon=", id];
+    NSString *urlString = [NSString stringWithFormat:@"%@%d", @"http://zobelisk-backend.herokuapp.com/posts.json?beacon_id=", id];
     //NSString *urlString = @"http://zobelisk-backend.herokuapp.com/posts.json";
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLSession *session = [NSURLSession sharedSession];
@@ -94,9 +94,23 @@
             [[NSNotificationCenter defaultCenter] postNotificationName:@"MIZPostFetchFailed" object:nil userInfo:nil];
         }
     }] resume];
+}*/
++ (void)fetchPost
+{
+    NSLog(@"Here");
+    NSString *urlString = @"http://zobelisk-backend.herokuapp.com/posts.json";
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSURLSession *session = [NSURLSession sharedSession];
+    [[session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+        if (httpResponse.statusCode == 200) {
+            [MIZPostFetch processPostListFromData:data];
+        } else {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"MIZPostFetchFailed" object:nil userInfo:nil];
+        }
+    }] resume];
 }
-
-
+//grab list of posts for the backend
 + (void)processPostListFromData:(NSData *)data
 {
     NSMutableArray *posts = [[NSMutableArray alloc] init];
@@ -140,17 +154,19 @@
     [[NSNotificationCenter defaultCenter] postNotificationName:@"MIZPostFinishedProcessing" object:nil userInfo:@{@"post": posts}];
 }
 
-/*+ (void)fetchUser
+//grab a specifi users information from the backend
++ (void)fetchUser
 {
-    NSString *urlString = @"http://zobelisk-backend.herokuapp.com/users.json";
+
+    NSString *urlString = @"http://zobelisk-backend.herokuapp.com/get_user.json";
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLSession *session = [NSURLSession sharedSession];
     [[session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
         if (httpResponse.statusCode == 200) {
-            [MIZPostFetch processPostListFromData:data];
+            [MIZPostFetch processUsersListFromData:data];
         } else {
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"MIZPostFetchFailed" object:nil userInfo:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"MIZUserFetchFailed" object:nil userInfo:nil];
         }
     }] resume];
 }
@@ -169,34 +185,25 @@
     NSLog(@"Success?");
     //    NSArray *postDictionaries = postDictionary[@"posts"];
     for (NSDictionary *dictionary in postArray) {
-        MIZPost *post = [[MIZPost alloc] init];
-        post.email = dictionary[@"email"];
-        post.firstName = dictionary[@"timestamp"];
-        post.postTitle = dictionary[@"title"];
-        post.content = dictionary[@"body_text"];
-        post.eventDate = dictionary[@"event_date"];
-        post.media = dictionary[@"media"];
+        MIZPost *user = [[MIZPost alloc] init];
+        user.email = dictionary[@"email"];
+        user.firstName = dictionary[@"first_name"];
+        user.lastName = dictionary[@"last_name"];
+       user.phone = dictionary[@"phone"];
+        user.twitter = dictionary[@"twitter"];
         
-        if (dictionary[@"likes"] == [NSNull null]) {
-            post.likes = 0;
-        }
-        else
-        {
-            post.likes = [dictionary[@"likes"] integerValue];
-        }
-        // post.likes = [dictionary[@"likes"] integerValue];
-        [posts addObject:post];
+        [users addObject: user];
     }
     NSLog(@"Success");
     
     NSString* path = [NSSearchPathForDirectoriesInDomains(
                                                           NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     
-    path = [path stringByAppendingPathComponent:@"posts.miz"];
-    [NSKeyedArchiver archiveRootObject:posts toFile:path];
+    path = [path stringByAppendingPathComponent:@"users.miz"];
+    [NSKeyedArchiver archiveRootObject:users toFile:path];
     
     // send out a notification that processing is complete.
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"MIZPostFinishedProcessing" object:nil userInfo:@{@"post": posts}];
-}*/
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"MIZPostFinishedProcessing" object:nil userInfo:@{@"user": users}];
+}
 
 @end
