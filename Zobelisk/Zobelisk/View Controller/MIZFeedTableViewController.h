@@ -14,11 +14,12 @@
 #import <CoreBluetooth/CoreBluetooth.h>
 
 
-@interface MIZFeedTableViewController: UITableViewController <MIZAddPostViewControllerDelegate>
+@interface MIZFeedTableViewController: UITableViewController <MIZAddPostViewControllerDelegate, CLLocationManagerDelegate>
 
 @property (weak, nonatomic) IBOutlet UISearchBar *search;
+@property (weak, nonatomic) IBOutlet UIButton *pocket;
+- (IBAction)pocket:(UIButton *)sender;
 
 @property (nonatomic, strong) NSArray *post;
-
 
 @end

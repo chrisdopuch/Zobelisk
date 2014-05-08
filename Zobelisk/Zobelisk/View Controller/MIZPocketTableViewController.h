@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "MIZAddPostViewController.h"
+#import"MIZPostFetch.h"
+#import "MIZPocketTableViewCell.h"
+
 
 @interface MIZPocketTableViewController : UITableViewController <MIZAddPostViewControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UISearchBar *search;
+@property (nonatomic, strong) NSArray *post;
 
 @end

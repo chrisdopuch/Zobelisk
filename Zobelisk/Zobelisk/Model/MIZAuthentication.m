@@ -33,12 +33,12 @@
         NSMutableDictionary *form = [[NSMutableDictionary alloc] init];
         NSMutableDictionary *user = [[NSMutableDictionary alloc] init];
         
-        [user setObject:[userProfile objectForKey:@"email"] forKey:@"email"];
-        [user setObject:[userProfile objectForKey:@"password"] forKey:@"current_password"];
-        [user setObject:[userProfile objectForKey:@"first name"] forKey:@"first_name"];
-        [user setObject:[userProfile objectForKey:@"last name"] forKey:@"last_name"];
-        [user setObject:[userProfile objectForKey:@"address"] forKey:@"address"];
-        [user setObject:[userProfile objectForKey:@"twitterHandle"] forKey:@"twitter"];
+        /*[userProfile setObject:[userProfile objectForKey:@"email"] forKey:@"email"];
+        [userProfile  setObject:[userProfile objectForKey:@"password"] forKey:@"current_password"];
+        [userProfile  setObject:[userProfile objectForKey:@"first name"] forKey:@"first_name"];
+        [userProfile  setObject:[userProfile objectForKey:@"last name"] forKey:@"last_name"];
+        [userProfile  setObject:[userProfile objectForKey:@"address"] forKey:@"address"];
+        [userProfile  setObject:[userProfile objectForKey:@"twitterHandle"] forKey:@"twitter"];*/
         
         [form setObject:@"✓" forKey:@"utf8"];
         [form setObject:@"put" forKey:@"_method"];
@@ -91,7 +91,6 @@
     [user setObject:email forKey:@"email"];
     [user setObject:password forKey:@"password"];
     [user setObject:password_confirmation forKey:@"password_confirmation"];
-    
     
     
     [paw setObject:@"✓" forKey:@"utf8"];

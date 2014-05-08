@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSString *content;
 @property (nonatomic, strong) NSString *eventDate;
 @property (nonatomic, strong) NSString *media;
+@property (nonatomic) NSInteger postID;
 
 @property (nonatomic, strong) NSString *firstName;
 @property (nonatomic, strong) NSString *lastName;
@@ -27,5 +28,5 @@
 
 + (void) createPost:(NSString *)title atBeacon:(short)beaconId withBody:(NSString *)body forEventOn:(NSString *)day duringMonth:(NSString *)month andYear:(NSString *)year taggedWithList:(NSString *)taglist;
 
-+ (void) favoritePost:(int)postId;
+- (void) favoritePost:(int)postId;
 @end

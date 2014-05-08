@@ -22,6 +22,7 @@
     [aCoder encodeObject:self.eventDate forKey:@"event_date"];
     [aCoder encodeObject:self.media forKey:@"media"];
     [aCoder encodeInteger:self.likes forKey:@"likes"];
+    [aCoder encodeInteger:(self.postID) forKey:@"post_id"];
     
     [aCoder encodeObject:self.firstName forKey:@"first_name"];
     [aCoder encodeObject:self.lastName forKey:@"last_name"];
@@ -41,6 +42,7 @@
         self.eventDate = [aDecoder decodeObjectForKey:@"event_date"];
         self.media = [aDecoder decodeObjectForKey:@"media"];
         self.likes = [aDecoder decodeIntegerForKey:@"likes"];
+        self.postID = [aDecoder decodeIntegerForKey:@"post_id"];
         
         self.firstName= [aDecoder decodeObjectForKey:@"first_name"];
         self.lastName = [aDecoder decodeObjectForKey:@"last_name"];
@@ -117,14 +119,15 @@
  [dataRequest resume];
  
  }
+
 //pocket post function
 
-+ (void) favoritePost:(int)postId
+- (void) favoritePost:(int)postId
 {
     
     NSURLSessionConfiguration* config = [NSURLSessionConfiguration defaultSessionConfiguration];
     
-    NSString *urlString = @"http://zobelisk-backend.herokuapp.com/favorites";
+    NSString *urlString = @"http://zobelisk-backend.herokuapp.com/favorites.json";
     NSURL *restURL = [NSURL URLWithString:urlString];
 
     NSMutableDictionary *favorite = [[NSMutableDictionary alloc] init];
@@ -152,7 +155,7 @@
     //Data task request sent to server
     NSURLSessionDataTask *dataRequest = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         
-        
+        NSLog(@"%@", response);
         NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
         
         if(error == nil )
