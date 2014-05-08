@@ -52,7 +52,7 @@
 //creating post at a specific iBeacon
 
 
-+ (void) createPost:(NSString *)title atBeacon:(short)beaconId withBody:(NSString *)body forEventOn:(NSString *)day duringMonth:(NSString *)month andYear:(NSString *)year taggedWithList:(NSString *)taglist
++ (void) createPost:(NSDictionary*)obj onBeacon:(int)beacon//(NSString *)title atBeacon:(short)beaconId withBody:(NSString *)body forEventOn:(NSString *)day duringMonth:(NSString *)month andYear:(NSString *)year taggedWithList:(NSString *)taglist
 {
  
  NSURLSessionConfiguration* config = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -64,24 +64,24 @@
  NSMutableDictionary *post = [[NSMutableDictionary alloc] init];
  NSMutableDictionary *form = [[NSMutableDictionary alloc] init];
  
- NSString* email = [[NSUserDefaults standardUserDefaults] objectForKey:@"email"];
- NSDate* currentDate = [[NSDate alloc] init];
+ //NSString* email = [[NSUserDefaults standardUserDefaults] objectForKey:@"email"];
+// NSDate* currentDate = [[NSDate alloc] init];
  NSCalendar* calendar = [NSCalendar currentCalendar];
- NSDateComponents* components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:currentDate];
- [post setObject: [NSNumber numberWithInt:beaconId ] forKey:@"beacon_id"];
- [post setObject: email forKey:@"email"];
+ NSDateComponents* components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:[obj objectForKey:@"expiration_date"]];
+ [post setObject: [NSNumber numberWithInt:beacon ] forKey:@"beacon_id"];
+ [post setObject: [obj objectForKey:@"email"] forKey:@"email"];
  [post setObject:[MIZGregorianDateComponents getYear] forKey:@"timestamp(1i)"];
  [post setObject:[MIZGregorianDateComponents getMonth] forKey:@"timestamp(2i)"];
  [post setObject:[MIZGregorianDateComponents getDay] forKey:@"timestamp(3i)"];
  [post setObject:[MIZGregorianDateComponents getHour] forKey:@"timestamp(4i)"];
  [post setObject:[MIZGregorianDateComponents getMinute] forKey:@"timestamp(5i)"];
  [post setObject:[NSNumber numberWithInt:0] forKey: @"likes"];
- [post setObject:title forKey:@"title"];
- [post setObject:year forKey:@"event_date(1i)"];
- [post setObject:month forKey:@"event_date(2i)"];
- [post setObject:day forKey:@"day"];
- [post setObject:body forKey:@"body_text"];
- [post setObject:taglist forKey:@"tag_list"];
+ [post setObject:[obj objectForKey:@"title"] forKey:@"title"];
+ [post setObject: [NSNumber numberWithInt:[components year]] forKey:@"event_date(1i)"];
+ [post setObject:[NSNumber numberWithInt:[components month]] forKey:@"event_date(2i)"];
+ [post setObject:[NSNumber numberWithInt:[components day]] forKey:@"day"];
+ [post setObject:[obj objectForKey:@"description"] forKey:@"body_text"];
+ //[post setObject: forKey:@"tag_list"];
  
  
  [form setObject:@"✓" forKey:@"utf8"];
