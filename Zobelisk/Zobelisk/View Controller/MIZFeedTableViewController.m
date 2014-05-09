@@ -342,7 +342,7 @@ static NSString *cellIdentifier = @"Cell";
     UITableViewCell *buttonCell = (UITableViewCell *) [sender superview];
     
     NSIndexPath *indexPath = [self.tableView indexPathForCell:buttonCell];
-    MIZPost *favoritedPost = self.post[indexPath.row];
+    MIZPost *favoritedPost = self.post[1];
     [favoritedPost favoritePost:favoritedPost.postID];
 }
 
