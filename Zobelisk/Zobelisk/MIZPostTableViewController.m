@@ -30,6 +30,7 @@
     //create add post button
     self.navigationItem.rightBarButtonItem = addPost;
     self.navigationItem.leftBarButtonItem = infoButton;
+    
    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

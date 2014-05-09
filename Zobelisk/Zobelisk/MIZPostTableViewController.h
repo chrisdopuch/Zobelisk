@@ -10,6 +10,7 @@
 #import "MIZAddPostViewController.h"
 
 
+
 @interface MIZPostTableViewController : UITableViewController <MIZAddPostViewControllerDelegate>
 
 

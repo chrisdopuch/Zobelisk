@@ -11,6 +11,13 @@
 @interface MIZAddPostViewController () <UITextViewDelegate>
 @property (nonatomic, strong) UIImagePickerController *picker;
 @property (nonatomic, strong) UIDatePicker *datePicker;
+@property (strong, nonatomic) CLBeaconRegion *beaconRegionOne;
+@property (strong, nonatomic) CLBeaconRegion *beaconRegionTwo;
+@property (strong, nonatomic) CLBeaconRegion *beaconRegionThree;
+@property (strong, nonatomic) CLLocationManager *locationManager;
+@property (strong, nonatomic) NSDictionary *beaconPeripheralData;
+@property (strong, nonatomic) CBPeripheralManager *peripheralManager;
+
 
 
 @end
@@ -60,7 +67,94 @@ NSDate *selectedDate;
    // [self.datePicker addTarget:self action:@selector(selectedDate) forControlEvents:UIControlEventValueChanged]; //no.2
     //scale image
     self.selectedImageView.contentMode = UIViewContentModeScaleAspectFit;
+    
+     [self initRegion];
 }
+- (void)initRegion
+{
+    NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"];
+    self.beaconRegionOne =[[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:@"beacon"];
+    self.beaconRegionTwo =[[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:@"beacon"];
+    self.beaconRegionThree =[[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:@"beacon"];
+    
+    
+    [self.locationManager startRangingBeaconsInRegion:self.beaconRegionOne];
+    [self.locationManager startRangingBeaconsInRegion:self.beaconRegionTwo];
+    [self.locationManager startRangingBeaconsInRegion:self.beaconRegionThree];
+}
+
+- (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region
+{
+    
+    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+    localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:1];
+    localNotification.alertBody = @"You are in range of a Zobelisk!";
+    localNotification.timeZone = [NSTimeZone defaultTimeZone];
+    [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    
+    
+    
+}
+
+-(void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
+{
+    
+    CLBeacon *beacon = [beacons lastObject];
+    NSArray *beaconMinors = @[@(19829), @(47986), @(44032)];
+    
+    if (beacon.proximity == CLProximityImmediate && self.range == NO){
+        if([beaconMinors containsObject:beacon.minor]) {
+            NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+            NSString* email = [[NSString alloc] init];
+            
+            email = [userDefaults objectForKey:@"email"];
+            
+            NSDictionary* postInfo = [[NSDictionary alloc] initWithObjectsAndKeys:self.postTitle.text, @"title",self.description.text, @"description", self.expDate.text, @"expiration_date", self.selectedImageView, @"image", email, @"email", nil];
+            [MIZPost createPost:postInfo onBeacon:beacon.minor];
+            self.range = YES;
+        }
+    }
+    else if (beacon.proximity == CLProximityNear && self.range == NO){
+        if([beaconMinors containsObject:beacon.minor]) {
+            NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+            NSString* email = [[NSString alloc] init];
+            
+            email = [userDefaults objectForKey:@"email"];
+            
+            NSDictionary* postInfo = [[NSDictionary alloc] initWithObjectsAndKeys:self.postTitle.text, @"title",self.description.text, @"description", self.expDate.text, @"expiration_date", self.selectedImageView, @"image", email, @"email", nil];
+            [MIZPost createPost:postInfo onBeacon:beacon.minor];
+            self.range = YES;
+
+        }
+    }
+    else if (beacon.proximity == CLProximityFar&& self.range == NO){
+        if([beaconMinors containsObject:beacon.minor]) {
+            NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+            NSString* email = [[NSString alloc] init];
+            
+            email = [userDefaults objectForKey:@"email"];
+            
+            NSDictionary* postInfo = [[NSDictionary alloc] initWithObjectsAndKeys:self.postTitle.text, @"title",self.description.text, @"description", self.expDate.text, @"expiration_date", self.selectedImageView, @"image", email, @"email", nil];
+            [MIZPost createPost:postInfo onBeacon:beacon.minor];
+            self.range = YES;
+
+        }
+    }
+    else if (beacon.proximity == CLProximityUnknown && self.range == NO){
+        if([beaconMinors containsObject:beacon.minor]) {
+            NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+            NSString* email = [[NSString alloc] init];
+            
+            email = [userDefaults objectForKey:@"email"];
+            
+            NSDictionary* postInfo = [[NSDictionary alloc] initWithObjectsAndKeys:self.postTitle.text, @"title",self.description.text, @"description", self.expDate.text, @"expiration_date", self.selectedImageView, @"image", email, @"email", nil];
+            [MIZPost createPost:postInfo onBeacon:beacon.minor];
+            self.range = YES;
+
+        }
+    }
+}
+
 
 
 -(void)updateLabelFromPicker
@@ -116,13 +210,7 @@ NSDate *selectedDate;
 - (IBAction)createPost:(UIButton *)sender {
     //Create post dictionary object
     
-     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSString* email = [[NSString alloc] init];
-    
-    email = [userDefaults objectForKey:@"email"];
-    
-    NSDictionary* postInfo = [[NSDictionary alloc] initWithObjectsAndKeys:self.postTitle.text, @"title",self.description.text, @"description", self.expDate.text, @"expiration_date", self.selectedImageView, @"image", email, @"email", nil];
-    //[MIZPost createPost:postInfo onBeacon:<#(int)#>];
+    [self locationManager];
     
 }
 
