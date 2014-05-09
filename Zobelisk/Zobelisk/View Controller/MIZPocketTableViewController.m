@@ -26,7 +26,7 @@ static NSString *cellIdentifier = @"Cell";
     // Get data
     [self.refreshControl beginRefreshing];
     [self.tableView setContentOffset:CGPointMake(0.0f, -60.0f)];
-    [MIZPostFetch fetchPost];
+    [MIZPostFetch fetchPostFavorite];
 }
 
 #pragma mark - Notification handling
@@ -41,17 +41,6 @@ static NSString *cellIdentifier = @"Cell";
         [self.refreshControl endRefreshing];
     }];
     
-}
-
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-     
-    }
-    return self;
 }
 
 

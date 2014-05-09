@@ -97,6 +97,21 @@
     }] resume];
 }
 
++ (void)fetchPostFavorite
+{
+    NSString *urlString = @"http://zobelisk-backend.herokuapp.com/favorited.json";
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSURLSession *session = [NSURLSession sharedSession];
+    [[session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *)response;
+        if (httpResponse.statusCode == 200) {
+            [MIZPostFetch processPostListFromData:data];
+        } else {
+            [[NSNotificationCenter defaultCenter] postNotificationName:@"MIZPostFetchFailed" object:nil userInfo:nil];
+        }
+    }] resume];
+}
+
 + (void)fetchPost
 {
     NSString *urlString = @"http://zobelisk-backend.herokuapp.com/posts.json";

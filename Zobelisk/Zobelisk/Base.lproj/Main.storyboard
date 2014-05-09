@@ -177,7 +177,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Post" rowHeight="131" id="sOx-I1-EPP" customClass="MIZPocketTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" rowHeight="131" id="sOx-I1-EPP" customClass="MIZPocketTableViewCell">
                                 <rect key="frame" x="0.0" y="130" width="320" height="131"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sOx-I1-EPP" id="itU-so-GOV">
@@ -1232,7 +1232,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="GRj-5l-xn9"/>
         <segue reference="RsC-aX-Hso"/>
+        <segue reference="GpZ-uI-90N"/>
     </inferredMetricsTieBreakers>
 </document>
