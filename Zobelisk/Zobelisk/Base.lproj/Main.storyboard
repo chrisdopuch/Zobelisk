@@ -857,39 +857,104 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fB-be-btf">
-                                <rect key="frame" x="44" y="76" width="42" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Designers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fB-be-btf">
+                                <rect key="frame" x="44" y="97" width="89" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="8zN-Sb-lrD"/>
+                                    <constraint firstAttribute="width" constant="89" id="DpQ-Mc-vMb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-ItalicMT" family="Times New Roman" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s7H-IQ-fn9">
-                                <rect key="frame" x="44" y="143" width="42" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Abigail Krauch" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s7H-IQ-fn9">
+                                <rect key="frame" x="44" y="129" width="134" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="134" id="f4t-dj-uvj"/>
+                                    <constraint firstAttribute="height" constant="21" id="mec-sE-LkO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="20"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaN-7H-qcl">
-                                <rect key="frame" x="44" y="196" width="42" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caitlin Holland" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaN-7H-qcl">
+                                <rect key="frame" x="44" y="158" width="166" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="NrC-Ls-s1o"/>
+                                    <constraint firstAttribute="width" constant="166" id="mxp-9f-ynN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="20"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFC-gc-9hE">
-                                <rect key="frame" x="44" y="251" width="42" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Developers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xFC-gc-9hE">
+                                <rect key="frame" x="44" y="238" width="106" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="ZoJ-zj-t0J"/>
+                                    <constraint firstAttribute="width" constant="106" id="hC1-kQ-DSQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPSMT" family="Times New Roman" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmw-gs-NNf">
-                                <rect key="frame" x="44" y="323" width="42" height="21"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Clifford Green" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kmw-gs-NNf">
+                                <rect key="frame" x="44" y="273" width="147" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="66W-hg-5oH"/>
+                                    <constraint firstAttribute="width" constant="147" id="xr9-KQ-yks"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldItalicMT" family="Times New Roman" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Christopher Dopuch" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXx-sH-zNq">
+                                <rect key="frame" x="44" y="304" width="192" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Lbv-2d-0dx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldItalicMT" family="Times New Roman" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Seth Wiesman" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ov3-hO-Srw">
+                                <rect key="frame" x="44" y="338" width="134" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="dCh-RZ-pdX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldItalicMT" family="Times New Roman" pointSize="20"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Victor Tran" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7os-Hl-fhp">
+                                <rect key="frame" x="44" y="367" width="106" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldItalicMT" family="Times New Roman" pointSize="20"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ov3-hO-Srw" firstAttribute="leading" secondItem="7os-Hl-fhp" secondAttribute="leading" id="03X-Y8-2ez"/>
+                            <constraint firstItem="s7H-IQ-fn9" firstAttribute="top" secondItem="3fB-be-btf" secondAttribute="bottom" constant="11" id="2Gf-Ss-DuI"/>
+                            <constraint firstItem="kmw-gs-NNf" firstAttribute="leading" secondItem="xFC-gc-9hE" secondAttribute="leading" id="6HK-yf-t7z"/>
+                            <constraint firstItem="s7H-IQ-fn9" firstAttribute="leading" secondItem="3fB-be-btf" secondAttribute="leading" id="8BY-pz-4Vx"/>
+                            <constraint firstItem="7os-Hl-fhp" firstAttribute="top" secondItem="ov3-hO-Srw" secondAttribute="bottom" constant="8" symbolic="YES" id="ASE-HA-uAx"/>
+                            <constraint firstItem="YXx-sH-zNq" firstAttribute="top" secondItem="kmw-gs-NNf" secondAttribute="bottom" constant="10" id="Hrk-uq-l0Y"/>
+                            <constraint firstItem="ov3-hO-Srw" firstAttribute="top" secondItem="YXx-sH-zNq" secondAttribute="bottom" constant="13" id="HsA-rw-U1t"/>
+                            <constraint firstItem="xFC-gc-9hE" firstAttribute="leading" secondItem="VaN-7H-qcl" secondAttribute="leading" id="JHQ-YB-o5p"/>
+                            <constraint firstAttribute="trailing" secondItem="YXx-sH-zNq" secondAttribute="trailing" constant="84" id="K95-jg-pfr"/>
+                            <constraint firstItem="YXx-sH-zNq" firstAttribute="leading" secondItem="ov3-hO-Srw" secondAttribute="leading" id="TyM-a9-PiO"/>
+                            <constraint firstItem="ov3-hO-Srw" firstAttribute="trailing" secondItem="s7H-IQ-fn9" secondAttribute="trailing" id="WaO-VO-Ucb"/>
+                            <constraint firstItem="kmw-gs-NNf" firstAttribute="top" secondItem="xFC-gc-9hE" secondAttribute="bottom" constant="14" id="WuW-2s-jtP"/>
+                            <constraint firstItem="xFC-gc-9hE" firstAttribute="trailing" secondItem="7os-Hl-fhp" secondAttribute="trailing" id="a0V-bM-CB5"/>
+                            <constraint firstItem="3fB-be-btf" firstAttribute="top" secondItem="d7s-Z3-CfY" secondAttribute="bottom" constant="33" id="edG-en-hyb"/>
+                            <constraint firstItem="s7H-IQ-fn9" firstAttribute="leading" secondItem="VaN-7H-qcl" secondAttribute="leading" id="eue-6E-OGm"/>
+                            <constraint firstItem="3fB-be-btf" firstAttribute="leading" secondItem="tsT-O1-i7F" secondAttribute="leading" constant="44" id="nih-7x-EVI"/>
+                            <constraint firstItem="xFC-gc-9hE" firstAttribute="top" secondItem="VaN-7H-qcl" secondAttribute="bottom" constant="59" id="wX3-uU-SHp"/>
+                            <constraint firstItem="kmw-gs-NNf" firstAttribute="leading" secondItem="YXx-sH-zNq" secondAttribute="leading" id="wpf-Xw-Yqh"/>
+                            <constraint firstItem="VaN-7H-qcl" firstAttribute="top" secondItem="s7H-IQ-fn9" secondAttribute="bottom" constant="8" symbolic="YES" id="xxu-P7-Pmc"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UV5-fq-Z2R">
                         <barButtonItem key="backBarButtonItem" title="Feed" id="Zny-Jf-SCq"/>
@@ -978,6 +1043,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="commentOnPost:" destination="f6w-e0-PIc" eventType="touchUpInside" id="xV3-fI-Up4"/>
                                             <segue destination="rDe-iS-Tx2" kind="push" id="1bf-fU-SyB"/>
                                         </connections>
                                     </button>
@@ -988,6 +1054,9 @@
                                         <state key="normal" title="Pocket">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pocketPost:" destination="f6w-e0-PIc" eventType="touchUpInside" id="r3k-eg-yZ3"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H5e-pw-KAl">
                                         <rect key="frame" x="20" y="10" width="24" height="14"/>
@@ -1233,6 +1302,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="GRj-5l-xn9"/>
-        <segue reference="RsC-aX-Hso"/>
+        <segue reference="1bf-fU-SyB"/>
     </inferredMetricsTieBreakers>
 </document>

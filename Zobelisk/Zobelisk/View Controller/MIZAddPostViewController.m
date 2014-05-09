@@ -122,10 +122,11 @@ NSDate *selectedDate;
     email = [userDefaults objectForKey:@"email"];
     
     NSDictionary* postInfo = [[NSDictionary alloc] initWithObjectsAndKeys:self.postTitle.text, @"title",self.description.text, @"description", self.expDate.text, @"expiration_date", self.selectedImageView, @"image", email, @"email", nil];
+    //[MIZPost createPost:postInfo onBeacon:<#(int)#>];
     
 }
 
--(void) choosePhotoBtn:(id)sender {
+-  (void) choosePhotoBtn:(id)sender {
     self.picker = [[UIImagePickerController alloc] init];
     self.picker.delegate = self;
     //SWITCH SAVED PHOTOS TO CAMERA!!!!!!!!!

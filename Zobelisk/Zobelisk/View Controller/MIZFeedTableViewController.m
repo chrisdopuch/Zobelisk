@@ -159,11 +159,33 @@ static NSString *cellIdentifier = @"Cell";
         [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
 
 }
+-(void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
+{
+    CLBeacon *beacon = [[CLBeacon alloc] init];
+    beacon = [beacons lastObject];
+    
+    if (beacon.proximity == CLProximityNear){
+        
+        if(beacon.minor == self.beaconRegionOne.minor){
+            [MIZPostFetch fetchPost];
+            
+        }
+        else if(beacon.minor == self.beaconRegionTwo.minor){
+            
+        }
+        else if(beacon.minor == self.beaconRegionThree.minor){
+            
+        }
+    }
+}
 
 - (void)infoButtonTapped:(id)sender
 {
     [self performSegueWithIdentifier:@"feedToInfo" sender:sender];
 }
+
+
+
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {

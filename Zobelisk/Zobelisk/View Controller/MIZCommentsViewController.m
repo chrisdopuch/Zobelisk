@@ -69,6 +69,8 @@
 - (IBAction)postComment:(id)sender
 {
   //INSERT COMMENT POSTING CODE HERE!!!
+    NSDictionary* comment = [[NSDictionary alloc] initWithObjectsAndKeys:self.comment.text, @"test_body", nil];
+    
 
 }
 - (void)didReceiveMemoryWarning
