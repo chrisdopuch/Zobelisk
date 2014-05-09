@@ -168,4 +168,56 @@
     [dataRequest resume];
 }
 
+
+- (void) commentPost:(NSDictionary*) comment {
+    
+    NSURLSessionConfiguration* config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    
+    NSString *urlString = @"http://zobelisk-backend.herokuapp.com/comments.json";
+    NSURL *restURL = [NSURL URLWithString:urlString];
+    NSMutableDictionary *com = [[NSMutableDictionary alloc] init];
+    
+    [com setObject:[comment objectForKey:@"text_body"] forKey:@"text_body"];
+    [com setObject:[comment objectForKey:@"post_id"] forKey:@"post_id"];
+    [com setObject: [MIZGregorianDateComponents getYear] forKey:@"timestamp(1i)"];
+    [com setObject:[MIZGregorianDateComponents getMonth] forKey:@"timestamp(2i)"];
+    [com setObject:[MIZGregorianDateComponents getDay] forKey:@"timestamp(3i)"];
+    [com setObject:[MIZGregorianDateComponents getHour] forKey:@"timestamp(4i)"];
+    [com setObject:[MIZGregorianDateComponents getMinute] forKey:@"timestamp(5i)"];
+    
+    NSMutableDictionary *form = [[NSMutableDictionary alloc]init];
+    [form setObject:com forKey:@"comment"];
+    [form setObject:@"✓" forKey:@"utf8"];
+    [form setObject:@"Create Favorite" forKey:@"commit"];
+    
+    NSData* requestData = [NSJSONSerialization dataWithJSONObject:form options:0 error:nil];
+    
+    //sets up URL session using config
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
+    
+    //sets up URL request with POST method to url
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
+    [request setURL:restURL];
+    [request setHTTPMethod:@"POST"];
+    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request addValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    [request setHTTPBody:requestData];
+    
+    //Data task request sent to server
+    NSURLSessionDataTask *dataRequest = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        
+        NSLog(@"%@", response);
+        //NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+        
+        if(error == nil )
+        {
+            //NSLog(@"comment");
+        }
+    }];
+    
+    //resumes the Datarequest.
+    [dataRequest resume];
+}
+
+
 @end

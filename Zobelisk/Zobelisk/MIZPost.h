@@ -29,4 +29,6 @@
 + (void) createPost:(NSDictionary*)obj onBeacon:(int)beacon;//(NSString *)title atBeacon:(short)beaconId withBody:(NSString *)body forEventOn:(NSString *)day duringMonth:(NSString *)month andYear:(NSString *)year taggedWithList:(NSString *)taglist;
 
 - (void) favoritePost:(int)postId;
+
+- (void) commentPost:(NSDictionary*) comment;
 @end
