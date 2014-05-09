@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MIZPost.h"
 @class MIZAddPostViewController;
 
 @protocol MIZAddPostViewControllerDelegate <NSObject>
