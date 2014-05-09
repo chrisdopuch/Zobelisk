@@ -80,7 +80,7 @@
     
 }
 
-/*+ (void)fetchPostforBeacon:(int)id
++ (void)fetchPostforBeacon:(int)id
 {
     NSString *urlString = [NSString stringWithFormat:@"%@%d", @"http://zobelisk-backend.herokuapp.com/posts.json?beacon_id=", id];
     //NSString *urlString = @"http://zobelisk-backend.herokuapp.com/posts.json";
@@ -94,10 +94,10 @@
             [[NSNotificationCenter defaultCenter] postNotificationName:@"MIZPostFetchFailed" object:nil userInfo:nil];
         }
     }] resume];
-}*/
+}
+
 + (void)fetchPost
 {
-    NSLog(@"Here");
     NSString *urlString = @"http://zobelisk-backend.herokuapp.com/posts.json";
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLSession *session = [NSURLSession sharedSession];
@@ -110,6 +110,7 @@
         }
     }] resume];
 }
+
 //grab list of posts for the backend
 + (void)processPostListFromData:(NSData *)data
 {
@@ -131,6 +132,8 @@
         post.content = dictionary[@"body_text"];
         post.eventDate = dictionary[@"event_date"];
         post.media = dictionary[@"media"];
+        post.postID = [dictionary[@"post_id"] integerValue];
+        
         
         if (dictionary[@"likes"] == [NSNull null]) {
             post.likes = 0;

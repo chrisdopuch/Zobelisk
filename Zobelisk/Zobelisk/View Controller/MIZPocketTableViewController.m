@@ -7,13 +7,42 @@
 //
 
 #import "MIZPocketTableViewController.h"
+#import "MIZAuthentication.h"
+#import "MIZPostViewController.h"
 
 @interface MIZPocketTableViewController () <UISearchBarDelegate>
 
 @property (nonatomic, strong)UIGestureRecognizer *tapGestureRecognizer;
+@property (nonatomic, strong) MIZPost *selectedPost;
 @end
 
+
 @implementation MIZPocketTableViewController
+
+static NSString *cellIdentifier = @"Cell";
+
+- (void)refresh
+{
+    // Get data
+    [self.refreshControl beginRefreshing];
+    [self.tableView setContentOffset:CGPointMake(0.0f, -60.0f)];
+    [MIZPostFetch fetchPost];
+}
+
+#pragma mark - Notification handling
+
+- (void)respondToProcessingComplete:(NSNotification *)notification
+{
+    NSLog(@"PROCESSING COMPLETE");
+    NSDictionary *userInfo = notification.userInfo;
+    self.post = userInfo[@"post"];
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        [self.tableView reloadData];
+        [self.refreshControl endRefreshing];
+    }];
+    
+}
+
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -25,6 +54,7 @@
     return self;
 }
 
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -33,12 +63,49 @@
     
     self.navigationItem.rightBarButtonItem = addPost;
         self.search.delegate = self;
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    // Register the view controller to listen for notifications
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(respondToProcessingComplete:) name:@"MIZPostFinishedProcessing" object:nil];
+    
+    // Tell the refresh control to stop
+    [[NSNotificationCenter defaultCenter] addObserverForName:@"MIZPostFetchingFailed" object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
+        [self.refreshControl endRefreshing];
+    }];
+    // Pull to refresh
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
+    [self.tableView insertSubview:self.refreshControl atIndex:0];
+    
+    // Unarchive saved episodes
+    NSString* path = [NSSearchPathForDirectoriesInDomains(
+                                                          NSLibraryDirectory, NSUserDomainMask, YES) objectAtIndex:0];
+    path = [path stringByAppendingPathComponent:@"favorite.miz"];
+    self.post = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
+    [self.tableView reloadData];
+    
+    [self refresh];
+
+
 }
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    MIZPocketTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    
+    
+    MIZPost *post = self.post[indexPath.row];
+    
+    cell.email.text = post.email;
+    cell.date.text = post.date;
+    cell.postTitle.text = post.postTitle;
+    cell.body.text = post.content;
+    
+    cell.body.numberOfLines = 0;
+    
+    return cell;
+}
+
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
@@ -129,6 +196,39 @@
     return YES;
 }
 */
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.post.count;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    return [NSString stringWithFormat:@"Posts"];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    self.selectedPost = self.post[self.post.count - indexPath.row-1];
+    [self performSegueWithIdentifier:@"FeedToPost" sender:self];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    MIZPost *post = self.post[self.post.count - indexPath.row-1];
+    MIZPocketTableViewCell *cell = (MIZPocketTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"Cell"];
+    
+    CGSize labelSize = CGSizeZero;
+    CGRect boundingRect = [post.content boundingRectWithSize:CGSizeMake(self.tableView.frame.size.width - 40, MAXFLOAT) options:NSStringDrawingUsesLineFragmentOrigin attributes:[cell.body.attributedText attributesAtIndex:0 effectiveRange:NULL] context:nil];
+    labelSize = boundingRect.size;
+    
+    return boundingRect.size.height+120.0f;
+}
+
 
 
 #pragma mark - Navigation
@@ -146,6 +246,11 @@
         //Goes to first view controller in navigation stack
         MIZAddPostViewController* AddPostViewController = [navigationController viewControllers][0];
         AddPostViewController.delegate = self;
+    }
+    if([segue.identifier isEqualToString:@"FeedToPost"])
+    {
+        MIZPostViewController *select = segue.destinationViewController;
+        select.post = self.selectedPost;
     }
     
 }

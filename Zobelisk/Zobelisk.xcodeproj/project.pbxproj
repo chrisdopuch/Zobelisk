@@ -14,6 +14,7 @@
 		57A067801913281B00459AF2 /* MIZRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A0677F1913281B00459AF2 /* MIZRegisterViewController.m */; };
 		57A067821913340500459AF2 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A067811913340500459AF2 /* CoreBluetooth.framework */; };
 		57A067841913340E00459AF2 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57A067831913340E00459AF2 /* CoreLocation.framework */; };
+		57A06787191AD2C100459AF2 /* MIZPocketTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57A06786191AD2C100459AF2 /* MIZPocketTableViewCell.m */; };
 		57B9CF28190EB8E300813028 /* MIZPostFetch.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B9CF27190EB8E300813028 /* MIZPostFetch.m */; };
 		57B9CF2B190EB96400813028 /* MIZPost.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B9CF2A190EB96400813028 /* MIZPost.m */; };
 		57B9CF2E190EE94600813028 /* MIZPostFeedCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 57B9CF2D190EE94600813028 /* MIZPostFeedCellTableViewCell.m */; };
@@ -71,6 +72,8 @@
 		57A0677F1913281B00459AF2 /* MIZRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZRegisterViewController.m; path = "View Controller/MIZRegisterViewController.m"; sourceTree = "<group>"; };
 		57A067811913340500459AF2 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
 		57A067831913340E00459AF2 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		57A06785191AD2C100459AF2 /* MIZPocketTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIZPocketTableViewCell.h; sourceTree = "<group>"; };
+		57A06786191AD2C100459AF2 /* MIZPocketTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIZPocketTableViewCell.m; sourceTree = "<group>"; };
 		57B9CF26190EB8E300813028 /* MIZPostFetch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIZPostFetch.h; sourceTree = "<group>"; };
 		57B9CF27190EB8E300813028 /* MIZPostFetch.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIZPostFetch.m; sourceTree = "<group>"; };
 		57B9CF29190EB96400813028 /* MIZPost.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIZPost.h; sourceTree = "<group>"; };
@@ -304,6 +307,8 @@
 			children = (
 				57B9CF2C190EE94600813028 /* MIZPostFeedCellTableViewCell.h */,
 				57B9CF2D190EE94600813028 /* MIZPostFeedCellTableViewCell.m */,
+				57A06785191AD2C100459AF2 /* MIZPocketTableViewCell.h */,
+				57A06786191AD2C100459AF2 /* MIZPocketTableViewCell.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -463,6 +468,7 @@
 				E6E5F67018E350A90001FBAF /* main.m in Sources */,
 				57B9CF2B190EB96400813028 /* MIZPost.m in Sources */,
 				E6E5F67418E350A90001FBAF /* MIZAppDelegate.m in Sources */,
+				57A06787191AD2C100459AF2 /* MIZPocketTableViewCell.m in Sources */,
 				57B9CF2E190EE94600813028 /* MIZPostFeedCellTableViewCell.m in Sources */,
 				E6C0ED6718F46FF3006402B5 /* MIZPocketTableViewController.m in Sources */,
 				853D3FAD190F405B00CE49CD /* MIZGregorianDateComponents.m in Sources */,

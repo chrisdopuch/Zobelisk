@@ -11,14 +11,19 @@
 #import "MIZPostViewController.h"
 
 
-@interface MIZFeedTableViewController () <UISearchBarDelegate>
+@interface MIZFeedTableViewController () <UISearchBarDelegate, CBPeripheralManagerDelegate>
+
 @property (nonatomic, strong)UIGestureRecognizer *tapGestureRecognizer;
 @property (nonatomic, strong) UIRefreshControl *refreshControl;
 @property (nonatomic, strong) MIZPost *selectedPost;
 
-@property (strong, nonatomic) CLBeaconRegion *beaconRegion;
+@property (strong, nonatomic) CLBeaconRegion *beaconRegionOne;
+@property (strong, nonatomic) CLBeaconRegion *beaconRegionTwo;
+@property (strong, nonatomic) CLBeaconRegion *beaconRegionThree;
+@property (strong, nonatomic) CLLocationManager *locationManager;
 @property (strong, nonatomic) NSDictionary *beaconPeripheralData;
 @property (strong, nonatomic) CBPeripheralManager *peripheralManager;
+
 @end
 
 
@@ -71,6 +76,9 @@ static NSString *cellIdentifier = @"Cell";
         [self performSegueWithIdentifier:@"SignUpSegue" sender:self];
     }
     
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    [self initRegion];
     
     UIBarButtonItem *addPost = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addPostButtonTapped:)];
     UIButton* infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
@@ -95,7 +103,6 @@ static NSString *cellIdentifier = @"Cell";
     [[NSNotificationCenter defaultCenter] addObserverForName:@"MIZPostFetchingFailed" object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
         [self.refreshControl endRefreshing];
     }];
-    
     // Pull to refresh
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
@@ -109,8 +116,48 @@ static NSString *cellIdentifier = @"Cell";
     [self.tableView reloadData];
     
     [self refresh];
+}
+
+    //iBeacon Set up
+- (void)initBeacon {
+    NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"];
+    self.beaconRegionOne = [[CLBeaconRegion alloc] initWithProximityUUID:uuid
+                                                                major:35427
+                                                                minor:1929
+                                                           identifier:@"beacon_id"];
+    self.beaconRegionTwo = [[CLBeaconRegion alloc] initWithProximityUUID:uuid
+                                                                   major:18942
+                                                                   minor:47986
+                                                              identifier:@"beacon_id"];
+    self.beaconRegionThree = [[CLBeaconRegion alloc] initWithProximityUUID:uuid
+                                                                   major:12992
+                                                                   minor:44032
+                                                              identifier:@"beacon_id"];
+}
+- (void)initRegion
+{
+        NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"];
+        self.beaconRegionOne = [[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:@"beacon_id"];
+        [self.locationManager startMonitoringForRegion:self.beaconRegionOne];
     
+    self.beaconRegionTwo = [[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:@"beacon_id"];
+    [self.locationManager startMonitoringForRegion:self.beaconRegionTwo];
+    self.beaconRegionThree = [[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:@"beacon_id"];
+    [self.locationManager startMonitoringForRegion:self.beaconRegionThree];
+    }
     
+- (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region
+{
+        [self.locationManager startRangingBeaconsInRegion:self.beaconRegionOne];
+        [self.locationManager startRangingBeaconsInRegion:self.beaconRegionTwo];
+        [self.locationManager startRangingBeaconsInRegion:self.beaconRegionThree];
+    
+        UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+        localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:1];
+        localNotification.alertBody = @"You are in range of a Zobelisk!";
+        localNotification.timeZone = [NSTimeZone defaultTimeZone];
+        [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+
 }
 
 - (void)infoButtonTapped:(id)sender
@@ -166,7 +213,6 @@ static NSString *cellIdentifier = @"Cell";
     
     
     MIZPost *post = self.post[self.post.count - indexPath.row-1];
-    
     
     cell.email.text = post.email;
     cell.date.text = post.date;
@@ -265,6 +311,14 @@ static NSString *cellIdentifier = @"Cell";
     return YES;
 }
 */
+- (IBAction)pocket:(UIButton *)sender {
+    
+    UITableViewCell *buttonCell = (UITableViewCell *) [sender superview];
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:buttonCell];
+    MIZPost *favortiedPost = self.post[self.post.count - indexPath.row-1];
+    [favortiedPost favoritePost:favortiedPost.postID];
+}
 
 
 #pragma mark - Navigation

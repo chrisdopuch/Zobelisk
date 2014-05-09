@@ -80,6 +80,9 @@
                                             <state key="normal" title="Pocket">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="pocket:" destination="AcZ-Iv-5n2" eventType="touchUpInside" id="NuS-dG-jfD"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubL-JB-lby">
                                             <rect key="frame" x="20" y="5" width="24" height="14"/>
@@ -174,7 +177,7 @@
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Post" rowHeight="131" id="sOx-I1-EPP">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Post" rowHeight="131" id="sOx-I1-EPP" customClass="MIZPocketTableViewCell">
                                 <rect key="frame" x="0.0" y="130" width="320" height="131"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="sOx-I1-EPP" id="itU-so-GOV">
@@ -243,6 +246,12 @@
                                         <constraint firstAttribute="trailing" secondItem="4qK-WZ-xXr" secondAttribute="trailing" constant="20" id="y5X-87-jSG"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="body" destination="Icj-Nw-dTG" id="3ws-mf-TAy"/>
+                                    <outlet property="date" destination="4qK-WZ-xXr" id="n62-NF-i4F"/>
+                                    <outlet property="email" destination="Gd7-6X-WCd" id="DWp-pl-BpQ"/>
+                                    <outlet property="postTitle" destination="grc-D3-UQF" id="acQ-1Y-0tV"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
