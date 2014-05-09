@@ -19,6 +19,7 @@
 
 @property (weak, nonatomic) IBOutlet UISearchBar *search;
 @property (weak, nonatomic) IBOutlet UIButton *pocket;
+@property (nonatomic) BOOL range;
 - (IBAction)pocket:(UIButton *)sender;
 
 @property (nonatomic, strong) NSArray *post;

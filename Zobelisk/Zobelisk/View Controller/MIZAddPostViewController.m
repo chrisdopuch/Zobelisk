@@ -130,7 +130,7 @@ NSDate *selectedDate;
     self.picker = [[UIImagePickerController alloc] init];
     self.picker.delegate = self;
     //SWITCH SAVED PHOTOS TO CAMERA!!!!!!!!!
-    self.picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
+    self.picker.sourceType = UIImagePickerControllerSourceTypeCamera;
     [self presentViewController:self.picker animated:YES completion:nil];
     }
 

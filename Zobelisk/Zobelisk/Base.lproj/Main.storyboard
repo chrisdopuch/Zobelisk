@@ -1044,7 +1044,7 @@
                                         </state>
                                         <connections>
                                             <action selector="commentOnPost:" destination="f6w-e0-PIc" eventType="touchUpInside" id="xV3-fI-Up4"/>
-                                            <segue destination="rDe-iS-Tx2" kind="push" id="1bf-fU-SyB"/>
+                                            <segue destination="rDe-iS-Tx2" kind="push" id="b9c-Gt-cIo"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSl-fn-A4i">
@@ -1301,7 +1301,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="b9c-Gt-cIo"/>
         <segue reference="GRj-5l-xn9"/>
-        <segue reference="1bf-fU-SyB"/>
     </inferredMetricsTieBreakers>
 </document>

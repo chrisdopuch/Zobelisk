@@ -53,6 +53,7 @@ static NSString *cellIdentifier = @"Cell";
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         [self.tableView reloadData];
         [self.refreshControl endRefreshing];
+        self.range = NO;
     }];
     
 }
@@ -117,73 +118,59 @@ static NSString *cellIdentifier = @"Cell";
     path = [path stringByAppendingPathComponent:@"post.miz"];
     self.post = [NSKeyedUnarchiver unarchiveObjectWithFile:path];
     [self.tableView reloadData];
-    
+    self.range = NO;
+    [self initRegion];
+
     [self refresh];
 }
 
     //iBeacon Set up
-- (void)initBeacon {
-    NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"];
-    self.beaconRegionOne = [[CLBeaconRegion alloc] initWithProximityUUID:uuid
-                                                                major:35427
-                                                                minor:1929
-                                                           identifier:@"beacon_id"];
-    self.beaconRegionTwo = [[CLBeaconRegion alloc] initWithProximityUUID:uuid
-                                                                   major:18942
-                                                                   minor:47986
-                                                              identifier:@"beacon_id"];
-    self.beaconRegionThree = [[CLBeaconRegion alloc] initWithProximityUUID:uuid
-                                                                   major:12992
-                                                                   minor:44032
-                                                              identifier:@"beacon_id"];
-}
 - (void)initRegion
 {
-        NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"];
-        self.beaconRegionOne = [[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:@"beacon_id"];
-        [self.locationManager startMonitoringForRegion:self.beaconRegionOne];
+    NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"];
+    self.beaconRegionOne =[[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:@"beacon"];
+     self.beaconRegionTwo =[[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:@"beacon"];
+     self.beaconRegionThree =[[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:@"beacon"];
+
     
-    self.beaconRegionTwo = [[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:@"beacon_id"];
-    [self.locationManager startMonitoringForRegion:self.beaconRegionTwo];
-    self.beaconRegionThree = [[CLBeaconRegion alloc] initWithProximityUUID:uuid identifier:@"beacon_id"];
-    [self.locationManager startMonitoringForRegion:self.beaconRegionThree];
-    }
-    
+    [self.locationManager startRangingBeaconsInRegion:self.beaconRegionOne];
+    [self.locationManager startRangingBeaconsInRegion:self.beaconRegionTwo];
+   [self.locationManager startRangingBeaconsInRegion:self.beaconRegionThree];
+}
+
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region
 {
-        [self.locationManager startRangingBeaconsInRegion:self.beaconRegionOne];
-        [self.locationManager startRangingBeaconsInRegion:self.beaconRegionTwo];
-        [self.locationManager startRangingBeaconsInRegion:self.beaconRegionThree];
     
         UILocalNotification* localNotification = [[UILocalNotification alloc] init];
         localNotification.fireDate = [NSDate dateWithTimeIntervalSinceNow:1];
         localNotification.alertBody = @"You are in range of a Zobelisk!";
         localNotification.timeZone = [NSTimeZone defaultTimeZone];
         [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
+    
+    
 
 }
 
 -(void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
 {
-        CLBeacon *beacon = [[CLBeacon alloc] init];
-        beacon = [beacons lastObject];
     
-    if (beacon.proximity == CLProximityNear){
-        
-        if(beacon.minor == self.beaconRegionOne.minor){
-            [MIZPostFetch fetchPostforBeacon:beacon.minor ];
-            
-        }
-        else if(beacon.minor == self.beaconRegionTwo.minor){
-            [MIZPostFetch fetchPostforBeacon:beacon.minor ];
-        }
-        else if(beacon.minor == self.beaconRegionThree.minor){
-            [MIZPostFetch fetchPostforBeacon:beacon.minor ];
-        }
+    CLBeacon *beacon = [beacons lastObject];
+    NSArray *beaconMinors = @[@(19829), @(47986), @(44032)];
 
-        
+    if (beacon.proximity == CLProximityImmediate && self.range == NO){
+        if([beaconMinors containsObject:beacon.minor]) {
+            [MIZPostFetch fetchPostforBeacon:beacon.minor];
+            self.range = YES;
+        }
+    }
+    else if (beacon.proximity == CLProximityImmediate && self.range == NO){
+        if([beaconMinors containsObject:beacon.minor]) {
+            [MIZPostFetch fetchPostforBeacon:beacon.minor];
+            self.range = YES;
+        }
     }
 }
+
 
 
 
