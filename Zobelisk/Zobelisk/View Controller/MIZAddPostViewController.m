@@ -126,13 +126,33 @@ NSDate *selectedDate;
     
 }
 
--  (void) choosePhotoBtn:(id)sender {
-    self.picker = [[UIImagePickerController alloc] init];
-    self.picker.delegate = self;
-    //SWITCH SAVED PHOTOS TO CAMERA!!!!!!!!!
-    self.picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-    [self presentViewController:self.picker animated:YES completion:nil];
-    }
+-  (IBAction) choosePhotoBtn:(id)sender {
+    UIActionSheet *media = [[UIActionSheet alloc] initWithTitle:@"Choose photo from:" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Camera", @"Gallery", nil];
+    
+    [media showInView:self.view];
+
+    
+}
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex)
+    {
+        case 0:
+            self.picker = [[UIImagePickerController alloc] init];
+            self.picker.delegate = self;
+            self.picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+            [self presentViewController:self.picker animated:YES completion:nil];
+            
+            break;
+        case 1:
+            self.picker = [[UIImagePickerController alloc] init];
+            self.picker.delegate = self;
+            self.picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            [self presentViewController:self.picker animated:YES completion:nil];
+            
+            break;
+    } 
+}
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{

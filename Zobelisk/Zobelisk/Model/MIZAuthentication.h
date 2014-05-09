@@ -14,7 +14,7 @@
 
 + (void) registerEmail:(NSString*)email withPassword:(NSString*)password andConfirmationPassword:(NSString*)password_confirmation;
 
-//+ (void) loginWithEmail:(NSString*)email withPassword:(NSString*)password;
++ (void) loginWithEmail:(NSString*)email withPassword:(NSString*)password;
 
 - (BOOL) verifyLogin;
 @end

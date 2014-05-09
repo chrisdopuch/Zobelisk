@@ -1043,8 +1043,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="commentOnPost:" destination="f6w-e0-PIc" eventType="touchUpInside" id="xV3-fI-Up4"/>
-                                            <segue destination="rDe-iS-Tx2" kind="push" id="b9c-Gt-cIo"/>
+                                            <segue destination="rDe-iS-Tx2" kind="push" id="QjD-Cg-S6i"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSl-fn-A4i">
@@ -1301,7 +1300,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="b9c-Gt-cIo"/>
+        <segue reference="RsC-aX-Hso"/>
         <segue reference="GRj-5l-xn9"/>
     </inferredMetricsTieBreakers>
 </document>

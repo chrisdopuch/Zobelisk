@@ -124,6 +124,10 @@ static NSString *cellIdentifier = @"Cell";
     [self refresh];
 }
 
+- (IBAction)infoButtonTapped:(id)sender
+{
+    [self performSegueWithIdentifier:@"feedToInfo" sender:self];
+}
     //iBeacon Set up
 - (void)initRegion
 {
@@ -164,6 +168,18 @@ static NSString *cellIdentifier = @"Cell";
         }
     }
     else if (beacon.proximity == CLProximityImmediate && self.range == NO){
+        if([beaconMinors containsObject:beacon.minor]) {
+            [MIZPostFetch fetchPostforBeacon:beacon.minor];
+            self.range = YES;
+        }
+    }
+    else if (beacon.proximity == CLProximityFar&& self.range == NO){
+        if([beaconMinors containsObject:beacon.minor]) {
+            [MIZPostFetch fetchPostforBeacon:beacon.minor];
+            self.range = YES;
+        }
+    }
+    else if (beacon.proximity == CLProximityUnknown && self.range == NO){
         if([beaconMinors containsObject:beacon.minor]) {
             [MIZPostFetch fetchPostforBeacon:beacon.minor];
             self.range = YES;
@@ -326,8 +342,8 @@ static NSString *cellIdentifier = @"Cell";
     UITableViewCell *buttonCell = (UITableViewCell *) [sender superview];
     
     NSIndexPath *indexPath = [self.tableView indexPathForCell:buttonCell];
-    MIZPost *favortiedPost = self.post[self.post.count - indexPath.row-1];
-    [favortiedPost favoritePost:favortiedPost.postID];
+    MIZPost *favoritedPost = self.post[indexPath.row];
+    [favoritedPost favoritePost:favoritedPost.postID];
 }
 
 

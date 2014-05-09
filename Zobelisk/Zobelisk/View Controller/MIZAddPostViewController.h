@@ -16,7 +16,7 @@
 
 @end
 
-@interface MIZAddPostViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
+@interface MIZAddPostViewController : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate>
 
 @property (nonatomic, strong) id <MIZAddPostViewControllerDelegate> delegate;
 @property (nonatomic, weak) IBOutlet UIImageView *selectedImageView;
