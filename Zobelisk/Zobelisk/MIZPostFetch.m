@@ -80,9 +80,10 @@
     
 }
 
-+ (void)fetchPostforBeacon:(int)id
++ (void)fetchPostforBeacon:(NSNumber*)id
 {
-    NSString *urlString = [NSString stringWithFormat:@"%@%d", @"http://zobelisk-backend.herokuapp.com/posts.json?beacon_id=", id];
+    NSString *urlString = [NSString stringWithFormat:@"%@%@", @"http://zobelisk-backend.herokuapp.com/posts.json?beacon_id=", id];
+    NSLog(@"%@", urlString);
     //NSString *urlString = @"http://zobelisk-backend.herokuapp.com/posts.json";
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLSession *session = [NSURLSession sharedSession];

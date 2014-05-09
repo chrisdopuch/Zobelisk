@@ -37,7 +37,10 @@ static NSString *cellIdentifier = @"Cell";
     // Get data
     [self.refreshControl beginRefreshing];
     [self.tableView setContentOffset:CGPointMake(0.0f, -60.0f)];
-    [MIZPostFetch fetchPost];
+    
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+        [self.tableView reloadData];
+    }];
 }
 
 #pragma mark - Notification handling
@@ -162,14 +165,14 @@ static NSString *cellIdentifier = @"Cell";
     if (beacon.proximity == CLProximityNear){
         
         if(beacon.minor == self.beaconRegionOne.minor){
-            [MIZPostFetch fetchPost];
+            [MIZPostFetch fetchPostforBeacon:beacon.minor ];
             
         }
         else if(beacon.minor == self.beaconRegionTwo.minor){
-            
+            [MIZPostFetch fetchPostforBeacon:beacon.minor ];
         }
         else if(beacon.minor == self.beaconRegionThree.minor){
-            
+            [MIZPostFetch fetchPostforBeacon:beacon.minor ];
         }
 
         

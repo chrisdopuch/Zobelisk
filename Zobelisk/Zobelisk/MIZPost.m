@@ -128,7 +128,7 @@
     
     NSURLSessionConfiguration* config = [NSURLSessionConfiguration defaultSessionConfiguration];
     
-    NSString *urlString = @"http://zobelisk-backend.herokuapp.com/favorites.json";
+    NSString *urlString = @"http://zobelisk-backend.herokuapp.com/favorited.json";
     NSURL *restURL = [NSURL URLWithString:urlString];
     NSMutableDictionary *favorite = [[NSMutableDictionary alloc] init];
     [favorite setObject: [NSNumber numberWithInt:postId] forKey:@"favorable_id"];
