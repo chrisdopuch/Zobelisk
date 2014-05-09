@@ -163,7 +163,7 @@ static NSString *cellIdentifier = @"Cell";
 
 }
 
-- (void)infoButtonTapped:(id)sender
+-(void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
 {
         CLBeacon *beacon = [[CLBeacon alloc] init];
         beacon = [beacons lastObject];
