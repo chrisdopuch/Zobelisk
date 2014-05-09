@@ -23,6 +23,7 @@
 		852350B6190887E30002C0C5 /* MIZAuthentication.m in Sources */ = {isa = PBXBuildFile; fileRef = 852350B5190887E30002C0C5 /* MIZAuthentication.m */; };
 		853D3FAD190F405B00CE49CD /* MIZGregorianDateComponents.m in Sources */ = {isa = PBXBuildFile; fileRef = 853D3FAC190F405B00CE49CD /* MIZGregorianDateComponents.m */; };
 		857B46B31912BDD70097EF9D /* MIZFavorite.m in Sources */ = {isa = PBXBuildFile; fileRef = 857B46B21912BDD70097EF9D /* MIZFavorite.m */; };
+		E673ED3B191BFA8500F8AF81 /* MIZInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E673ED3A191BFA8500F8AF81 /* MIZInfoViewController.m */; };
 		E6C0ED6718F46FF3006402B5 /* MIZPocketTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C0ED6618F46FF3006402B5 /* MIZPocketTableViewController.m */; };
 		E6C0ED6D18F470A8006402B5 /* MIZSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C0ED6C18F470A8006402B5 /* MIZSignUpViewController.m */; };
 		E6C0ED7018F470FB006402B5 /* MIZPostTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C0ED6F18F470FB006402B5 /* MIZPostTableViewController.m */; };
@@ -88,6 +89,8 @@
 		853D3FAC190F405B00CE49CD /* MIZGregorianDateComponents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZGregorianDateComponents.m; path = Model/MIZGregorianDateComponents.m; sourceTree = "<group>"; };
 		857B46B11912BDD70097EF9D /* MIZFavorite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZFavorite.h; path = Model/MIZFavorite.h; sourceTree = "<group>"; };
 		857B46B21912BDD70097EF9D /* MIZFavorite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZFavorite.m; path = Model/MIZFavorite.m; sourceTree = "<group>"; };
+		E673ED39191BFA8500F8AF81 /* MIZInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MIZInfoViewController.h; sourceTree = "<group>"; };
+		E673ED3A191BFA8500F8AF81 /* MIZInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MIZInfoViewController.m; sourceTree = "<group>"; };
 		E6C0ED6518F46FF3006402B5 /* MIZPocketTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZPocketTableViewController.h; path = "View Controller/MIZPocketTableViewController.h"; sourceTree = "<group>"; };
 		E6C0ED6618F46FF3006402B5 /* MIZPocketTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MIZPocketTableViewController.m; path = "View Controller/MIZPocketTableViewController.m"; sourceTree = "<group>"; };
 		E6C0ED6B18F470A8006402B5 /* MIZSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MIZSignUpViewController.h; path = "View Controller/MIZSignUpViewController.h"; sourceTree = "<group>"; };
@@ -274,6 +277,8 @@
 		E6E5F69818E350B60001FBAF /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				E673ED39191BFA8500F8AF81 /* MIZInfoViewController.h */,
+				E673ED3A191BFA8500F8AF81 /* MIZInfoViewController.m */,
 				E6C0ED8018F4F8FF006402B5 /* Tab Bar View Controller */,
 				E6E5F6A618EB36CB0001FBAF /* Table View Controller */,
 				E6E5F6A518EB36B90001FBAF /* Navigation Controller */,
@@ -480,6 +485,7 @@
 				E6C0ED8318F4F974006402B5 /* MIZTabViewController.m in Sources */,
 				E6C0ED7618F4BA8F006402B5 /* MIZFeedNavigationViewController.m in Sources */,
 				E6E5F6A918EB40360001FBAF /* MIZMeViewController.m in Sources */,
+				E673ED3B191BFA8500F8AF81 /* MIZInfoViewController.m in Sources */,
 				57D25FD019117AFC009FE0E4 /* MIZPostViewController.m in Sources */,
 				E6C0ED8618F50094006402B5 /* MIZAddPostViewController.m in Sources */,
 				E6C0ED7318F4719E006402B5 /* MIZMapViewController.m in Sources */,

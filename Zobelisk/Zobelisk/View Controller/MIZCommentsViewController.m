@@ -8,6 +8,7 @@
 
 #import "MIZCommentsViewController.h"
 
+
 @interface MIZCommentsViewController ()
 
 @end
@@ -65,9 +66,10 @@
     [textView resignFirstResponder];
 }
 
-- (void) postComment:(id)sender {
+- (IBAction)postComment:(id)sender
+{
   //INSERT COMMENT POSTING CODE HERE!!!
-    
+
 }
 - (void)didReceiveMemoryWarning
 {

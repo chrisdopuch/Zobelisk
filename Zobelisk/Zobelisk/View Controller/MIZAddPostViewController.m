@@ -114,8 +114,14 @@ NSDate *selectedDate;
 
 
 - (IBAction)createPost:(UIButton *)sender {
-    //Create post dictionary object 
-    NSDictionary* postInfo = [[NSDictionary alloc] initWithObjectsAndKeys:self.postTitle.text, @"title",self.description.text, @"description", self.expDate.text, @"expiration_date", self.selectedImageView, @"image", nil];
+    //Create post dictionary object
+    
+     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString* email = [[NSString alloc] init];
+    
+    email = [userDefaults objectForKey:@"email"];
+    
+    NSDictionary* postInfo = [[NSDictionary alloc] initWithObjectsAndKeys:self.postTitle.text, @"title",self.description.text, @"description", self.expDate.text, @"expiration_date", self.selectedImageView, @"image", email, @"email", nil];
     
 }
 
@@ -125,8 +131,8 @@ NSDate *selectedDate;
     //SWITCH SAVED PHOTOS TO CAMERA!!!!!!!!!
     self.picker.sourceType = UIImagePickerControllerSourceTypeSavedPhotosAlbum;
     [self presentViewController:self.picker animated:YES completion:nil];
-    
     }
+
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
         self.selectedImageView.image = [info objectForKey:@"UIImagePickerControllerOriginalImage"];

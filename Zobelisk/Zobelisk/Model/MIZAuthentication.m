@@ -13,7 +13,7 @@
 + (void) registerUser:(NSMutableDictionary*)user
 {
     
-    [MIZAuthentication registerEmail:[user objectForKey:@"email"] withPassword:[user objectForKey:@"password"] andConfirmationPassword: [user objectForKey:@"password"]];
+  //  [MIZAuthentication registerEmail:[user objectForKey:@"email"] withPassword:[user objectForKey:@"password"] andConfirmationPassword: [user objectForKey:@"password"]];
     [MIZAuthentication updateUser:user];
     
 }
@@ -33,16 +33,16 @@
         NSMutableDictionary *form = [[NSMutableDictionary alloc] init];
         NSMutableDictionary *user = [[NSMutableDictionary alloc] init];
         
-        /*[userProfile setObject:[userProfile objectForKey:@"email"] forKey:@"email"];
-        [userProfile  setObject:[userProfile objectForKey:@"password"] forKey:@"current_password"];
-        [userProfile  setObject:[userProfile objectForKey:@"first name"] forKey:@"first_name"];
-        [userProfile  setObject:[userProfile objectForKey:@"last name"] forKey:@"last_name"];
-        [userProfile  setObject:[userProfile objectForKey:@"address"] forKey:@"address"];
-        [userProfile  setObject:[userProfile objectForKey:@"twitterHandle"] forKey:@"twitter"];*/
+       [user setObject:[userProfile objectForKey:@"email"] forKey:@"email"];
+        [user setObject:[userProfile objectForKey:@"password"] forKey:@"password"];
+        [user setObject:[userProfile objectForKey:@"firstName"] forKey:@"first_name"];
+        [user setObject:[userProfile objectForKey:@"lastName"] forKey:@"last_name"];
+        [user setObject:[userProfile objectForKey:@"address"] forKey:@"address"];
+        [user setObject:[userProfile objectForKey:@"twitter"] forKey:@"twitter"];
         
         [form setObject:@"✓" forKey:@"utf8"];
         [form setObject:@"put" forKey:@"_method"];
-        [form setObject:userProfile forKey:@"user"];
+        [form setObject:user forKey:@"user"];
         [form setObject:@"Sign up" forKey:@"commit"];
         
         //converts key/value pair into request data
@@ -67,6 +67,7 @@
             
         }];
         
+        
         //resumes the Datarequest.
         [dataRequest resume];
         
@@ -76,7 +77,7 @@
 
 + (void) registerEmail:(NSString*)email withPassword:(NSString*)password andConfirmationPassword:(NSString*)password_confirmation
 {
-    NSURLSessionConfiguration* config = [NSURLSessionConfiguration defaultSessionConfiguration];
+   /* NSURLSessionConfiguration* config = [NSURLSessionConfiguration defaultSessionConfiguration];
     
     
     //converts url into a string
@@ -127,7 +128,7 @@
     }];
     
     //resumes the Datarequest.
-    [dataRequest resume];
+    [dataRequest resume];*/
     
 }
 

@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "MIZAddPostViewController.h"
-#import"MIZPostFetch.h"
+#import "MIZPostFetch.h"
+#import "MIZInfoViewController.h"
 #import "MIZPostFeedCellTableViewCell.h"
 #import <CoreLocation/CoreLocation.h>
 #import <CoreBluetooth/CoreBluetooth.h>

@@ -173,7 +173,7 @@
     
     
     //adds new entries into registration object
-    [self.registrationObject addEntriesFromDictionary:@{@"address":self.addressTextField.text,@"twitterHandle":self.twitterHandleTextField.text, @"phone":self.phoneTextField.text}];
+    [self.registrationObject addEntriesFromDictionary:@{@"address":self.addressTextField.text,@"twitter":self.twitterHandleTextField.text, @"phone":self.phoneTextField.text}];
     
     [MIZAuthentication registerUser:self.registrationObject];
     
