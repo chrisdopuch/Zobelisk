@@ -203,16 +203,23 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    
+    //store user email into device
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    
+    [userDefaults setObject:self.email.text forKey:@"email"];
     [segue destinationViewController];
     //create mutable dictionary to store information from signup view controller
-    NSMutableDictionary *registerObject = [[NSMutableDictionary alloc] initWithObjectsAndKeys:self.firstName.text, @"first name", self.lastName.text, @"last name", self.passwordField.text, @"password", self.email.text, @"email", nil];
+    NSMutableDictionary *registerObject = [[NSMutableDictionary alloc] initWithObjectsAndKeys:self.firstName.text, @"firstName", self.lastName.text, @"lastName", self.passwordField.text, @"password", self.email.text, @"email", nil];
     
     //Performs segue based on the identifier
     if([segue.identifier isEqualToString:@"signUpToRegister"])
     {
         //Segue to Register controller
         MIZRegisterViewController* controller = (MIZRegisterViewController*)segue.destinationViewController;
+        
         //pass the registration object into Registration view controller.
+        
         controller.registrationObject = registerObject;
     }
     

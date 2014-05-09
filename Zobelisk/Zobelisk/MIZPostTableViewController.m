@@ -24,9 +24,12 @@
     [super viewDidLoad];
     
     UIBarButtonItem *addPost = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addPostButtonTapped:)];
+    UIBarButtonItem *infoButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(infoButtonTapped:)];
     
+    
+    //create add post button
     self.navigationItem.rightBarButtonItem = addPost;
-    
+    self.navigationItem.leftBarButtonItem = infoButton;
    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -45,7 +48,9 @@
     [self performSegueWithIdentifier:@"addPost" sender:sender];
 }
 
-
+- (void)infoButtonTapped:(id)sender{
+    
+}
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation

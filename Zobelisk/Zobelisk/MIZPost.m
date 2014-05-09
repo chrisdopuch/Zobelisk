@@ -41,7 +41,6 @@
         self.eventDate = [aDecoder decodeObjectForKey:@"event_date"];
         self.media = [aDecoder decodeObjectForKey:@"media"];
         self.likes = [aDecoder decodeIntegerForKey:@"likes"];
-        
         self.firstName= [aDecoder decodeObjectForKey:@"first_name"];
         self.lastName = [aDecoder decodeObjectForKey:@"last_name"];
         self.phone = [aDecoder decodeObjectForKey:@"phone"];

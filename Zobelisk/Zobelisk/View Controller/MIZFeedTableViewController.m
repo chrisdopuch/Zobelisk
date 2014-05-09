@@ -73,6 +73,12 @@ static NSString *cellIdentifier = @"Cell";
     
     
     UIBarButtonItem *addPost = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(addPostButtonTapped:)];
+    UIButton* infoButton = [UIButton buttonWithType:UIButtonTypeInfoLight];
+    [infoButton addTarget:self action:@selector(infoButtonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIBarButtonItem *infoBarButton = [[UIBarButtonItem alloc] initWithCustomView:infoButton];
+    
+    self.navigationItem.leftBarButtonItem = infoBarButton;
     self.navigationItem.rightBarButtonItem = addPost;
      self.search.delegate = self;
     
@@ -107,7 +113,10 @@ static NSString *cellIdentifier = @"Cell";
     
 }
 
-
+- (void)infoButtonTapped:(id)sender
+{
+    [self performSegueWithIdentifier:@"feedToInfo" sender:sender];
+}
 
 - (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar
 {
@@ -272,11 +281,12 @@ static NSString *cellIdentifier = @"Cell";
         MIZAddPostViewController* AddPostViewController = [navigationController viewControllers][0];
         AddPostViewController.delegate = self;
     }
-    if([segue.identifier isEqualToString:@"FeedToPost"])
+    else if([segue.identifier isEqualToString:@"FeedToPost"])
     {
         MIZPostViewController *select = segue.destinationViewController;
         select.post = self.selectedPost;
     }
+
 }
 
 @end
