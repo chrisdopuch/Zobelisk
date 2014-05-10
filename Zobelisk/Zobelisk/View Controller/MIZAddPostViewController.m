@@ -70,6 +70,21 @@ NSDate *selectedDate;
     
      [self initRegion];
 }
+
+- (IBAction)createPost:(UIButton *)sender {
+    //Request beacon ID and email from user defaults
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSString* email = [userDefaults objectForKey:@"email"];
+    NSNumber* beaconID = [userDefaults objectForKey:@"beaconID"];
+    
+    //Create post dictionary object
+    NSDictionary* postInfo = [[NSDictionary alloc] initWithObjectsAndKeys:self.postTitle.text, @"title",self.description.text, @"description", self.expDate.text, @"expiration_date", self.selectedImageView, @"image", email, @"email", nil];
+    [MIZPost createPost:postInfo onBeacon:beaconID];
+    [userDefaults removeObjectForKey:@"beaconID"];
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+}
 - (void)initRegion
 {
     NSUUID *uuid = [[NSUUID alloc] initWithUUIDString:@"B9407F30-F5F8-466E-AFF9-25556B57FE6D"];
@@ -91,8 +106,6 @@ NSDate *selectedDate;
     localNotification.alertBody = @"You are in range of a Zobelisk!";
     localNotification.timeZone = [NSTimeZone defaultTimeZone];
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotification];
-    
-    
     
 }
 
@@ -207,12 +220,6 @@ NSDate *selectedDate;
 }
 
 
-- (IBAction)createPost:(UIButton *)sender {
-    //Create post dictionary object
-    
-    [self locationManager];
-    
-}
 
 -  (IBAction) choosePhotoBtn:(id)sender {
     UIActionSheet *media = [[UIActionSheet alloc] initWithTitle:@"Choose photo from:" delegate:self cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil otherButtonTitles:@"Camera", @"Gallery", nil];
