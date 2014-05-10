@@ -63,18 +63,16 @@
  
  NSMutableDictionary *post = [[NSMutableDictionary alloc] init];
  NSMutableDictionary *form = [[NSMutableDictionary alloc] init];
- 
- //NSString* email = [[NSUserDefaults standardUserDefaults] objectForKey:@"email"];
-// NSDate* currentDate = [[NSDate alloc] init];
- NSCalendar* calendar = [NSCalendar currentCalendar];
+ MIZGregorianDateComponents* components = [MIZGregorianDateComponents init];
+    
  //NSDateComponents* components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:[obj objectForKey:@"expiration_date"]];
  [post setObject: [obj objectForKey:@"email"] forKey:@"email"];
  [post setObject: beacon forKey:@"beacon_id"];
- [post setObject:[MIZGregorianDateComponents getYear] forKey:@"timestamp(1i)"];
- [post setObject:[MIZGregorianDateComponents getMonth] forKey:@"timestamp(2i)"];
- [post setObject:[MIZGregorianDateComponents getDay] forKey:@"timestamp(3i)"];
- [post setObject:[MIZGregorianDateComponents getHour] forKey:@"timestamp(4i)"];
- [post setObject:[MIZGregorianDateComponents getMinute] forKey:@"timestamp(5i)"];
+ [post setObject:[components year] forKey:@"timestamp(1i)"];
+ [post setObject:[components month] forKey:@"timestamp(2i)"];
+ [post setObject:[components day] forKey:@"timestamp(3i)"];
+ [post setObject:[components hour] forKey:@"timestamp(4i)"];
+ [post setObject:[components minute] forKey:@"timestamp(5i)"];
  [post setObject:[NSNumber numberWithInt:0] forKey: @"likes"];
  [post setObject:[obj objectForKey:@"title"] forKey:@"title"];
  //[post setObject: [NSNumber numberWithInt:[components year]] forKey:@"event_date(1i)"];
@@ -173,15 +171,16 @@
     
     NSString *urlString = @"http://zobelisk-backend.herokuapp.com/comments.json";
     NSURL *restURL = [NSURL URLWithString:urlString];
+    MIZGregorianDateComponents* components = [[MIZGregorianDateComponents alloc] init];
     NSMutableDictionary *com = [[NSMutableDictionary alloc] init];
     
     [com setObject:[comment objectForKey:@"text_body"] forKey:@"text_body"];
     [com setObject:[comment objectForKey:@"post_id"] forKey:@"post_id"];
-    [com setObject: [MIZGregorianDateComponents getYear] forKey:@"timestamp(1i)"];
-    [com setObject:[MIZGregorianDateComponents getMonth] forKey:@"timestamp(2i)"];
-    [com setObject:[MIZGregorianDateComponents getDay] forKey:@"timestamp(3i)"];
-    [com setObject:[MIZGregorianDateComponents getHour] forKey:@"timestamp(4i)"];
-    [com setObject:[MIZGregorianDateComponents getMinute] forKey:@"timestamp(5i)"];
+    [com setObject: [components year] forKey:@"timestamp(1i)"];
+    [com setObject:[components month] forKey:@"timestamp(2i)"];
+    [com setObject:[components day] forKey:@"timestamp(3i)"];
+    [com setObject:[components hour] forKey:@"timestamp(4i)"];
+    [com setObject:[components minute] forKey:@"timestamp(5i)"];
     
     NSMutableDictionary *form = [[NSMutableDictionary alloc]init];
     [form setObject:com forKey:@"comment"];

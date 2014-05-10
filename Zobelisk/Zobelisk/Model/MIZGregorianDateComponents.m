@@ -10,51 +10,27 @@
 
 @implementation MIZGregorianDateComponents
 
-+ (NSNumber*) getYear
+- (MIZGregorianDateComponents*) init
 {
-    NSDate* currentDate = [[NSDate alloc] init];
-    NSCalendar* calendar = [NSCalendar currentCalendar];
-    NSDateComponents* components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:currentDate];
-    NSNumber* year = [NSNumber numberWithInt:[components year]];
-    return year;
-}
-+ (NSNumber*) getMonth
-{
-    NSDate* currentDate = [[NSDate alloc] init];
-    NSCalendar* calendar = [NSCalendar currentCalendar];
-    NSDateComponents* components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:currentDate];
-    NSNumber* month = [NSNumber numberWithInt:[components month]];
-    return month;
-}
-+ (NSNumber*) getDay
-{
-    NSDate* currentDate = [[NSDate alloc] init];
-    NSCalendar* calendar = [NSCalendar currentCalendar];
-    NSDateComponents* components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:currentDate];
-    NSNumber* day = [NSNumber numberWithInt:[components day]];
-    return day;
+    return [self initWithDate: [[NSDate alloc]init]];
 }
 
-+ (NSNumber*) getHour
+- (MIZGregorianDateComponents*) initWithDate:(NSDate*)timestamp
 {
-    NSDate *date = [[NSDate alloc] init];
-    // Assume you have a 'date'
-    NSCalendar *gregorianCal = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDateComponents *dateComps = [gregorianCal components: (NSHourCalendarUnit | NSMinuteCalendarUnit)
-                                                  fromDate: date];
-    // Then use it
-    return [NSNumber numberWithInteger:[dateComps hour]];
-}
+    MIZGregorianDateComponents* date = [MIZGregorianDateComponents alloc];
+    NSCalendar* calendar = [NSCalendar currentCalendar];
+    NSDateComponents* components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:timestamp];
 
-+ (NSNumber*) getMinute
-{
-    NSDate *date = [[NSDate alloc] init];
-    // Assume you have a 'date'
     NSCalendar *gregorianCal = [[NSCalendar alloc] initWithCalendarIdentifier:NSGregorianCalendar];
-    NSDateComponents *dateComps = [gregorianCal components: (NSHourCalendarUnit | NSMinuteCalendarUnit)
-                                                  fromDate: date];
-    // Then use it
-    return [NSNumber numberWithInteger:[dateComps minute]];
+    NSDateComponents *dateComps = [gregorianCal components: (NSHourCalendarUnit | NSMinuteCalendarUnit) fromDate: timestamp];
+    
+    [date setYear:[NSNumber numberWithInteger:[components year]]];
+    [date setMonth:[NSNumber numberWithInteger:[components month]]];
+    [date setYear: [NSNumber numberWithInteger:[components day]]];
+    [date setHour:[NSNumber numberWithInteger:[dateComps hour]]];
+    [date setMinute:[NSNumber numberWithInteger:[dateComps minute]]];
+    
+    return date;
 }
 
 @end

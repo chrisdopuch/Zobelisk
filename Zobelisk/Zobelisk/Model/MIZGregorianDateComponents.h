@@ -10,10 +10,13 @@
 
 @interface MIZGregorianDateComponents : NSObject
 
-+ (NSNumber*) getYear;
-+ (NSNumber*) getMonth;
-+ (NSNumber*) getDay;
-+ (NSNumber*) getHour;
-+ (NSNumber*) getMinute;
+@property NSNumber* year;
+@property NSNumber* month;
+@property NSNumber* day;
+@property NSNumber* hour;
+@property NSNumber* minute;
+
+- (MIZGregorianDateComponents*) init;
+- (MIZGregorianDateComponents*) initWithDate:(NSDate*)timestamp;
 
 @end
