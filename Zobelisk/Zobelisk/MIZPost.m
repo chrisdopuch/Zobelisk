@@ -57,7 +57,7 @@
  
  NSURLSessionConfiguration* config = [NSURLSessionConfiguration defaultSessionConfiguration];
  
- NSString *urlString = @"http://zobelisk-backend.herokuapp.com/posts/new";
+ NSString *urlString = @"http://zobelisk-backend.herokuapp.com/posts.json";
  //converts string into URL var
  NSURL *restURL = [NSURL URLWithString:urlString];
  
