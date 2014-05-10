@@ -157,31 +157,38 @@ static NSString *cellIdentifier = @"Cell";
 
 -(void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
 {
+    NSUserDefaults* beaconID = [NSUserDefaults standardUserDefaults];
+    
     
     CLBeacon *beacon = [beacons lastObject];
     NSArray *beaconMinors = @[@(19829), @(47986), @(44032)];
 
+    
     if (beacon.proximity == CLProximityImmediate && self.range == NO){
         if([beaconMinors containsObject:beacon.minor]) {
             [MIZPostFetch fetchPostforBeacon:beacon.minor];
+            [beaconID setObject:beacon.minor forKey:@"beaconID"];
             self.range = YES;
         }
     }
     else if (beacon.proximity == CLProximityImmediate && self.range == NO){
         if([beaconMinors containsObject:beacon.minor]) {
             [MIZPostFetch fetchPostforBeacon:beacon.minor];
+            [beaconID setObject:beacon.minor forKey:@"beaconID"];
             self.range = YES;
         }
     }
     else if (beacon.proximity == CLProximityFar&& self.range == NO){
         if([beaconMinors containsObject:beacon.minor]) {
             [MIZPostFetch fetchPostforBeacon:beacon.minor];
+           [beaconID setObject:beacon.minor forKey:@"beaconID"];
             self.range = YES;
         }
     }
     else if (beacon.proximity == CLProximityUnknown && self.range == NO){
         if([beaconMinors containsObject:beacon.minor]) {
             [MIZPostFetch fetchPostforBeacon:beacon.minor];
+            [beaconID setObject:beacon.minor forKey:@"beaconID"];
             self.range = YES;
         }
     }
@@ -236,9 +243,12 @@ static NSString *cellIdentifier = @"Cell";
     
 
     MIZPostFeedCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
-    
-    
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+  //  NSDate *postDate = [[NSDate alloc] init];
     MIZPost *post = self.post[self.post.count - indexPath.row-1];
+
+    NSDate* postDate = [formatter dateFromString:post.date];
+    
     
     cell.email.text = post.email;
     cell.date.text = post.date;
