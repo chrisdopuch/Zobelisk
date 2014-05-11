@@ -26,7 +26,7 @@
     
     [date setYear:[NSNumber numberWithInteger:[components year]]];
     [date setMonth:[NSNumber numberWithInteger:[components month]]];
-    [date setYear: [NSNumber numberWithInteger:[components day]]];
+    [date setDay: [NSNumber numberWithInteger:[components day]]];
     [date setHour:[NSNumber numberWithInteger:[dateComps hour]]];
     [date setMinute:[NSNumber numberWithInteger:[dateComps minute]]];
     

@@ -63,9 +63,8 @@
  
  NSMutableDictionary *post = [[NSMutableDictionary alloc] init];
  NSMutableDictionary *form = [[NSMutableDictionary alloc] init];
- MIZGregorianDateComponents* components = [MIZGregorianDateComponents init];
+ MIZGregorianDateComponents* components = [[MIZGregorianDateComponents alloc] init];
     
- //NSDateComponents* components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:[obj objectForKey:@"expiration_date"]];
  [post setObject: [obj objectForKey:@"email"] forKey:@"email"];
  [post setObject: beacon forKey:@"beacon_id"];
  [post setObject:[components year] forKey:@"timestamp(1i)"];
