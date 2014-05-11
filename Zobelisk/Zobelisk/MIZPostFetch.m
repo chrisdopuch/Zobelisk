@@ -23,17 +23,19 @@
     NSMutableDictionary *post = [[NSMutableDictionary alloc] init];
     NSMutableDictionary *form = [[NSMutableDictionary alloc] init];
     
+    MIZGregorianDateComponents *components = [MIZGregorianDateComponents init];
+    
     NSString* email = [[NSUserDefaults standardUserDefaults] objectForKey:@"email"];
-    NSDate* currentDate = [[NSDate alloc] init];
-    NSCalendar* calendar = [NSCalendar currentCalendar];
-    NSDateComponents* components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:currentDate];
+    //NSDate* currentDate = [[NSDate alloc] init];
+    //NSCalendar* calendar = [NSCalendar currentCalendar];
+   // NSDateComponents* components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:currentDate];
     [post setObject: [NSNumber numberWithInt:beaconId ] forKey:@"beacon_id"];
     [post setObject: email forKey:@"email"];
-    [post setObject:[MIZGregorianDateComponents getYear] forKey:@"timestamp(1i)"];
-    [post setObject:[MIZGregorianDateComponents getMonth] forKey:@"timestamp(2i)"];
-    [post setObject:[MIZGregorianDateComponents getDay] forKey:@"timestamp(3i)"];
-    [post setObject:[MIZGregorianDateComponents getHour] forKey:@"timestamp(4i)"];
-    [post setObject:[MIZGregorianDateComponents getMinute] forKey:@"timestamp(5i)"];
+    [post setObject:[components year] forKey:@"timestamp(1i)"];
+    [post setObject:[components month] forKey:@"timestamp(2i)"];
+    [post setObject:[components day] forKey:@"timestamp(3i)"];
+    [post setObject:[components hour] forKey:@"timestamp(4i)"];
+    [post setObject:[components  minute] forKey:@"timestamp(5i)"];
     [post setObject:[NSNumber numberWithInt:0] forKey: @"likes"];
     [post setObject:title forKey:@"title"];
     [post setObject:year forKey:@"event_date(1i)"];
