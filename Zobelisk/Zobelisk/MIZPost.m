@@ -64,7 +64,7 @@
  NSMutableDictionary *post = [[NSMutableDictionary alloc] init];
  NSMutableDictionary *form = [[NSMutableDictionary alloc] init];
  MIZGregorianDateComponents* components = [[MIZGregorianDateComponents alloc] init];
- MIZGregorianDateComponents* event   = [[MIZGregorianDateComponents alloc] initWithDate: [obj objectForKey:@"expiration_date"]];
+ MIZGregorianDateComponents* event   = [[MIZGregorianDateComponents alloc] initWithString: [obj objectForKey:@"expiration_date"]];
     
  [post setObject: [obj objectForKey:@"email"] forKey:@"email"];
  [post setObject: beacon forKey:@"beacon_id"];
@@ -75,7 +75,7 @@
  [post setObject:[components minute] forKey:@"timestamp(5i)"];
  [post setObject:[NSNumber numberWithInt:0] forKey: @"likes"];
  [post setObject:[obj objectForKey:@"title"] forKey:@"title"];
- [post setObject: [event year] forKey:@"event_date(1i)"];
+ [post setObject:[event year] forKey:@"event_date(1i)"];
  [post setObject:[event month] forKey:@"event_date(2i)"];
  [post setObject:[event day] forKey:@"event_date(3i)"];
  [post setObject:[obj objectForKey:@"description"] forKey:@"body_text"];
@@ -104,7 +104,7 @@
  NSURLSessionDataTask *dataRequest = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
  
  
- NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+ //NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
      
  if(error == nil )
  {
