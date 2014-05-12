@@ -14,6 +14,7 @@
 {
     
     [MIZAuthentication registerEmail:[user objectForKey:@"email"] withPassword:[user objectForKey:@"password"] andConfirmationPassword: [user objectForKey:@"password"]];
+    [MIZAuthentication loginWithEmail:[user objectForKey:@"email"] withPassword:[user objectForKey:@"password"]];
     //[MIZAuthentication updateUser:user];
     
 }
@@ -155,7 +156,7 @@
 }
 + (void) loginWithEmail:(NSString*)email withPassword:(NSString*)password
 {
-        NSString* urlString = @"http://zobelisk-backend.herokuapp.com/users.json";
+        NSString* urlString = @"http://zobelisk-backend.herokuapp.com/users/sign_in.json";
         
         NSURLSessionConfiguration* config = [NSURLSessionConfiguration defaultSessionConfiguration];
         

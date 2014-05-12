@@ -26,9 +26,7 @@
     MIZGregorianDateComponents *components = [MIZGregorianDateComponents init];
     
     NSString* email = [[NSUserDefaults standardUserDefaults] objectForKey:@"email"];
-    //NSDate* currentDate = [[NSDate alloc] init];
-    //NSCalendar* calendar = [NSCalendar currentCalendar];
-   // NSDateComponents* components = [calendar components:NSYearCalendarUnit|NSMonthCalendarUnit|NSDayCalendarUnit fromDate:currentDate];
+
     [post setObject: [NSNumber numberWithInt:beaconId ] forKey:@"beacon_id"];
     [post setObject: email forKey:@"email"];
     [post setObject:[components year] forKey:@"timestamp(1i)"];

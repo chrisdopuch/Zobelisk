@@ -52,7 +52,7 @@
 //creating post at a specific iBeacon
 
 
-+ (void) createPost:(NSDictionary*)obj onBeacon:(NSNumber*)beacon//(NSString *)title atBeacon:(short)beaconId withBody:(NSString *)body forEventOn:(NSString *)day duringMonth:(NSString *)month andYear:(NSString *)year taggedWithList:(NSString *)taglist
++ (void) createPost:(NSDictionary*)obj onBeacon:(NSNumber*)beacon
 {
  
  NSURLSessionConfiguration* config = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -84,7 +84,7 @@
  
  [form setObject:@"✓" forKey:@"utf8"];
  [form setObject:post forKey:@"post"];
- [form setObject:@"Sign up" forKey:@"commit"];
+ [form setObject:@"Create Post" forKey:@"commit"];
  
  //converts key/value pair into request data
  NSData* requestData = [NSJSONSerialization dataWithJSONObject:form options:0 error:nil];
@@ -104,10 +104,13 @@
  NSURLSessionDataTask *dataRequest = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
  
  
- //NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
+ NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
      
  if(error == nil )
  {
+     for (NSString *key in [jsonDict allKeys]) {
+         NSLog(@"%@ : %@\n", key, [jsonDict objectForKey:key]);
+     }
      NSLog(@"post");
  }
  }];
