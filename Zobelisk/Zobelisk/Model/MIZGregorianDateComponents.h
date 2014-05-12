@@ -18,5 +18,6 @@
 
 - (MIZGregorianDateComponents*) init;
 - (MIZGregorianDateComponents*) initWithDate:(NSDate*)timestamp;
+- (MIZGregorianDateComponents*) initWithString:(NSString*)timestamp;
 
 @end

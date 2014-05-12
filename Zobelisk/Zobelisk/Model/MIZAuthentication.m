@@ -13,8 +13,8 @@
 + (void) registerUser:(NSMutableDictionary*)user
 {
     
-  //  [MIZAuthentication registerEmail:[user objectForKey:@"email"] withPassword:[user objectForKey:@"password"] andConfirmationPassword: [user objectForKey:@"password"]];
-    [MIZAuthentication updateUser:user];
+    [MIZAuthentication registerEmail:[user objectForKey:@"email"] withPassword:[user objectForKey:@"password"] andConfirmationPassword: [user objectForKey:@"password"]];
+    //[MIZAuthentication updateUser:user];
     
 }
 
@@ -33,12 +33,12 @@
         NSMutableDictionary *form = [[NSMutableDictionary alloc] init];
         NSMutableDictionary *user = [[NSMutableDictionary alloc] init];
         
-        /*[userProfile setObject:[userProfile objectForKey:@"email"] forKey:@"email"];
+        [userProfile setObject:[userProfile objectForKey:@"email"] forKey:@"email"];
         [userProfile  setObject:[userProfile objectForKey:@"password"] forKey:@"current_password"];
         [userProfile  setObject:[userProfile objectForKey:@"first name"] forKey:@"first_name"];
         [userProfile  setObject:[userProfile objectForKey:@"last name"] forKey:@"last_name"];
         [userProfile  setObject:[userProfile objectForKey:@"address"] forKey:@"address"];
-        [userProfile  setObject:[userProfile objectForKey:@"twitterHandle"] forKey:@"twitter"];*/
+        [userProfile  setObject:[userProfile objectForKey:@"twitterHandle"] forKey:@"twitter"];
         
         [form setObject:@"✓" forKey:@"utf8"];
         [form setObject:@"put" forKey:@"_method"];
@@ -77,7 +77,7 @@
 
 + (void) registerEmail:(NSString*)email withPassword:(NSString*)password andConfirmationPassword:(NSString*)password_confirmation
 {
-   /* NSURLSessionConfiguration* config = [NSURLSessionConfiguration defaultSessionConfiguration];
+   NSURLSessionConfiguration* config = [NSURLSessionConfiguration defaultSessionConfiguration];
     
     
     //converts url into a string
@@ -128,7 +128,7 @@
     }];
     
     //resumes the Datarequest.
-    [dataRequest resume];*/
+    [dataRequest resume];
     
 }
 
