@@ -73,7 +73,7 @@
                   symbolName = "+[MIZAuthentication loginWithEmail:withPassword:]"
                   moduleName = "Zobelisk"
                   urlString = "file:///Users/Green/zobelisk/Zobelisk/Zobelisk/Zobelisk/Model/MIZAuthentication.m"
-                  timestampString = "421533716.532992"
+                  timestampString = "421625788.298781"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "192"
@@ -87,7 +87,7 @@
                   symbolName = "__49+[MIZAuthentication loginWithEmail:withPassword:]_block_invoke"
                   moduleName = "Zobelisk"
                   urlString = "file:///Users/Green/zobelisk/Zobelisk/Zobelisk/Zobelisk/Model/MIZAuthentication.m"
-                  timestampString = "421533716.533188"
+                  timestampString = "421625788.299008"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "192"
@@ -164,15 +164,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Zobelisk/View Controller/MIZFeedTableViewController.m"
-            timestampString = "421431465.773505"
+            timestampString = "421625733.60201"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
             landmarkName = "-locationManager:didRangeBeacons:inRegion:"
             landmarkType = "5">
          </BreakpointContent>
@@ -286,6 +286,22 @@
             startingLineNumber = "31"
             endingLineNumber = "31"
             landmarkName = "-initWithDate:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Zobelisk/MIZPost.m"
+            timestampString = "421543332.583724"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "+createPost:onBeacon:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

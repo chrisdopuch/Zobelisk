@@ -22,10 +22,10 @@
      //self.body.numberOfLines = 0;
     
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-        self.email.text = self.post.email;
-        self.date.text = self.post.date;
-        self.postTitle.text = self.post.postTitle;
-        self.body.text = self.post.content;
+            self.email.text = self.post.email;
+            self.date.text = self.post.date;
+            self.postTitle.text = self.post.postTitle;
+            self.body.text = self.post.content;
     }];
 }
 
