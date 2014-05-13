@@ -99,7 +99,10 @@
 
 + (void)fetchPostFavorite
 {
-    NSString *urlString = @"http://zobelisk-backend.herokuapp.com/favorited.json";
+    NSUserDefaults *defaults = [[NSUserDefaults alloc] init];
+    NSString* uid = [defaults objectForKey:@"userID"];
+    
+    NSString *urlString = [NSString stringWithFormat: @"http://zobelisk-backend.herokuapp.com/favorited.json?user_id=%@", uid];
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLSession *session = [NSURLSession sharedSession];
     [[session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
