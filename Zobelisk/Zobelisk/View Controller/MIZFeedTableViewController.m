@@ -70,16 +70,28 @@ static NSString *cellIdentifier = @"Cell";
     return self;
 }
 
+/*- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    [MIZAuthentication logout];
+}
+*/
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    //[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getUserID:) name:@"MIZGetUserIdFinished" object:nil];
+    
+ 
     MIZAuthentication *authenticator = [MIZAuthentication new];
     BOOL isLoggedIn = [authenticator verifyLogin];
+
     if (isLoggedIn == NO){
         [self performSegueWithIdentifier:@"SignUpSegue" sender:self];
     }
-    
+
+
+
     self.locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate = self;
     [self initRegion];
@@ -120,8 +132,8 @@ static NSString *cellIdentifier = @"Cell";
     [self.tableView reloadData];
     self.range = NO;
     [self initRegion];
-
     [self refresh];
+    
 }
 
 - (IBAction)infoButtonTapped:(id)sender
@@ -142,6 +154,12 @@ static NSString *cellIdentifier = @"Cell";
    [self.locationManager startRangingBeaconsInRegion:self.beaconRegionThree];
 }
 
+-(void)callGetUser{
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(getUserID:) name:@"MIZGetUserIdFinished" object:nil];
+    NSString *email = [defaults objectForKey:@"email"];
+    [MIZAuthentication getUserId:email];
+}
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region
 {
     
@@ -153,6 +171,19 @@ static NSString *cellIdentifier = @"Cell";
     
     
 
+}
+- (void)getUserID:(NSNotification *)notification{
+    
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *userInfo = notification.userInfo;
+   // NSNumber* userID = [NSNumber numberWithInteger: userInfo[@"userID"]];
+   
+    NSString* uid = [NSString stringWithFormat:@"%@", [userInfo objectForKey:@"userId"]];
+   /* for (NSString* key in [userInfo allKeys]) {
+        NSLog(@"%@", [userInfo objectForKey:key]);
+    }*/
+    
+    [defaults setObject:uid forKey:@"userID"];
 }
 
 -(void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region
@@ -240,7 +271,6 @@ static NSString *cellIdentifier = @"Cell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
 
     MIZPostFeedCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
@@ -350,7 +380,6 @@ static NSString *cellIdentifier = @"Cell";
 - (IBAction)pocket:(UIButton *)sender {
     
     UITableViewCell *buttonCell = (UITableViewCell *) [sender superview];
-    
     NSIndexPath *indexPath = [self.tableView indexPathForCell:buttonCell];
     MIZPost *favoritedPost = self.post[1];
     [favoritedPost favoritePost:favoritedPost.postID];
@@ -362,17 +391,21 @@ static NSString *cellIdentifier = @"Cell";
  //In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
+    
     //Controls what view to segue based on identifier
     if([segue.identifier isEqualToString:@"addPost"])
     {
+        [self callGetUser];
         //Sets navigation controller as destination
         UINavigationController *navigationController = segue.destinationViewController;
         //Goes to first view controller in navigation stack
+
         MIZAddPostViewController* AddPostViewController = [navigationController viewControllers][0];
         AddPostViewController.delegate = self;
     }
     else if([segue.identifier isEqualToString:@"FeedToPost"])
     {
+        [self callGetUser];
         MIZPostViewController *select = segue.destinationViewController;
         select.post = self.selectedPost;
     }

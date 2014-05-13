@@ -14,7 +14,7 @@
 {
     
     [MIZAuthentication registerEmail:[user objectForKey:@"email"] withPassword:[user objectForKey:@"password"] andConfirmationPassword: [user objectForKey:@"password"]];
-    [MIZAuthentication loginWithEmail:[user objectForKey:@"email"] withPassword:[user objectForKey:@"password"]];
+    //[MIZAuthentication loginWithEmail:[user objectForKey:@"email"] withPassword:[user objectForKey:@"password"]];
     //[MIZAuthentication updateUser:user];
     
 }
@@ -157,7 +157,7 @@
 
 + (void) getUserId:(NSString*)email
 {
-    NSString* urlString = [NSString stringWithFormat: @"http://zobelisk-backend.herokuapp.com/get_user.json?email=%@", email] ;
+    NSString* urlString = [NSString stringWithFormat: @"http://zobelisk-backend.herokuapp.com/get_user.json?email=%@", [email stringByAddingPercentEscapesUsingEncoding:NSASCIIStringEncoding]];
     
     NSURLSessionConfiguration* config = [NSURLSessionConfiguration defaultSessionConfiguration];
     
@@ -166,7 +166,7 @@
     
     
     //converts key/value pair into request data
-    NSData* requestData = [NSJSONSerialization dataWithJSONObject:nil options:0 error:nil];
+    NSData* requestData = [NSJSONSerialization dataWithJSONObject:[[NSDictionary alloc] init] options:0 error:nil];
     
     //sets up URL session using config
     NSURLSession *session = [NSURLSession sessionWithConfiguration:config];
@@ -185,11 +185,16 @@
         //NSLog(response);
         NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
         
-        //  [[jsonDict objectForKey:@"id"] intValue]
+        for (NSString* key in [jsonDict allKeys]) {
+            NSLog(@"%@: %@", key, [jsonDict objectForKey:key]);
+        }
+        
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"MIZGetUserIdFinished" object:nil userInfo:@{@"userId": [jsonDict objectForKey:@"id"]}];
         
         if(error == nil)
         {
-            [[NSNotificationCenter defaultCenter] postNotificationName:@"MIZGetUserIdFinished" object:nil userInfo:@{@"userId": [jsonDict objectForKey:@"id"]}];
+            
+
         }
     }];
     

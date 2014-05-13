@@ -18,5 +18,7 @@
 
 + (void) getUserId:(NSString*)email;
 
++ (void) logout;
+
 - (BOOL) verifyLogin;
 @end

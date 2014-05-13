@@ -7,6 +7,7 @@
 //
 
 #import "MIZRegisterViewController.h"
+#import "MIZAuthentication.h"
 
 
 @interface MIZRegisterViewController ()
@@ -174,11 +175,11 @@
     
     //adds new entries into registration object
     [self.registrationObject addEntriesFromDictionary:@{@"address":self.addressTextField.text,@"twitter":self.twitterHandleTextField.text, @"phone":self.phoneTextField.text}];
+   
     NSString* email = [self.registrationObject objectForKey:@"email"];
     NSString* password = [self.registrationObject objectForKey:@"password"];
-    
     [MIZAuthentication registerUser:self.registrationObject];
-    [MIZAuthentication loginWithEmail:email withPassword:password ];
+    //[MIZAuthentication loginWithEmail:email withPassword:password ];
     
     [self dismissViewControllerAnimated:YES completion:^
      {

@@ -79,6 +79,7 @@
  [post setObject:[event month] forKey:@"event_date(2i)"];
  [post setObject:[event day] forKey:@"event_date(3i)"];
  [post setObject:[obj objectForKey:@"description"] forKey:@"body_text"];
+    [post setObject: [obj objectForKey:@"user_id" ] forKey:@"user_id"];
  //[post setObject: forKey:@"tag_list"];
  
  

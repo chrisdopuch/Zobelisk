@@ -43,9 +43,9 @@
     NSLog(@"%@", user.email);
     self.firstName.text = user.firstName;
     self.lastName.text = user.lastName;
-    self.email.text = user.email;
-    self.twitter.text = user.twitter;
-    self.phone.text = user.phone;
+   // self.email.text = user.email;
+    //self.twitter.text = user.twitter;
+    //self.phone.text = user.phone;
     
     
 }

@@ -74,11 +74,12 @@ NSDate *selectedDate;
 - (IBAction)createPost:(UIButton *)sender {
     //Request beacon ID and email from user defaults
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    //NSNumber* userID = [userDefaults objectForKey:@"userID"];
     NSString* email = [userDefaults objectForKey:@"email"];
     NSNumber* beaconID = [userDefaults objectForKey:@"beaconID"];
     
     //Create post dictionary object
-    NSDictionary* postInfo = [[NSDictionary alloc] initWithObjectsAndKeys:self.postTitle.text, @"title",self.description.text, @"description", self.expDate.text, @"expiration_date", self.selectedImageView, @"image", email, @"email", nil];
+    NSDictionary* postInfo = [[NSDictionary alloc] initWithObjectsAndKeys:self.postTitle.text, @"title",self.description.text, @"description", self.expDate.text, @"expiration_date", self.selectedImageView, @"image", email, @"email", [userDefaults objectForKey:@"userID"], @"user_id", nil];
     [MIZPost createPost:postInfo onBeacon:beaconID];
     [userDefaults removeObjectForKey:@"beaconID"];
     [self dismissViewControllerAnimated:YES completion:^{
