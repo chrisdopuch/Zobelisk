@@ -55,7 +55,7 @@ static NSString *cellIdentifier = @"Cell";
         self.search.delegate = self;
     
     // Register the view controller to listen for notifications
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(respondToProcessingComplete:) name:@"MIZPostFinishedProcessing" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(respondToProcessingComplete:) name:@"MIZFavoritesFinishedProcessing" object:nil];
     
     // Tell the refresh control to stop
     [[NSNotificationCenter defaultCenter] addObserverForName:@"MIZPostFetchingFailed" object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification *note) {
