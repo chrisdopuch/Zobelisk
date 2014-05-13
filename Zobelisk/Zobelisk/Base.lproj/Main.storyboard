@@ -191,6 +191,9 @@
                                             <state key="normal" title="Comment">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
+                                            <connections>
+                                                <action selector="commentOnPost:" destination="Wps-4x-CIP" eventType="touchUpInside" id="lE7-G3-Wnn"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="User" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gd7-6X-WCd">
                                             <rect key="frame" x="20" y="6" width="24" height="14"/>
@@ -223,13 +226,13 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="Icj-Nw-dTG" firstAttribute="leading" secondItem="itU-so-GOV" secondAttribute="leading" constant="20" id="7UD-As-CHT"/>
                                         <constraint firstItem="grc-D3-UQF" firstAttribute="leading" secondItem="itU-so-GOV" secondAttribute="leading" constant="20" id="G9p-z9-8P8"/>
                                         <constraint firstItem="Gd7-6X-WCd" firstAttribute="leading" secondItem="itU-so-GOV" secondAttribute="leading" constant="20" id="Ibf-nt-CF0"/>
                                         <constraint firstItem="grc-D3-UQF" firstAttribute="top" secondItem="Gd7-6X-WCd" secondAttribute="bottom" constant="8" id="L9x-rp-Y36"/>
                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="X9n-bn-530" secondAttribute="bottom" constant="8" id="S1e-5t-Pd4"/>
                                         <constraint firstItem="X9n-bn-530" firstAttribute="leading" secondItem="itU-so-GOV" secondAttribute="leading" constant="20" id="S5N-Et-zxt"/>
                                         <constraint firstItem="X9n-bn-530" firstAttribute="top" secondItem="Icj-Nw-dTG" secondAttribute="bottom" constant="18" id="c85-Cv-SpE"/>
-                                        <constraint firstAttribute="centerX" secondItem="Icj-Nw-dTG" secondAttribute="centerX" id="fpX-sr-ykQ"/>
                                         <constraint firstItem="Icj-Nw-dTG" firstAttribute="top" secondItem="grc-D3-UQF" secondAttribute="bottom" constant="5" id="ikF-UD-lKf"/>
                                         <constraint firstItem="Gd7-6X-WCd" firstAttribute="top" secondItem="itU-so-GOV" secondAttribute="top" constant="6" id="omw-ne-glj"/>
                                         <constraint firstAttribute="centerY" secondItem="Icj-Nw-dTG" secondAttribute="centerY" id="qWb-ys-YXi"/>
@@ -242,6 +245,7 @@
                                     <outlet property="date" destination="4qK-WZ-xXr" id="n62-NF-i4F"/>
                                     <outlet property="email" destination="Gd7-6X-WCd" id="DWp-pl-BpQ"/>
                                     <outlet property="postTitle" destination="grc-D3-UQF" id="acQ-1Y-0tV"/>
+                                    <segue destination="f6w-e0-PIc" kind="push" identifier="PocketToPost" id="h16-UF-Phe"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -259,7 +263,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bVM-Vh-1HM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="224" y="967"/>
+            <point key="canvasLocation" x="1228" y="-1312"/>
         </scene>
         <!--Comments View Controller - Comment-->
         <scene sceneID="f9n-dU-PqB">
@@ -270,7 +274,7 @@
                         <viewControllerLayoutGuide type="bottom" id="P4K-Q3-fKZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="MwH-Yi-fbM">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comment:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdz-yx-FJT">
@@ -966,11 +970,11 @@
                         <viewControllerLayoutGuide type="bottom" id="OBr-a9-u6Z"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ekQ-RP-oRg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vId-RR-NcN">
-                                <rect key="frame" x="0.0" y="213" width="320" height="355"/>
+                                <rect key="frame" x="0.0" y="213" width="320" height="306"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -1022,7 +1026,7 @@
                                         </state>
                                         <connections>
                                             <action selector="commentOnPost:" destination="f6w-e0-PIc" eventType="touchUpInside" id="cUB-Wd-FdH"/>
-                                            <segue destination="rDe-iS-Tx2" kind="push" identifier="postToComment" id="QjD-Cg-S6i"/>
+                                            <segue destination="rDe-iS-Tx2" kind="push" identifier="PostToComment" id="8i7-lH-Lp7"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSl-fn-A4i">
@@ -1280,7 +1284,8 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="RsC-aX-Hso"/>
         <segue reference="GpZ-uI-90N"/>
+        <segue reference="h16-UF-Phe"/>
+        <segue reference="8i7-lH-Lp7"/>
     </inferredMetricsTieBreakers>
 </document>

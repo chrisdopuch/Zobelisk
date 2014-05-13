@@ -53,6 +53,7 @@
 }
 - (void)viewWillAppear:(BOOL)animated {
     
+    //sets up 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillShow:) name:UIKeyboardWillShowNotification object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(keyboardWillHide:) name:UIKeyboardWillHideNotification object:nil];
     
@@ -207,7 +208,9 @@
     //store user email into device
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     
+    
     [userDefaults setObject:self.email.text forKey:@"email"];
+    
     [segue destinationViewController];
     //create mutable dictionary to store information from signup view controller
     NSMutableDictionary *registerObject = [[NSMutableDictionary alloc] initWithObjectsAndKeys:self.firstName.text, @"firstName", self.lastName.text, @"lastName", self.passwordField.text, @"password", self.email.text, @"email", nil];
@@ -219,7 +222,6 @@
         MIZRegisterViewController* controller = (MIZRegisterViewController*)segue.destinationViewController;
         
         //pass the registration object into Registration view controller.
-        
         controller.registrationObject = registerObject;
     }
     

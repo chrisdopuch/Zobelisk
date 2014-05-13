@@ -24,6 +24,7 @@ static NSString *cellIdentifier = @"Cell";
 - (void)refresh
 {
     // Get data
+   
     [self.refreshControl beginRefreshing];
     [self.tableView setContentOffset:CGPointMake(0.0f, -60.0f)];
     [MIZPostFetch fetchPostFavorite];
@@ -73,7 +74,6 @@ static NSString *cellIdentifier = @"Cell";
     [self.tableView reloadData];
     
     [self refresh];
-
 
 }
 
@@ -236,13 +236,19 @@ static NSString *cellIdentifier = @"Cell";
         MIZAddPostViewController* AddPostViewController = [navigationController viewControllers][0];
         AddPostViewController.delegate = self;
     }
-    if([segue.identifier isEqualToString:@"FeedToPost"])
+   else if([segue.identifier isEqualToString:@"PocketToPost"])
     {
         MIZPostViewController *select = segue.destinationViewController;
         select.post = self.selectedPost;
     }
+   else if([segue.identifier isEqualToString:@"PocketToComment"])
+   {
+       MIZPostViewController *select = segue.destinationViewController;
+       select.post = self.selectedPost;
+   }
     
 }
+
 
 
 @end
