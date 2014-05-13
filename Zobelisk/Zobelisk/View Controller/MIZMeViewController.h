@@ -11,12 +11,11 @@
 #import"MIZPostFetch.h"
 
 @interface MIZMeViewController : UIViewController <MIZAddPostViewControllerDelegate>
+@property (weak, nonatomic) IBOutlet UILabel *firstName;
+@property (weak, nonatomic) IBOutlet UILabel *lastName;
+@property (weak, nonatomic) IBOutlet UILabel *phoneNumber;
+@property (weak, nonatomic) IBOutlet UILabel *emailLabel;
 
-@property (nonatomic, weak) IBOutlet UILabel *firstName;
-@property (nonatomic, weak) IBOutlet UILabel *lastName;
-@property (nonatomic, weak) IBOutlet UILabel *email;
-@property (nonatomic, weak) IBOutlet UILabel *phone;
-@property (nonatomic, weak) IBOutlet UILabel *twitter;
 
 @property (nonatomic, strong) NSArray *users;
 
