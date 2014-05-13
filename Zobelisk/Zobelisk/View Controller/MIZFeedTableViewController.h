@@ -21,7 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *pocket;
 @property (nonatomic) BOOL range;
 - (IBAction)pocket:(UIButton *)sender;
-- (void)getUserId:(id)sender;
+- (void)getUserId:(NSNotification*)notification;
 -(void)callGetUser;
 
 @property (nonatomic, strong) NSArray *post;

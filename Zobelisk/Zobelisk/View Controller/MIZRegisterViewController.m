@@ -179,7 +179,7 @@
     NSString* email = [self.registrationObject objectForKey:@"email"];
     NSString* password = [self.registrationObject objectForKey:@"password"];
     [MIZAuthentication registerUser:self.registrationObject];
-    //[MIZAuthentication loginWithEmail:email withPassword:password ];
+    [MIZAuthentication loginWithEmail:email withPassword:password ];
     
     [self dismissViewControllerAnimated:YES completion:^
      {

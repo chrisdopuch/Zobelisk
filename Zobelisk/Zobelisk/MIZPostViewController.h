@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 
 #import "MIZAddPostViewController.h"
+#import "MIZCommentsViewController.h"
+#import "MIZPostFetch.h"
 #import "MIZPost.h"
 
 
@@ -20,7 +22,9 @@
 @property (nonatomic, weak) IBOutlet UILabel *date;
 @property (nonatomic, weak) IBOutlet UILabel *postTitle;
 @property (nonatomic, weak) IBOutlet UILabel *body;
-
+@property (nonatomic, strong) NSDictionary* postObj;
+- (IBAction)pocket:(UIButton *)sender;
+- (IBAction)commentOnPost:(id)sender;
 
 
 @end

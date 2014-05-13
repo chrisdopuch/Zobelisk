@@ -123,7 +123,7 @@
 
 //pocket post function
 
-- (void) favoritePost:(int)postId
+- (void) favoritePost:(NSString*)postId forUser:(NSString*)user_id
 {
     
     NSURLSessionConfiguration* config = [NSURLSessionConfiguration defaultSessionConfiguration];
@@ -133,6 +133,7 @@
     NSMutableDictionary *favorite = [[NSMutableDictionary alloc] init];
     [favorite setObject: [NSNumber numberWithInt:postId] forKey:@"favorable_id"];
     [favorite setObject: @"post" forKey:@"favorable_type"];
+    [favorite setObject:user_id forKey:@"user_id"];
     
     NSMutableDictionary *form = [[NSMutableDictionary alloc]init];
     [form setObject:favorite forKey:@"favorite"];
@@ -169,7 +170,7 @@
 }
 
 
-- (void) commentPost:(NSDictionary*) comment {
++ (void) commentPost:(NSDictionary*) comment {
     
     NSURLSessionConfiguration* config = [NSURLSessionConfiguration defaultSessionConfiguration];
     
@@ -185,6 +186,7 @@
     [com setObject:[components day] forKey:@"timestamp(3i)"];
     [com setObject:[components hour] forKey:@"timestamp(4i)"];
     [com setObject:[components minute] forKey:@"timestamp(5i)"];
+    [com setObject:[comment objectForKey:@"user_id"] forKey:@"user_id"];
     
     NSMutableDictionary *form = [[NSMutableDictionary alloc]init];
     [form setObject:com forKey:@"comment"];

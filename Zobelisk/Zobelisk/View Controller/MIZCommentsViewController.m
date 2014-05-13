@@ -7,6 +7,7 @@
 //
 
 #import "MIZCommentsViewController.h"
+#import "MIZPost.h"
 
 
 @interface MIZCommentsViewController ()
@@ -69,9 +70,15 @@
 - (IBAction)postComment:(id)sender
 {
   //INSERT COMMENT POSTING CODE HERE!!!
-    NSDictionary* comment = [[NSDictionary alloc] initWithObjectsAndKeys:self.comment.text, @"test_body", nil];
-    
 
+    NSString* pid = [self.postObj objectForKey:@"post_id"];
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    NSString* uid = [defaults objectForKey:@"userID"];
+    NSDictionary* comment = [[NSDictionary alloc] initWithObjectsAndKeys:self.comment.text, @"test_body", uid, @"user_id", pid, @"post_id",  nil];
+    [MIZPost commentPost:comment];
+    [self dismissViewControllerAnimated:true completion:^{
+        
+    }];
 }
 - (void)didReceiveMemoryWarning
 {

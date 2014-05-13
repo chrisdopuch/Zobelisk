@@ -192,18 +192,7 @@
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GSI-29-5jO">
-                                            <rect key="frame" x="92" y="93" width="55" height="29"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="55" id="92L-4z-npb"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
-                                            <state key="normal" title="Pocket">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                        </button>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="User" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gd7-6X-WCd">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="User" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gd7-6X-WCd">
                                             <rect key="frame" x="20" y="6" width="24" height="14"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
@@ -217,29 +206,31 @@
                                             <color key="textColor" red="0.44289174460000003" green="0.23455783629999999" blue="0.90957828439999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grc-D3-UQF">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="grc-D3-UQF">
                                             <rect key="frame" x="20" y="28" width="32" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Icj-Nw-dTG">
-                                            <rect key="frame" x="131" y="55" width="58" height="20"/>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Content" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Icj-Nw-dTG">
+                                            <rect key="frame" x="20" y="55" width="280" height="20"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="280" id="IW7-JE-k5z"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="GSI-29-5jO" firstAttribute="baseline" secondItem="X9n-bn-530" secondAttribute="baseline" id="91L-9Q-Plo"/>
                                         <constraint firstItem="grc-D3-UQF" firstAttribute="leading" secondItem="itU-so-GOV" secondAttribute="leading" constant="20" id="G9p-z9-8P8"/>
                                         <constraint firstItem="Gd7-6X-WCd" firstAttribute="leading" secondItem="itU-so-GOV" secondAttribute="leading" constant="20" id="Ibf-nt-CF0"/>
                                         <constraint firstItem="grc-D3-UQF" firstAttribute="top" secondItem="Gd7-6X-WCd" secondAttribute="bottom" constant="8" id="L9x-rp-Y36"/>
                                         <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="X9n-bn-530" secondAttribute="bottom" constant="8" id="S1e-5t-Pd4"/>
                                         <constraint firstItem="X9n-bn-530" firstAttribute="leading" secondItem="itU-so-GOV" secondAttribute="leading" constant="20" id="S5N-Et-zxt"/>
+                                        <constraint firstItem="X9n-bn-530" firstAttribute="top" secondItem="Icj-Nw-dTG" secondAttribute="bottom" constant="18" id="c85-Cv-SpE"/>
                                         <constraint firstAttribute="centerX" secondItem="Icj-Nw-dTG" secondAttribute="centerX" id="fpX-sr-ykQ"/>
-                                        <constraint firstAttribute="trailing" secondItem="GSI-29-5jO" secondAttribute="trailing" constant="173" id="hxO-05-hgO"/>
-                                        <constraint firstAttribute="bottom" secondItem="GSI-29-5jO" secondAttribute="bottom" constant="8" id="nIV-mr-XcV"/>
+                                        <constraint firstItem="Icj-Nw-dTG" firstAttribute="top" secondItem="grc-D3-UQF" secondAttribute="bottom" constant="5" id="ikF-UD-lKf"/>
                                         <constraint firstItem="Gd7-6X-WCd" firstAttribute="top" secondItem="itU-so-GOV" secondAttribute="top" constant="6" id="omw-ne-glj"/>
                                         <constraint firstAttribute="centerY" secondItem="Icj-Nw-dTG" secondAttribute="centerY" id="qWb-ys-YXi"/>
                                         <constraint firstItem="4qK-WZ-xXr" firstAttribute="top" secondItem="itU-so-GOV" secondAttribute="top" constant="6" id="sxs-0y-mwW"/>
@@ -1030,7 +1021,8 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="rDe-iS-Tx2" kind="push" id="QjD-Cg-S6i"/>
+                                            <action selector="commentOnPost:" destination="f6w-e0-PIc" eventType="touchUpInside" id="cUB-Wd-FdH"/>
+                                            <segue destination="rDe-iS-Tx2" kind="push" identifier="postToComment" id="QjD-Cg-S6i"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jSl-fn-A4i">
@@ -1041,6 +1033,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="pocket:" destination="f6w-e0-PIc" eventType="touchUpInside" id="e1l-4E-MgV"/>
                                             <action selector="pocketPost:" destination="f6w-e0-PIc" eventType="touchUpInside" id="r3k-eg-yZ3"/>
                                         </connections>
                                     </button>
@@ -1288,6 +1281,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="RsC-aX-Hso"/>
-        <segue reference="s8O-t9-C42"/>
+        <segue reference="GpZ-uI-90N"/>
     </inferredMetricsTieBreakers>
 </document>

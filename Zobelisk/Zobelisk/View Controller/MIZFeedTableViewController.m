@@ -1,3 +1,4 @@
+
 //
 //  MIZFeedTableViewController.m
 //  Zobelisk
@@ -9,6 +10,7 @@
 #import "MIZFeedTableViewController.h"
 #import "MIZAuthentication.h"
 #import "MIZPostViewController.h"
+
 
 
 @interface MIZFeedTableViewController () <UISearchBarDelegate, CBPeripheralManagerDelegate>
@@ -70,12 +72,7 @@ static NSString *cellIdentifier = @"Cell";
     return self;
 }
 
-/*- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    [MIZAuthentication logout];
-}
-*/
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -379,10 +376,10 @@ static NSString *cellIdentifier = @"Cell";
 */
 - (IBAction)pocket:(UIButton *)sender {
     
-    UITableViewCell *buttonCell = (UITableViewCell *) [sender superview];
-    NSIndexPath *indexPath = [self.tableView indexPathForCell:buttonCell];
-    MIZPost *favoritedPost = self.post[1];
-    [favoritedPost favoritePost:favoritedPost.postID];
+    //UITableViewCell *buttonCell = (UITableViewCell *) [sender superview];
+    //NSIndexPath *indexPath = [self.tableView indexPathForCell:buttonCell];
+    //MIZPost *favoritedPost = self.post[1];
+    //[favoritedPost favoritePost:favoritedPost.postID];
 }
 
 

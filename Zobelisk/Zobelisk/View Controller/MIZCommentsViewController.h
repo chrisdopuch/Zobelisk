@@ -8,9 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface MIZCommentsViewController : UIViewController <UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *comment;
-
+@property (strong, nonatomic) NSDictionary*  postObj;
 -(IBAction)postComment:(id)sender;
 
 @end

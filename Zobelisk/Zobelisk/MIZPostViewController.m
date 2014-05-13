@@ -8,6 +8,7 @@
 
 #import "MIZPostViewController.h"
 #import "MIZPostFeedCellTableViewCell.h"
+#import "MIZPost.h"
 
 @implementation MIZPostViewController
 
@@ -19,6 +20,8 @@
     
     self.navigationItem.rightBarButtonItem = addPost;
     
+    [MIZPostFetch fetchPostFavorite];
+
      //self.body.numberOfLines = 0;
     
     [[NSOperationQueue mainQueue] addOperationWithBlock:^{
@@ -28,6 +31,22 @@
             self.body.text = self.post.content;
     }];
 }
+
+- (IBAction)pocket:(UIButton *)sender {
+    NSUserDefaults* defaults = [NSUserDefaults standardUserDefaults];
+    NSString *uid = [defaults objectForKey:@"userID"];
+    NSString* pid = [NSString stringWithFormat:@"%ld", (long)self.post.postID];
+    
+    MIZPost *favoritedPost = [[MIZPost alloc] init] ;
+    [favoritedPost favoritePost:pid forUser:uid];
+}
+
+- (IBAction)commentOnPost:(id)sender {
+   // NSDictionary *post = [[NSDictionary alloc] initWithObjectsAndKeys: @"post_id", self.post.postID, nil];
+    [self performSegueWithIdentifier:@"postToComment" sender:self];
+    
+}
+
 
 /*- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -65,6 +84,13 @@
         //Goes to first view controller in navigation stack
         MIZAddPostViewController* AddPostViewController = [navigationController viewControllers][0];
         AddPostViewController.delegate = self;
+    }
+    else if([segue.identifier isEqualToString:@"postToComment"])
+    {
+        NSString* pid = [NSString stringWithFormat:@"%ld", (long)self.post.postID];
+        NSDictionary *post = [[NSDictionary alloc] initWithObjectsAndKeys:pid, @"post_id", nil];
+        MIZCommentsViewController* controller = (MIZCommentsViewController*)segue.destinationViewController;
+        controller.postObj = post;
     }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
