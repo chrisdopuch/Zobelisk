@@ -174,7 +174,11 @@
         [paw setObject:@"✓" forKey:@"utf8"];
         [paw setObject:user forKey:@"user"];
         [paw setObject:@"Sign in" forKey:@"commit"];
-        
+    
+    
+        for(NSString *key in [paw allKeys]) {
+            NSLog(@"%@",[paw objectForKey:key]);
+        }
         //converts key/value pair into request data
         NSData* requestData = [NSJSONSerialization dataWithJSONObject:paw options:0 error:nil];
         
